@@ -34,7 +34,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
   return (
     <>
       <Nav compact={false} />
-      <Main>
+      <Main onClick={(e) => console.log(e.target)}>
         <Component {...pageProps} />
       </Main>
     </>

@@ -7,7 +7,7 @@ import MaxContainer from "styled-components/MaxContainer";
 import Button from "styled-components/Button";
 import Link from "next/link";
 import ProductCard from "components/ProductCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 
 const HeroContainer = styled(Container)`
   display: grid;
@@ -108,6 +108,20 @@ const EPOSArticle = styled.article`
       text-align: left;
     }
   }
+
+  @media (max-width: 414px) {
+    margin: 0 var(--paddingDouble);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto);
+
+    div.epos-text {
+      text-align: center;
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
 `;
 
 const BackgroundSkew = styled.div`
@@ -143,7 +157,11 @@ export default function Home() {
 
   const [theme, setTheme] = useState(spsTheme);
 
-  function changeColours() {
+  function changeColours(e: MouseEvent) {
+    e.preventDefault();
+
+    console.log("Button pressed");
+
     if (theme.background === "#142038") {
       setTheme(myTheme);
     } else {

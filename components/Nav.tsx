@@ -23,7 +23,6 @@ const Header = styled.header<{ open: boolean }>`
 
   @media (max-width: 414px) {
     background: transparent;
-    height: 100%;
     padding: 0;
   }
 
@@ -39,9 +38,10 @@ const Header = styled.header<{ open: boolean }>`
       position: absolute;
       flex-direction: column;
       align-items: flex-start;
+      top: 0px;
       right: 0px;
       width: 100vw;
-      height: 100%;
+      height: 100vh;
       background: var(--black);
       transform: translateX(100vw);
       transition: 0.15s ease-in;

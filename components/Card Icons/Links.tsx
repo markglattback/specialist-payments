@@ -18,13 +18,13 @@ export default function Links({ style }: HTMLAttributes<SVGAElement>) {
           width="32.11"
           height="32.11"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feColorMatrix
             values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"
             result="invert"
           />
-          <feFlood flood-color="#fff" result="bg" />
+          <feFlood floodColor="#fff" result="bg" />
           <feBlend in="invert" in2="bg" />
         </filter>
         <mask

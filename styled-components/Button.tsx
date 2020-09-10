@@ -16,4 +16,6 @@ export default styled.button<Props>`
     primary ? "var(--brand)" : "var(--brandTint)"};
   color: var(--background);
   border: none;
+  cursor: pointer;
+  z-index: var(--zIndexFront);
 `;
