@@ -2,7 +2,7 @@ import styled from "styled-components";
 import NavLink from "./NavLink";
 import NavDropdown from "./NavDropdown";
 import NavToggle from "./NavToggle";
-import { useEffect, useState, MouseEvent } from "react";
+import { useLayoutEffect, useState, MouseEvent, useRef } from "react";
 import { useAppContext } from "./AppContext";
 
 /* TYPES */
@@ -35,6 +35,7 @@ const Header = styled.header<{ open: boolean }>`
     margin: 0 auto;
 
     @media (max-width: 414px) {
+      display: none;
       position: absolute;
       flex-direction: column;
       align-items: flex-start;
@@ -42,11 +43,15 @@ const Header = styled.header<{ open: boolean }>`
       right: 0px;
       width: 100vw;
       height: 100vh;
-      background: var(--black);
+      /* background: var(--black); */
       transform: translateX(100vw);
       transition: 0.15s ease-in;
       padding-top: 2rem;
     }
+  }
+
+  nav.visible {
+    display: block;
   }
 
   nav.mobile {
@@ -126,17 +131,28 @@ export default function Nav({ compact }: Props) {
     setOpen(!open);
   }
 
+  const nav = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    nav.current?.classList.add("visible");
+  }, [open]);
+
   return (
     <Header open={open}>
       <div className="nav-background"></div>
-      <nav className={open ? "mobile" : undefined}>
+      <nav ref={nav} className={open ? "mobile" : undefined}>
         <div className="brand-logo">
           <span>Specialist Payments</span>
         </div>
         <ul>
           <NavDropdown
             category="Products"
-            links={[{ text: "Card Readers", href: "/card-machines" }]}
+            links={[
+              { text: "Card Readers", href: "/card-machines" },
+              { text: "Payment Gateways", href: "/payment-gateways" },
+              { text: "Payment Links", href: "/payment-links" },
+              { text: "Phone Payments", href: "/phone-payments" },
+            ]}
             mobile={mobile}
           />
           <NavLink href="/about-us" text="About Us" />

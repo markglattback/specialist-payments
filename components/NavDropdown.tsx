@@ -46,7 +46,6 @@ const CategoryWrapper = styled.div<{ mobile: boolean }>`
   }
 
   a {
-    font-weight: 700;
   }
 
   @media (max-width: 414px) {
@@ -56,6 +55,7 @@ const CategoryWrapper = styled.div<{ mobile: boolean }>`
 
     div.nav-dropdown {
       display: flex;
+      flex-direction: column;
       position: static;
       background: transparent;
       padding: 0;
@@ -223,8 +223,8 @@ export default function NavDropdown({ category, links, mobile }: Props) {
           ref={dropdownRef}
           onMouseLeave={!mobile ? handleMouseLeave : undefined}
         >
-          {links.map((link) => (
-            <Link href={link.href}>
+          {links.map((link, index) => (
+            <Link href={link.href} key={`${index}-link`}>
               <a>{link.text}</a>
             </Link>
           ))}

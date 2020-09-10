@@ -78,14 +78,6 @@ const ProductContainer = styled(MaxContainer)`
       flex-direction: column;
     }
   }
-
-  div.colour-scheme {
-    margin: 0rem auto;
-
-    button {
-      margin: var(--padding) auto;
-    }
-  }
 `;
 
 const EPOSArticle = styled.article`
@@ -139,53 +131,6 @@ const BackgroundSkew = styled.div`
 `;
 
 export default function Home() {
-  const spsTheme = {
-    background: "#142038",
-    backgroundTint: "#1e2e3f",
-    brandShade: "#43b185",
-    brand: "#72cca7",
-    brandTint: "#edf7f3",
-  };
-
-  const myTheme = {
-    background: "#202026",
-    backgroundTint: "#313135",
-    brandShade: "#2b7a78",
-    brand: "#3aafa9",
-    brandTint: "#def2f1",
-  };
-
-  const [theme, setTheme] = useState(spsTheme);
-
-  function changeColours(e: MouseEvent) {
-    e.preventDefault();
-
-    console.log("Button pressed");
-
-    if (theme.background === "#142038") {
-      setTheme(myTheme);
-    } else {
-      setTheme(spsTheme);
-    }
-  }
-
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--background",
-      theme.background
-    );
-    document.documentElement.style.setProperty(
-      "--backgroundTint",
-      theme.backgroundTint
-    );
-    document.documentElement.style.setProperty(
-      "--brandShade",
-      theme.brandShade
-    );
-    document.documentElement.style.setProperty("--brand", theme.brand);
-    document.documentElement.style.setProperty("--brandTint", theme.brandTint);
-  }, [theme]);
-
   return (
     <div>
       <Head>
@@ -265,11 +210,6 @@ export default function Home() {
               <p>{lorem}</p>
             </div>
           </EPOSArticle>
-          <div className="colour-scheme">
-            <Button type="button" primary onClick={changeColours}>
-              Change Colours
-            </Button>
-          </div>
         </ProductContainer>
       </section>
     </div>
