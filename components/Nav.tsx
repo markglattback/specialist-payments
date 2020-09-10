@@ -17,11 +17,12 @@ const Header = styled.header<{ open: boolean }>`
   left: 0px;
   width: 100%;
   padding: var(--paddingHalf) 0;
-  background: transparent;
+  background: var(--background);
   font-size: 16px;
   z-index: var(--zIndexFront);
 
   @media (max-width: 414px) {
+    background: transparent;
     height: 100%;
     padding: 0;
   }
@@ -57,6 +58,7 @@ const Header = styled.header<{ open: boolean }>`
     display: flex;
     font-weight: 700;
     font-size: 1rem;
+    z-index: var(--zIndexFront);
 
     @media (max-width: 414px) {
       display: none;

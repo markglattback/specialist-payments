@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import dynamic from "next/dynamic";
+import { FunctionComponent } from "react";
 
 const ProductCardWrapper = styled.div`
   display: grid;
@@ -42,6 +44,7 @@ type Props = {
 
 type Product = {
   title: string;
+  iconComp: string;
   iconSrc: string;
   iconAltText: string;
   description: string;
@@ -49,10 +52,18 @@ type Product = {
 };
 
 export default function ProductCard({ product }: Props) {
+  let IconComponent = null;
+
+  if (product.iconComp) {
+    IconComponent = dynamic(
+      () => import(`./Card Icons/${product.iconComp}`)
+    ) as any;
+  }
+
   return (
     <ProductCardWrapper>
       <div className="icon">
-        <img src={product.iconSrc} alt={product.iconAltText} />
+        <IconComponent />
       </div>
       <div className="title">
         <h3>{product.title}</h3>

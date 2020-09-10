@@ -7,6 +7,7 @@ import MaxContainer from "styled-components/MaxContainer";
 import Button from "styled-components/Button";
 import Link from "next/link";
 import ProductCard from "components/ProductCard";
+import { useEffect, useState } from "react";
 
 const HeroContainer = styled(Container)`
   display: grid;
@@ -77,6 +78,14 @@ const ProductContainer = styled(MaxContainer)`
       flex-direction: column;
     }
   }
+
+  div.colour-scheme {
+    margin: 0rem auto;
+
+    button {
+      margin: var(--padding) auto;
+    }
+  }
 `;
 
 const EPOSArticle = styled.article`
@@ -116,6 +125,49 @@ const BackgroundSkew = styled.div`
 `;
 
 export default function Home() {
+  const spsTheme = {
+    background: "#142038",
+    backgroundTint: "#1e2e3f",
+    brandShade: "#43b185",
+    brand: "#72cca7",
+    brandTint: "#edf7f3",
+  };
+
+  const myTheme = {
+    background: "#202026",
+    backgroundTint: "#313135",
+    brandShade: "#2b7a78",
+    brand: "#3aafa9",
+    brandTint: "#def2f1",
+  };
+
+  const [theme, setTheme] = useState(spsTheme);
+
+  function changeColours() {
+    if (theme.background === "#142038") {
+      setTheme(myTheme);
+    } else {
+      setTheme(spsTheme);
+    }
+  }
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--background",
+      theme.background
+    );
+    document.documentElement.style.setProperty(
+      "--backgroundTint",
+      theme.backgroundTint
+    );
+    document.documentElement.style.setProperty(
+      "--brandShade",
+      theme.brandShade
+    );
+    document.documentElement.style.setProperty("--brand", theme.brand);
+    document.documentElement.style.setProperty("--brandTint", theme.brandTint);
+  }, [theme]);
+
   return (
     <div>
       <Head>
@@ -150,6 +202,7 @@ export default function Home() {
             <ProductCard
               product={{
                 title: "Card Readers",
+                iconComp: "Readers",
                 iconSrc: "/product card icons/readers.svg",
                 iconAltText: "Illustration of a Card Reader",
                 description: lorem,
@@ -159,6 +212,7 @@ export default function Home() {
             <ProductCard
               product={{
                 title: "Payment Gateways",
+                iconComp: "Gateways",
                 iconSrc: "/product card icons/gateways.svg",
                 iconAltText: "Illustration of a Payment Gateway",
                 description: lorem,
@@ -168,6 +222,7 @@ export default function Home() {
             <ProductCard
               product={{
                 title: "Payment Links",
+                iconComp: "Links",
                 iconSrc: "/product card icons/links.svg",
                 iconAltText: "Illustration of a Payment Link",
                 description: lorem,
@@ -177,6 +232,7 @@ export default function Home() {
             <ProductCard
               product={{
                 title: "Phone Payments",
+                iconComp: "Phone",
                 iconSrc: "/product card icons/phone.svg",
                 iconAltText: "Illustration of a Phone",
                 description: lorem,
@@ -191,6 +247,11 @@ export default function Home() {
               <p>{lorem}</p>
             </div>
           </EPOSArticle>
+          <div className="colour-scheme">
+            <Button type="button" primary onClick={changeColours}>
+              Change Colours
+            </Button>
+          </div>
         </ProductContainer>
       </section>
     </div>
