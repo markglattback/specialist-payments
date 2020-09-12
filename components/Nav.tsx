@@ -2,94 +2,33 @@ import styled from "styled-components";
 import NavLink from "./NavLink";
 import NavDropdown from "./NavDropdown";
 import NavToggle from "./NavToggle";
-import { useLayoutEffect, useState, MouseEvent, useRef } from "react";
+import { useEffect, useState, MouseEvent, useRef } from "react";
 import { useAppContext } from "./AppContext";
 
 /* TYPES */
 type Props = {
-  compact: boolean;
+  mobile: boolean;
 };
 
-/* STYLES */
-const Header = styled.header<{ open: boolean }>`
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  padding: var(--paddingHalf) 0;
-  background: var(--background);
-  font-size: 16px;
+const BrandLogo = styled.div<Props>`
+  display: flex;
+  font-weight: 700;
+  font-size: 1rem;
   z-index: var(--zIndexFront);
+  height: 100px;
+  align-self: ${({ mobile }) => (mobile ? "center" : "auto")};
 
-  @media (max-width: 414px) {
-    background: transparent;
-    padding: 0;
+  img {
+    display: inline-block;
   }
+`;
 
-  nav {
-    max-width: var(--maxWidth);
-    background: var(--background);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-
-    @media (max-width: 414px) {
-      display: none;
-      position: absolute;
-      flex-direction: column;
-      align-items: flex-start;
-      top: 0px;
-      right: 0px;
-      width: 100vw;
-      height: 100vh;
-      /* background: var(--black); */
-      transform: translateX(100vw);
-      transition: 0.15s ease-in;
-      padding-top: 2rem;
-    }
-  }
-
-  nav.visible {
-    display: block;
-  }
-
-  nav.mobile {
-    transform: translateX(0px);
-    transition: 0.15s ease-out;
-  }
-
-  div.brand-logo {
-    display: flex;
-    font-weight: 700;
-    font-size: 1rem;
-    z-index: var(--zIndexFront);
-
-    @media (max-width: 414px) {
-      display: none;
-    }
-  }
-
-  div.nav-background {
-    display: ${({ open }) => (open ? "none" : "block")};
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 48px;
-    background: var(--background);
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    @media (max-width: 414px) {
-      flex-direction: column;
-    }
-  }
+const NavUL = styled.ul<Props>`
+  display: flex;
+  flex-direction: ${({ mobile }) => (mobile ? "column" : "row")};
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
   li {
     margin: var(--padding) 0;
@@ -120,45 +59,22 @@ const Header = styled.header<{ open: boolean }>`
 `;
 
 /* Components */
-export default function Nav({ compact }: Props) {
-  const [open, setOpen] = useState(false);
-
-  const { state } = useAppContext();
-  const { mobile } = state;
-
-  function toggleMenu(e: MouseEvent) {
-    e.preventDefault();
-    setOpen(!open);
-  }
-
-  const nav = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    nav.current?.classList.add("visible");
-  }, [open]);
-
+export default function Nav({ mobile }: Props) {
   return (
-    <Header open={open}>
-      <div className="nav-background"></div>
-      <nav ref={nav} className={open ? "mobile" : undefined}>
-        <div className="brand-logo">
-          <span>Specialist Payments</span>
-        </div>
-        <ul>
-          <NavDropdown
-            category="Products"
-            links={[
-              { text: "Card Readers", href: "/card-machines" },
-              { text: "Payment Gateways", href: "/payment-gateways" },
-              { text: "Payment Links", href: "/payment-links" },
-              { text: "Phone Payments", href: "/phone-payments" },
-            ]}
-            mobile={mobile}
-          />
-          <NavLink href="/about-us" text="About Us" />
-        </ul>
-      </nav>
-      <NavToggle open={open} onClick={toggleMenu} />
-    </Header>
+    <>
+      <NavUL mobile={mobile}>
+        <NavDropdown
+          category="Products"
+          links={[
+            { text: "Card Readers", href: "/card-machines" },
+            { text: "Payment Gateways", href: "/payment-gateways" },
+            { text: "Payment Links", href: "/payment-links" },
+            { text: "Phone Payments", href: "/phone-payments" },
+          ]}
+          mobile={mobile}
+        />
+        <NavLink href="/about-us" text="About Us" />
+      </NavUL>
+    </>
   );
 }

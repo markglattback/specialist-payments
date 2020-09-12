@@ -66,6 +66,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.15;
   font-weight: 700;
 }

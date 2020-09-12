@@ -11,12 +11,12 @@ export default function MyApp(props: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
       </Head>
       <AppContextProvider>
         <Layout {...props} />

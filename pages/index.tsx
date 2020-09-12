@@ -140,7 +140,7 @@ export default function Home() {
         <HeroContainer>
           <div className="headline-container">
             <div className="headline">
-              <h1>Payment Services, Made Easy</h1>
+              <h1>Our Service, Your Vision</h1>
               <p>
                 We provide bespoke solutions that will help your business grow.
                 Our goal is to build lasting relationships built on trust.
