@@ -1,10 +1,13 @@
 :root {
   --black: #222;
+  --backgroundShade: #0d1526;
   --background: #142038;
   --backgroundTint: #1e2e3f;
   --brandShade: #43b185;
   --brand: #72cca7;
   --brandTint: #edf7f3;
+  --bodyColor: #8a94a7;
+  --bodyColorTint: hsl(219, 11%, 65%);
   --white: #fff;
   --fontMin: 16px;
   --fontMax: 20px;
@@ -50,8 +53,11 @@ html {
 
 html,
 body {
+  display: flex;
+  flex-direction: column;
   padding: 0;
   margin: 0;
+  height: 100%;
   background: var(--background);
   color: var(--white);
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen,
@@ -75,6 +81,11 @@ h6 {
 h1 {
   font-size: 1.8rem;
   font-weight: 900;
+  color: var(--white);
+}
+
+h2 {
+  font-size: 1.2rem;
 }
 
 h2,
@@ -96,4 +107,10 @@ a {
 
 legend {
   color: inherit;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

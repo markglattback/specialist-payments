@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import { useAppContext } from "./AppContext";
 import Header from "./Header";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 const Main = styled.main`
-  padding: calc(16px * 2 + 3rem) 0;
+  padding: calc(16px * 2 + 3rem) 0 0 0;
+  flex: 1 0 auto;
 `;
 
 export default function Layout({ Component, pageProps }: AppProps) {
@@ -37,6 +39,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
       <Main onClick={(e) => console.log(e.target)}>
         <Component {...pageProps} />
       </Main>
+      <Footer />
     </>
   );
 }

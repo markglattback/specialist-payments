@@ -24,7 +24,8 @@ const HeaderMobileWrapper = styled.header`
     width: 100vw;
     height: 100vh;
     transform: translateX(100vw);
-    background: var(--background);
+    transition: 0.15s ease-in;
+    background: var(--backgroundShade);
     padding-top: 2rem;
   }
 

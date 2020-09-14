@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import NavLink from "./NavLink";
+import ResponsiveNavButton from "./ResponsiveNavButton";
 import NavDropdown from "./NavDropdown";
 import NavToggle from "./NavToggle";
 import { useEffect, useState, MouseEvent, useRef } from "react";
@@ -31,7 +32,9 @@ const NavUL = styled.ul<Props>`
   padding: 0;
 
   li {
+    display: inline-flex;
     margin: var(--padding) 0;
+    align-items: center;
   }
 
   li.active > a,
@@ -66,14 +69,15 @@ export default function Nav({ mobile }: Props) {
         <NavDropdown
           category="Products"
           links={[
-            { text: "Card Readers", href: "/card-machines" },
-            { text: "Payment Gateways", href: "/payment-gateways" },
-            { text: "Payment Links", href: "/payment-links" },
-            { text: "Phone Payments", href: "/phone-payments" },
+            { text: "Card Readers", href: "/products/card-readers" },
+            { text: "Payment Gateways", href: "/products/payment-gateways" },
+            { text: "Payment Links", href: "/products/payment-links" },
+            { text: "Phone Payments", href: "/products/phone-payments" },
           ]}
           mobile={mobile}
         />
         <NavLink href="/about-us" text="About Us" />
+        <ResponsiveNavButton mobile={mobile} href="/quote" text="Get a Quote" />
       </NavUL>
     </>
   );

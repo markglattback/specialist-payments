@@ -8,6 +8,7 @@ const Toggle = styled.div`
   position: relative;
   background: transparent;
   cursor: pointer;
+  z-index: var(--zIndexFront);
 
   @media (max-width: 414px) {
     display: block;

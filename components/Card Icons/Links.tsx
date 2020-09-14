@@ -90,7 +90,7 @@ export default function Links({ style }: HTMLAttributes<SVGAElement>) {
           />
         </mask>
       </defs>
-      <rect style={{ fill: "var(--brandShade)" }} width="60" height="60" />
+      <rect style={{ fill: "var(--white)" }} width="60" height="60" />
       <g style={{ mask: "url(#mask)" }}>
         <path
           style={{ fill: "#202026" }}

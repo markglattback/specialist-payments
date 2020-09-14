@@ -50,10 +50,9 @@ const HeroContainer = styled(Container)`
 `;
 
 const ProductContainer = styled(MaxContainer)`
-  /* background: var(--backgroundTint); */
   background: transparent;
   position: relative;
-  padding-bottom: 10rem;
+  padding-bottom: 7rem;
 
   @media (max-width: 414px) {
     padding-top: 5rem;
@@ -80,18 +79,26 @@ const ProductContainer = styled(MaxContainer)`
   }
 `;
 
-const EPOSArticle = styled.article`
+const Article = styled.article`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   max-width: var(--maxWidth);
-  margin: 0 auto;
+  margin: 10rem auto;
+  /* color: var(--bodyColorTint); */
 
-  div.epos-image {
+  :nth-of-type(1) {
+    margin-top: 0;
+  }
+  :nth-of-type(2) {
+    margin-bottom: 0;
+  }
+
+  div.article-image {
     margin-left: 2.5rem;
     max-width: 400px;
   }
 
-  div.epos-text {
+  div.article-text {
     h2 {
       font-size: 1.2rem;
       font-weight: 700;
@@ -106,7 +113,7 @@ const EPOSArticle = styled.article`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto);
 
-    div.epos-text {
+    div.article-text {
       text-align: center;
 
       h2 {
@@ -120,9 +127,9 @@ const BackgroundSkew = styled.div`
   position: absolute;
   background: var(--backgroundTint);
   top: 10rem;
-  height: calc(100% - 10rem);
+  height: calc(100%);
   width: 100%;
-  transform: skewY(-10deg);
+  transform: skewY(-5deg);
 
   @media (max-width: 414px) {
     top: 0rem;
@@ -203,13 +210,20 @@ export default function Home() {
               }}
             />
           </div>
-          <EPOSArticle id="epos">
-            <div className="epos-image"></div>
-            <div className="epos-text">
+          <Article id="epos">
+            <div className="article-image"></div>
+            <div className="article-text">
               <h2>Seamless POS Integration</h2>
               <p>{lorem}</p>
             </div>
-          </EPOSArticle>
+          </Article>
+          <Article id="finance">
+            <div className="article-text">
+              <h2>Business Finance</h2>
+              <p>{lorem}</p>
+            </div>
+            <div className="article-image"></div>
+          </Article>
         </ProductContainer>
       </section>
     </div>
