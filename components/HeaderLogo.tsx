@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "../context/AppContext";
 import Link from "next/link";
 
 const BrandLogo = styled.div<Props>`
@@ -25,13 +25,10 @@ const BrandLogo = styled.div<Props>`
 `;
 
 type Props = {
-  mobile: boolean;
+  mobile?: boolean;
 };
 
-export default function HeaderLogo() {
-  const { state } = useAppContext();
-  const { mobile } = state;
-
+export default function HeaderLogo({ mobile }: Props) {
   return (
     <BrandLogo mobile={mobile}>
       <Link href="/">

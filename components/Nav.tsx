@@ -3,28 +3,14 @@ import NavLink from "./NavLink";
 import ResponsiveNavButton from "./ResponsiveNavButton";
 import NavDropdown from "./NavDropdown";
 import NavToggle from "./NavToggle";
-import { useEffect, useState, MouseEvent, useRef } from "react";
-import { useAppContext } from "./AppContext";
+import { MouseEvent, HTMLAttributes, FC } from "react";
 
 /* TYPES */
-type Props = {
-  mobile: boolean;
-};
+interface Props {
+  mobile?: boolean;
+}
 
-const BrandLogo = styled.div<Props>`
-  display: flex;
-  font-weight: 700;
-  font-size: 1rem;
-  z-index: var(--zIndexFront);
-  height: 100px;
-  align-self: ${({ mobile }) => (mobile ? "center" : "auto")};
-
-  img {
-    display: inline-block;
-  }
-`;
-
-const NavUL = styled.ul<Props>`
+const NavUL = styled.ul<{ mobile: boolean | undefined }>`
   display: flex;
   flex-direction: ${({ mobile }) => (mobile ? "column" : "row")};
   list-style: none;
@@ -62,9 +48,14 @@ const NavUL = styled.ul<Props>`
 `;
 
 /* Components */
-export default function Nav({ mobile }: Props) {
+export default function Nav({
+  className,
+  mobile,
+  children,
+}: HTMLAttributes<HTMLDivElement> & Props) {
   return (
-    <>
+    <nav className={className}>
+      {children}
       <NavUL mobile={mobile}>
         <NavDropdown
           category="Products"
@@ -79,6 +70,6 @@ export default function Nav({ mobile }: Props) {
         <NavLink href="/about-us" text="About Us" />
         <ResponsiveNavButton mobile={mobile} href="/quote" text="Get a Quote" />
       </NavUL>
-    </>
+    </nav>
   );
 }

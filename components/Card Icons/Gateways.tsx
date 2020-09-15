@@ -9,7 +9,7 @@ export default function Gateways({ style }: HTMLAttributes<SVGAElement>) {
       viewBox="0 0 60 60"
     >
       <defs></defs>
-      <rect style={{ fill: "var(--white)" }} width="60" height="60" />
+      <rect style={{ fill: "var(--brandShade)" }} width="60" height="60" />
       <polyline
         style={{
           fill: "none",
@@ -98,7 +98,7 @@ export default function Gateways({ style }: HTMLAttributes<SVGAElement>) {
           fill: "none",
           strokeMiterlimit: 10,
           strokeWidth: "2px",
-          stroke: "var(--white)",
+          stroke: "var(--brandShade)",
         }}
         points="49 30 51 32 55 28"
       />

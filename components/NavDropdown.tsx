@@ -9,11 +9,12 @@ import {
   MouseEvent as ReactMouseEvent,
   ReactChild,
 } from "react";
+import { useNavContext } from "context/NavContext";
 
 type Props = {
   category: string;
   links: Links[];
-  mobile: boolean;
+  mobile?: boolean;
 };
 
 type Links = {
@@ -21,7 +22,7 @@ type Links = {
   href: string;
 };
 
-const CategoryWrapper = styled.div<{ mobile: boolean }>`
+const CategoryWrapper = styled.div<{ mobile?: boolean }>`
   display: inline-block;
   position: relative;
   font-size: inherit;
@@ -210,6 +211,13 @@ export default function NavDropdown({ category, links, mobile }: Props) {
     });
   }, [open]);
 
+  const navContext = useNavContext();
+  const { state, dispatch } = navContext;
+
+  function closeMenu(e: ReactMouseEvent) {
+    dispatch({ type: "CLOSE" });
+  }
+
   return (
     <li
       ref={categoryRef}
@@ -225,7 +233,7 @@ export default function NavDropdown({ category, links, mobile }: Props) {
         >
           {links.map((link, index) => (
             <Link href={link.href} key={`${index}-link`}>
-              <a>{link.text}</a>
+              <a onClick={closeMenu}>{link.text}</a>
             </Link>
           ))}
         </div>

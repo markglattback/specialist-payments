@@ -3,7 +3,7 @@ import NavLink from "./NavLink";
 import NavButton from "./NavButton";
 
 interface Props extends LinkProps {
-  mobile: boolean;
+  mobile?: boolean;
   text: string;
 }
 

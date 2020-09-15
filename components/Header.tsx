@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Nav from "./Nav";
 import NavToggle from "./NavToggle";
 import { useEffect, useState, MouseEvent, useRef } from "react";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "../context/AppContext";
 import HeaderMobile from "./HeaderMobile";
 import HeaderDesktop from "./HeaderDesktop";
 
@@ -97,34 +97,13 @@ const HeaderWrapper = styled.header<{ open: boolean }>`
 
 /* Components */
 export default function Header() {
-  const [open, setOpen] = useState(false);
-
   const { state } = useAppContext();
   const { mobile } = state;
 
-  function toggleMenu(e: MouseEvent) {
-    e.preventDefault();
-    setOpen(!open);
-  }
-
-  const nav = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    nav.current?.classList.add("visible");
-  }, [open]);
-
   return (
     <>
-      {mobile && (
-        <HeaderMobile>
-          <Nav mobile={mobile} />
-        </HeaderMobile>
-      )}
-      {!mobile && (
-        <HeaderDesktop>
-          <Nav mobile={mobile} />
-        </HeaderDesktop>
-      )}
+      {mobile && <HeaderMobile mobile={mobile} />}
+      {!mobile && <HeaderDesktop />}
     </>
   );
 }

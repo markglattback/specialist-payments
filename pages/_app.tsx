@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import "styles/normalize.css";
 import "styles/globals.css";
 import Head from "next/head";
-import AppContextProvider, { useAppContext } from "../components/AppContext";
+import AppContextProvider, { useAppContext } from "../context/AppContext";
 import Layout from "components/Layout";
 
 export default function MyApp(props: AppProps) {

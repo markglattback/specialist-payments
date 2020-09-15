@@ -7,13 +7,13 @@ import {
 } from "react";
 
 type State = {
-  mobile: boolean;
+  open: boolean;
 };
 
-type Action = { type: "ENTER_MOBILE_MODE" } | { type: "EXIT_MOBILE_MODE" };
+type Action = { type: "OPEN" } | { type: "CLOSE" };
 
 const initialState: State = {
-  mobile: false,
+  open: false,
 };
 
 type Context = {
@@ -23,16 +23,16 @@ type Context = {
 
 const store = createContext<Context>({
   state: initialState,
-  dispatch: () => {},
+  dispatch: (action: Action) => {},
 });
 
 export default function AppContext({ children }: { children: ReactNode }) {
   function reducer(state: State, action: Action) {
     switch (action.type) {
-      case "ENTER_MOBILE_MODE":
-        return { ...state, mobile: true };
-      case "EXIT_MOBILE_MODE":
-        return { ...state, mobile: false };
+      case "OPEN":
+        return { ...state, open: true };
+      case "CLOSE":
+        return { ...state, open: false };
       default:
         return state;
     }
@@ -45,6 +45,6 @@ export default function AppContext({ children }: { children: ReactNode }) {
   return <Provider value={{ state, dispatch }}>{children}</Provider>;
 }
 
-export const useAppContext = () => {
+export const useNavContext = () => {
   return useContext(store);
 };

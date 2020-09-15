@@ -11,7 +11,10 @@ const FooterWrapper = styled.footer`
     position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
-    margin: 0 var(--paddingDouble);
+
+    @media (max-width: 414px) {
+      margin: 0 var(--paddingDouble);
+    }
 
     h2 {
       color: var(--brand);

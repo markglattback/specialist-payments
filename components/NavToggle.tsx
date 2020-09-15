@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, MouseEvent as ReactMouseEvent } from "react";
+import { useNavContext } from "context/NavContext";
 
 const Toggle = styled.div`
   display: none;
@@ -65,10 +66,21 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
 }
 
-export default function NavToggle({ open, onClick }: Props) {
+export default function NavToggle() {
+  const navContext = useNavContext();
+  const { state, dispatch } = navContext;
+
+  function toggleMenu(e: ReactMouseEvent) {
+    e.preventDefault();
+    if (state.open) {
+      dispatch({ type: "CLOSE" });
+    } else {
+      dispatch({ type: "OPEN" });
+    }
+  }
   return (
-    <Toggle onClick={onClick}>
-      <span className={open ? "open" : undefined}></span>
+    <Toggle onClick={toggleMenu}>
+      <span className={state.open ? "open" : undefined}></span>
     </Toggle>
   );
 }

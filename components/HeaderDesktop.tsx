@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactChild } from "react";
+import Nav from "./Nav";
 import HeaderLogo from "./HeaderLogo";
 
 const HeaderDesktopWrapper = styled.header`
@@ -26,13 +27,12 @@ type Props = {
   children: ReactChild;
 };
 
-export default function NavDesktop({ children }: Props) {
+export default function NavDesktop() {
   return (
     <HeaderDesktopWrapper>
-      <nav>
+      <Nav>
         <HeaderLogo />
-        {children}
-      </nav>
+      </Nav>
     </HeaderDesktopWrapper>
   );
 }
