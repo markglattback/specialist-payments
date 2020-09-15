@@ -36,7 +36,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header />
-      <Main onClick={(e) => console.log(e.target)}>
+      <Main>
         <Component {...pageProps} />
       </Main>
       <Footer />

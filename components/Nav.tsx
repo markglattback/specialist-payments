@@ -67,7 +67,7 @@ export default function Nav({
           ]}
           mobile={mobile}
         />
-        <NavLink href="/about-us" text="About Us" />
+        <NavLink href="/about" text="About Us" />
         <ResponsiveNavButton mobile={mobile} href="/quote" text="Get a Quote" />
       </NavUL>
     </nav>

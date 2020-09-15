@@ -101,8 +101,6 @@ export default function Header() {
   const { state } = useAppContext();
   const { mobile } = state;
 
-  console.log(mobile);
-
   return (
     <>
       {mobile && (

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styled from "styled-components";
-import HeroImage from "components/HeroImage";
 import HeroSVG from "components/HeroSVG";
 import Container from "styled-components/Container";
 import MaxContainer from "styled-components/MaxContainer";

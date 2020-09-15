@@ -23,8 +23,10 @@ type Links = {
 };
 
 const DropdownWrapper = styled.li`
-  :hover div.nav-dropdown {
-    display: block;
+  @media (min-width: 415px) {
+    :hover div.nav-dropdown {
+      display: block;
+    }
   }
 `;
 

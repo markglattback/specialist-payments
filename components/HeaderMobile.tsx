@@ -42,12 +42,8 @@ type Props = {
 };
 
 export default function HeaderMobile({ mobile }: Props) {
-  // const [open, setOpen] = useState(false);
-
   const navContext = useNavContext();
   const { state, dispatch } = navContext;
-
-  console.log("Mobile Header State", state);
 
   return (
     <HeaderMobileWrapper>

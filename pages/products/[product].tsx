@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
+import styled from "styled-components";
+import Container from "styled-components/Container";
 
 type Product = {
   name: string;
@@ -9,6 +11,10 @@ type Product = {
 
 type Products = {
   [key: string]: Product;
+};
+
+type ProductUrls = {
+  [key: string]: string;
 };
 
 const products: Products = {
@@ -41,16 +47,16 @@ const productUrls: ProductUrls = {
   ["phone-payments"]: "phonePayments",
 };
 
-type ProductUrls = {
-  [key: string]: string;
-};
+const PageWrapper = styled.div``;
 
 export default function ProductPage({ product }: { product: Product }) {
   return (
-    <>
-      <h1>{product.name}</h1>
-      <div>{product.content}</div>
-    </>
+    <PageWrapper>
+      <Container>
+        <h1>{product.name}</h1>
+        <div>{product.content}</div>
+      </Container>
+    </PageWrapper>
   );
 }
 
@@ -72,7 +78,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [
-    { params: { product: "card-readers" } },
     { params: { product: "payment-gateways" } },
     { params: { product: "payment-links" } },
     { params: { product: "phone-payments" } },

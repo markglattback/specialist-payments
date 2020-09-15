@@ -79,8 +79,6 @@ export default function NavToggle() {
     }
   }
 
-  console.log("Toggle State", state);
-
   return (
     <Toggle onClick={toggleMenu}>
       <span className={state.open ? "open" : undefined}></span>
