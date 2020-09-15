@@ -22,6 +22,12 @@ type Links = {
   href: string;
 };
 
+const DropdownWrapper = styled.li`
+  :hover display.nav-dropdown {
+    display: block;
+  }
+`;
+
 const CategoryWrapper = styled.div<{ mobile?: boolean }>`
   display: inline-block;
   position: relative;
@@ -221,15 +227,15 @@ export default function NavDropdown({ category, links, mobile }: Props) {
   return (
     <li
       ref={categoryRef}
-      onMouseEnter={!mobile ? handleMouseEnter : undefined}
-      onMouseLeave={!mobile ? handleMouseLeave : undefined}
+      // onMouseEnter={!mobile ? handleMouseEnter : undefined}
+      // onMouseLeave={!mobile ? handleMouseLeave : undefined}
     >
       <CategoryWrapper mobile={mobile}>
         <span>{category}</span>
         <div
           className={!open ? "nav-dropdown" : "nav-dropdown nav-dropdown--open"}
           ref={dropdownRef}
-          onMouseLeave={!mobile ? handleMouseLeave : undefined}
+          // onMouseLeave={!mobile ? handleMouseLeave : undefined}
         >
           {links.map((link, index) => (
             <Link href={link.href} key={`${index}-link`}>

@@ -3,6 +3,7 @@ import { ReactChild, useState, MouseEvent } from "react";
 import HeaderLogo from "./HeaderLogo";
 import Nav from "./Nav";
 import NavToggle from "./NavToggle";
+import { useNavContext } from "context/NavContext";
 
 const HeaderMobileWrapper = styled.header`
   position: fixed;
@@ -41,27 +42,25 @@ type Props = {
 };
 
 export default function HeaderMobile({ mobile }: Props) {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
+
+  const navContext = useNavContext();
+  const { state, dispatch } = navContext;
 
   function toggleMenu(e: MouseEvent) {
     e.preventDefault();
-    setOpen(!open);
-  }
-
-  function closeMenu(e: MouseEvent) {
-    e.preventDefault();
-    setOpen(false);
+    if (state.open) {
+      dispatch({ type: "CLOSE" });
+    } else {
+      dispatch({ type: "OPEN" });
+    }
   }
 
   return (
     <HeaderMobileWrapper>
       <HeaderLogo mobile={mobile} />
-      <Nav
-        className={open ? "open" : undefined}
-        mobile={mobile}
-        closeMenu={closeMenu}
-      />
-      <NavToggle open={open} onClick={toggleMenu} />
+      <Nav className={state.open ? "open" : undefined} mobile={mobile} />
+      <NavToggle />
     </HeaderMobileWrapper>
   );
 }
