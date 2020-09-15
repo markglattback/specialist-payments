@@ -4,6 +4,7 @@ import {
   createContext,
   ReactNode,
   Dispatch,
+  useRef,
 } from "react";
 
 type State = {
@@ -26,7 +27,7 @@ const store = createContext<Context>({
   dispatch: (action: Action) => {},
 });
 
-export default function AppContext({ children }: { children: ReactNode }) {
+export default function NavContext({ children }: { children: ReactNode }) {
   function reducer(state: State, action: Action) {
     switch (action.type) {
       case "OPEN":
@@ -39,10 +40,21 @@ export default function AppContext({ children }: { children: ReactNode }) {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const { Provider } = store;
 
-  return <Provider value={{ state, dispatch }}>{children}</Provider>;
+  return (
+    <Provider
+      value={{
+        state,
+        dispatch: (action) => {
+          console.log("Im called here");
+          dispatch(action);
+        },
+      }}
+    >
+      {children}
+    </Provider>
+  );
 }
 
 export const useNavContext = () => {

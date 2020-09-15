@@ -23,7 +23,7 @@ type Links = {
 };
 
 const DropdownWrapper = styled.li`
-  :hover display.nav-dropdown {
+  :hover div.nav-dropdown {
     display: block;
   }
 `;
@@ -38,7 +38,7 @@ const CategoryWrapper = styled.div<{ mobile?: boolean }>`
   div.nav-dropdown {
     display: none;
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     left: -1rem;
     transform: translateX(-(var(--padding)));
     margin-top: 1rem;
@@ -225,7 +225,7 @@ export default function NavDropdown({ category, links, mobile }: Props) {
   }
 
   return (
-    <li
+    <DropdownWrapper
       ref={categoryRef}
       // onMouseEnter={!mobile ? handleMouseEnter : undefined}
       // onMouseLeave={!mobile ? handleMouseLeave : undefined}
@@ -244,6 +244,6 @@ export default function NavDropdown({ category, links, mobile }: Props) {
           ))}
         </div>
       </CategoryWrapper>
-    </li>
+    </DropdownWrapper>
   );
 }

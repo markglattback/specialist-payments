@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
 import { useEffect } from "react";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "../context/AppContext";
 import Header from "./Header";
 import styled from "styled-components";
 import Footer from "./Footer";
