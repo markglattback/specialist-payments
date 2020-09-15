@@ -10,6 +10,6 @@ export default styled.div`
 
   @media (max-width: 414px) {
     top: 0rem;
-    height: 100%;
+    /* height: 100%; */
   }
 `;
