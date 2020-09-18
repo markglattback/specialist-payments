@@ -16,6 +16,7 @@ const NavUL = styled.ul<{ mobile: boolean | undefined }>`
   list-style: none;
   margin: 0;
   padding: 0;
+  font-weight: bold;
 
   li {
     display: inline-flex;
