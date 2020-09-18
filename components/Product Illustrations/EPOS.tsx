@@ -6,7 +6,7 @@ function SvgComponent(props: React.SVGProps<SVGSVGElement>) {
       <defs>
         <style>
           {
-            ".prefix__cls-1{fill:#1e2e3f;isolation:isolate}.prefix__cls-4,.prefix__cls-5,.prefix__cls-6{fill:none;stroke:#72cca7;stroke-width:4px;stroke-miterlimit:10}.prefix__cls-5{stroke-dasharray:11.95 11.95}.prefix__cls-6{stroke-dasharray:11.06 11.06}.prefix__cls-8{fill:#b3b3b3}.prefix__cls-9{fill:#fff}.prefix__cls-10{fill:#e6e6e6}.prefix__cls-11{fill:#22b573}"
+            ".prefix__cls-1{fill:#47576a;isolation:isolate}.prefix__cls-4,.prefix__cls-5,.prefix__cls-6{fill:none;stroke:#72cca7;stroke-width:4px;stroke-miterlimit:10}.prefix__cls-5{stroke-dasharray:11.95 11.95}.prefix__cls-6{stroke-dasharray:11.06 11.06}.prefix__cls-8{fill:#b3b3b3}.prefix__cls-9{fill:#fff}.prefix__cls-10{fill:#e6e6e6}.prefix__cls-11{fill:#22b573}"
           }
         </style>
       </defs>

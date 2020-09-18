@@ -41,15 +41,8 @@ export default function PaymentGatewaysPage() {
           <Container>
             <ProductArticle>
               <div className="article-text">
-                <h2>Pax A920</h2>
-                <p>
-                  The Pax A920 is our latest card reader, and is the most
-                  popular and stylish card terminal on the market. Powered by
-                  Android and packed with a fantastic range of features.
-                </p>
-              </div>
-              <div className="article-image">
-                <img src="/A920.webp" alt="Pax A920 Card Reader" />
+                <h2>Heading</h2>
+                <p>{lorem}</p>
               </div>
             </ProductArticle>
           </Container>

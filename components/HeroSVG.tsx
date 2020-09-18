@@ -7,35 +7,35 @@ export default function HeroImage({ style }: HTMLAttributes<SVGAElement>) {
       <g id="Layer_4" data-name="Layer 4">
         <g id="Layer_3" data-name="Layer 3">
           <rect
-            style={{ fill: "var(--backgroundTint)" }}
+            style={{ fill: "var(--backgroundHighTint)" }}
             x="375"
             y="45"
             width="50"
             height="270"
           />
           <rect
-            style={{ fill: "var(--backgroundTint)" }}
+            style={{ fill: "var(--backgroundHighTint)" }}
             x="300"
             y="90"
             width="50"
             height="225"
           />
           <rect
-            style={{ fill: "var(--backgroundTint)" }}
+            style={{ fill: "var(--backgroundHighTint)" }}
             x="225"
             y="135"
             width="50"
             height="180"
           />
           <rect
-            style={{ fill: "var(--backgroundTint)" }}
+            style={{ fill: "var(--backgroundHighTint)" }}
             x="150"
             y="180"
             width="50"
             height="135"
           />
           <rect
-            style={{ fill: "var(--backgroundTint)" }}
+            style={{ fill: "var(--backgroundHighTint)" }}
             x="75"
             y="225"
             width="50"

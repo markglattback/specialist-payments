@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 import HeroSVG from "components/HeroSVG";
+import EPOS from "components/Product Illustrations/EPOS";
 import Container from "styled-components/Container";
 import MaxContainer from "styled-components/MaxContainer";
 import Button from "styled-components/Button";
@@ -93,7 +94,6 @@ const Article = styled.article`
   }
 
   div.article-image {
-    margin-left: 2.5rem;
     max-width: 400px;
   }
 
@@ -112,12 +112,22 @@ const Article = styled.article`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto);
 
+    :not(:first-of-type) {
+      margin-top: 7rem;
+    }
+
     div.article-text {
       text-align: center;
 
       h2 {
         text-align: center;
       }
+    }
+
+    div.article-image {
+      max-width: 100%;
+      grid-row-start: 2;
+      margin-top: var(--paddingDouble);
     }
   }
 `;
@@ -210,7 +220,9 @@ export default function Home() {
             />
           </div>
           <Article id="epos">
-            <div className="article-image"></div>
+            <div className="article-image">
+              <EPOS style={{ height: "100%", width: "100%" }} />
+            </div>
             <div className="article-text">
               <h2>Seamless POS Integration</h2>
               <p>{lorem}</p>

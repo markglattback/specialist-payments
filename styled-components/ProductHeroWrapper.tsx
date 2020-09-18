@@ -10,7 +10,7 @@ export default styled(Container)`
   div.information {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     margin-left: 5rem;
   }
 

@@ -4,7 +4,7 @@ import Container from "styled-components/Container";
 const FooterWrapper = styled.footer`
   background: var(--backgroundShade);
   position: relative;
-  padding-top: 7rem;
+  padding-top: var(--paddingDouble);
   flex-shrink: 0;
 
   div.contact {

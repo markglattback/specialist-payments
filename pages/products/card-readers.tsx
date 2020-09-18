@@ -26,6 +26,10 @@ const EPOSArticle = styled.article`
     img {
       width: 100%;
     }
+
+    @media (max-width: 414px) {
+      margin: var(--paddingDouble) auto;
+    }
   }
 
   @media (max-width: 414px) {
