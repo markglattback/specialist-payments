@@ -12,6 +12,7 @@ const HeaderDesktopWrapper = styled.header`
   background: var(--background);
   font-size: 16px;
   z-index: var(--zIndexFront);
+  animation: fadeIn 0.3s ease-in 0.2s;
 
   nav {
     display: flex;
@@ -20,6 +21,15 @@ const HeaderDesktopWrapper = styled.header`
     margin: 0 auto;
     max-width: var(--maxWidth);
     background: var(--background);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 

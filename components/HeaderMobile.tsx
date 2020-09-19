@@ -14,6 +14,7 @@ const HeaderMobileWrapper = styled.header`
   background: var(--background);
   font-size: 16px;
   z-index: var(--zIndexFront);
+  animation: fadeIn 0.3s ease-in 0.2s;
 
   nav {
     display: flex;
@@ -34,6 +35,15 @@ const HeaderMobileWrapper = styled.header`
   nav.open {
     transform: translateX(0px);
     transition: 0.15s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
