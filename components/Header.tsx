@@ -17,6 +17,14 @@ export default function Header() {
   const { state } = useAppContext();
   const { mobile } = state;
 
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null;
+
   return (
     <>
       {mobile && (
