@@ -1,5 +1,5 @@
 import { AppProps } from "next/app";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useAppContext } from "../context/AppContext";
 import Header from "./Header";
 import styled from "styled-components";
@@ -13,7 +13,7 @@ const Main = styled.main`
 export default function Layout({ Component, pageProps }: AppProps) {
   const { state, dispatch } = useAppContext();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function calcWidth() {
       const width = window.screen.width;
 
