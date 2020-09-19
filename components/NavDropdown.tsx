@@ -48,13 +48,6 @@ const CategoryWrapper = styled.div<{ mobile?: boolean }>`
     border-radius: var(--paddingHalf);
   }
 
-  div.nav-dropdown--open {
-    display: block;
-  }
-
-  a {
-  }
-
   @media (max-width: 414px) {
     display: flex;
     flex-direction: column;
@@ -97,12 +90,7 @@ export default function NavDropdown({ category, links, mobile }: Props) {
     <DropdownWrapper ref={categoryRef}>
       <CategoryWrapper mobile={mobile}>
         <span>{category}</span>
-        <div
-          className={
-            !state.open ? "nav-dropdown" : "nav-dropdown nav-dropdown--open"
-          }
-          ref={dropdownRef}
-        >
+        <div className="nav-dropdown" ref={dropdownRef}>
           {links.map((link, index) => (
             <Link href={link.href} key={`${index}-link`}>
               <a onClick={closeMenu}>{link.text}</a>
