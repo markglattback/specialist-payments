@@ -6,6 +6,16 @@ const FooterWrapper = styled.footer`
   position: relative;
   padding-top: var(--paddingDouble);
   flex-shrink: 0;
+  font-size: 16px;
+  color: var(--bodyColor);
+
+  div.logo {
+    margin-bottom: var(--paddingDouble);
+    img {
+      display: inline-block;
+      height: 80px;
+    }
+  }
 
   div.contact {
     position: relative;
@@ -17,17 +27,17 @@ const FooterWrapper = styled.footer`
     }
 
     h2 {
+      font-size: 1.2em;
       color: var(--brand);
     }
+  }
+
+  p.contact-details {
+    font-weight: bold;
 
     span {
-      @media (max-width: 414px) {
-        display: block;
-      }
-    }
-
-    span.email {
-      margin-right: 3rem;
+      font-weight: normal;
+      margin-left: var(--paddingHalf);
     }
   }
 
@@ -47,13 +57,16 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
+        <div className="logo">
+          <img src="/sp-logo-horizontal.svg" alt="Specialist Payments" />
+        </div>
         <div className="contact">
           <div>
             <h2>Contact</h2>
-            <p>Get in touch via email or phone</p>
             <p className="contact-details">
-              <span className="email">info@specialistpayments.com</span>
-              <span className="phone">020 8167 9061</span>
+              email:<span className="email">info@specialistpayments.com</span>
+              <br />
+              phone:<span className="phone">020 8167 9061</span>
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ const CBWrapper = styled.div`
 `;
 
 const Label = styled.label`
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-left: var(--paddingHalf);
 `;
 

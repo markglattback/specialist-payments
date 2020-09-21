@@ -15,7 +15,7 @@ const HeaderMobileWrapper = styled.header`
   font-size: 16px;
   z-index: var(--zIndexFront);
   opacity: 0;
-  animation: fadeIn 0.15s ease-in 0.1s forwards;
+  animation: fadeIn 0.15s ease-in forwards;
 
   nav {
     display: flex;
