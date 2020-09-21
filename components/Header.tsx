@@ -22,6 +22,7 @@ export default function Header() {
   useEffect(() => {
     setHydrated(true);
   }, []);
+  console.log(hydrated);
 
   if (!hydrated) return null;
 

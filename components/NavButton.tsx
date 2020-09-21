@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Button from "styled-components/Button";
 import Link, { LinkProps } from "next/link";
+import { useNavContext } from "context/NavContext";
+import { MouseEvent as ReactMouseEvent } from "react";
 
 const NavButtonWrapper = styled.div`
   button {
@@ -14,11 +16,20 @@ interface Props extends LinkProps {
 }
 
 export default function NavButton({ text, ...props }: Props) {
+  const navContext = useNavContext();
+  const { state, dispatch } = navContext;
+
+  function closeMenu(e: ReactMouseEvent) {
+    dispatch({ type: "CLOSE" });
+  }
+
   return (
     <li>
       <NavButtonWrapper>
         <Link {...props}>
-          <Button primary>{text}</Button>
+          <Button primary onClick={closeMenu}>
+            {text}
+          </Button>
         </Link>
       </NavButtonWrapper>
     </li>

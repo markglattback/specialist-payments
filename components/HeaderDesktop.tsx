@@ -12,7 +12,8 @@ const HeaderDesktopWrapper = styled.header`
   background: var(--background);
   font-size: 16px;
   z-index: var(--zIndexFront);
-  animation: fadeIn 0.3s ease-in 0.2s;
+  opacity: 0;
+  animation: fadeIn 0.1s ease-in 0.1s forwards;
 
   nav {
     display: flex;

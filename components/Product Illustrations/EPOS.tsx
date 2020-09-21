@@ -1,6 +1,6 @@
-import * as React from "react";
+import { SVGProps } from "react";
 
-function SvgComponent(props: React.SVGProps<SVGSVGElement>) {
+function SvgComponent(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 800 480" {...props}>
       <defs>
