@@ -1,25 +1,44 @@
 import styled from "styled-components";
 import Container from "styled-components/Container";
+import Link from "next/link";
 
 const FooterWrapper = styled.footer`
   background: var(--backgroundShade);
   position: relative;
-  padding-top: var(--paddingDouble);
+  padding: var(--paddingDouble) 0;
   flex-shrink: 0;
   font-size: 16px;
   color: var(--bodyColor);
 
+  h3 {
+    font-size: 1em;
+    margin: var(--padding) 0;
+  }
+
   div.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: var(--padding);
+    align-items: flex-start;
+
+    > div {
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 50%);
+    }
+
     @media (max-width: 414px) {
+      grid-template-columns: repeat(1, 1fr);
       margin: 0 var(--padding);
     }
   }
 
   div.logo {
-    margin-bottom: var(--paddingDouble);
     img {
       display: inline-block;
-      height: 80px;
+      width: 156px;
     }
   }
 
@@ -32,15 +51,18 @@ const FooterWrapper = styled.footer`
       font-size: 1.2em;
       color: var(--brand);
     }
+
+    @media (max-width: 1024px) {
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+
+    @media (max-width: 414px) {
+      grid-row-start: 4;
+    }
   }
 
   p.contact-details {
-    font-weight: bold;
-
-    span {
-      font-weight: normal;
-      margin-left: var(--paddingHalf);
-    }
   }
 
   div.footer-background {
@@ -50,6 +72,13 @@ const FooterWrapper = styled.footer`
     height: calc(100%);
     width: 100%;
     transform: skewY(10deg);
+  }
+
+  div.footer-links {
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 
@@ -61,17 +90,48 @@ export default function Footer() {
       <Container>
         <div className="grid">
           <div className="logo">
-            <img src="/sp-logo-horizontal.svg" alt="Specialist Payments" />
+            <img src="/sp-logo-tight.svg" alt="Specialist Payments" />
           </div>
           <div className="contact">
             <div>
-              <h2>Contact</h2>
+              <h3>Contact</h3>
               <p className="contact-details">
-                email:<span className="email">info@specialistpayments.com</span>
+                <span className="email">info@specialistpayments.com</span>
                 <br />
-                phone:<span className="phone">020 8167 9061</span>
+                <span className="phone">020 8167 9061</span>
               </p>
             </div>
+          </div>
+          <div className="footer-links">
+            <h3>Products</h3>
+            <ul>
+              <Link href="/card-readers">
+                <a>Card Readers</a>
+              </Link>
+              <Link href="/payment-gateways">
+                <a>Payment Gateways</a>
+              </Link>
+              <Link href="/payment-links">
+                <a>Payment Links</a>
+              </Link>
+              <Link href="/phone-payments">
+                <a>Phone Payments</a>
+              </Link>
+              <Link href="/business-finance">
+                <a>Business Finance</a>
+              </Link>
+            </ul>
+          </div>
+          <div className="footer-links">
+            <h3>Company</h3>
+            <ul>
+              <Link href="/about">
+                <a>About Us</a>
+              </Link>
+              <Link href="/privacy-policy">
+                <a>Privacy Policy</a>
+              </Link>
+            </ul>
           </div>
         </div>
       </Container>

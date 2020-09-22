@@ -66,6 +66,13 @@ const ProductContainer = styled(MaxContainer)`
     z-index: 1;
   }
 
+  h2.benefits {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--brand);
+    margin-bottom: 1.5rem;
+  }
+
   div.products {
     display: flex;
     max-width: var(--maxWidth);
@@ -157,10 +164,16 @@ export default function Home() {
         <HeroContainer>
           <div className="headline-container">
             <div className="headline">
-              <h1>Our Service, Your Vision</h1>
+              <h1>
+                Take Payments,
+                <br />
+                Increase Revenue,
+                <br />
+                Prosper.
+              </h1>
               <p>
-                We provide bespoke solutions that will help your business grow.
-                Our goal is to build lasting relationships built on trust.
+                We help businesses streamline the way they take payments to
+                maximise their revenue.
               </p>
               <Link href="/quote">
                 <Button type="button" primary>
@@ -224,21 +237,36 @@ export default function Home() {
             </div>
           </article>
           <article id="why-us">
-            <h2>Client Benefits</h2>
+            <h2 className="benefits">Client Benefits</h2>
             <Benefit
               icon="/benefits/support.svg"
               title="24/7 Support"
-              details={lorem}
+              details="We're confident you won't need us often, but when you do we'll be there for you, all day, every day."
             />
             <Benefit
               icon="/benefits/account-manager.svg"
               title="Dedicated Account Manager"
-              details={lorem}
+              details="We'll assign you a dedicated account manager to guide you on your journey with us."
+            />
+            <Benefit
+              icon="/benefits/next-day-funding.svg"
+              title="Next Day Funds"
+              details="The payments you take will be in your bank account the next day, improving your cash flow."
             />
             <Benefit
               icon="/benefits/next-day-delivery.svg"
               title="Next Day Delivery"
-              details={lorem}
+              details="Once you're signed up you'll receive your new equipment the next day. No waiting."
+            />
+            <Benefit
+              icon="/benefits/fast-setup.svg"
+              title="Fast Setup"
+              details="Installing your new equipment couldn't be easier. You'll be up and running within minutes."
+            />
+            <Benefit
+              icon="/benefits/pci-compliance.svg"
+              title="PCI Compliance"
+              details="We'll take care of your PCI Compliance so you can focus on running your business."
             />
           </article>
           <Article id="epos">
