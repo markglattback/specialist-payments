@@ -226,17 +226,17 @@ export default function Home() {
           <article id="why-us">
             <h2>Client Benefits</h2>
             <Benefit
-              icon="/benefit icons/support.svg"
+              icon="/benefits/support.svg"
               title="24/7 Support"
               details={lorem}
             />
             <Benefit
-              icon="/benefit icons/account manager.svg"
+              icon="/benefits/account-manager.svg"
               title="Dedicated Account Manager"
               details={lorem}
             />
             <Benefit
-              icon="/benefit icons/next day delivery.svg"
+              icon="/benefits/next-day-delivery.svg"
               title="Next Day Delivery"
               details={lorem}
             />
