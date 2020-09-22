@@ -9,6 +9,12 @@ const FooterWrapper = styled.footer`
   font-size: 16px;
   color: var(--bodyColor);
 
+  div.grid {
+    @media (max-width: 414px) {
+      margin: 0 var(--padding);
+    }
+  }
+
   div.logo {
     margin-bottom: var(--paddingDouble);
     img {
@@ -21,10 +27,6 @@ const FooterWrapper = styled.footer`
     position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
-
-    @media (max-width: 414px) {
-      margin: 0 var(--paddingDouble);
-    }
 
     h2 {
       font-size: 1.2em;
@@ -57,17 +59,19 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <div className="logo">
-          <img src="/sp-logo-horizontal.svg" alt="Specialist Payments" />
-        </div>
-        <div className="contact">
-          <div>
-            <h2>Contact</h2>
-            <p className="contact-details">
-              email:<span className="email">info@specialistpayments.com</span>
-              <br />
-              phone:<span className="phone">020 8167 9061</span>
-            </p>
+        <div className="grid">
+          <div className="logo">
+            <img src="/sp-logo-horizontal.svg" alt="Specialist Payments" />
+          </div>
+          <div className="contact">
+            <div>
+              <h2>Contact</h2>
+              <p className="contact-details">
+                email:<span className="email">info@specialistpayments.com</span>
+                <br />
+                phone:<span className="phone">020 8167 9061</span>
+              </p>
+            </div>
           </div>
         </div>
       </Container>

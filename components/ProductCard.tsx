@@ -20,7 +20,7 @@ const ProductCardWrapper = styled.div`
 
   @media (max-width: 414px) {
     max-width: 100%;
-    margin: var(--padding) var(--paddingDouble);
+    margin: var(--padding) var(--padding);
   }
 
   div.icon {

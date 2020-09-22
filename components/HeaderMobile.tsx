@@ -30,12 +30,16 @@ const HeaderMobileWrapper = styled.header`
     transform: translateX(100vw);
     transition: 0.15s ease-in;
     background: var(--backgroundShade);
-    padding-top: 2rem;
+    padding-top: 4rem;
   }
 
   nav.open {
     transform: translateX(0px);
     transition: 0.15s ease-out;
+  }
+
+  a {
+    font-weight: normal;
   }
 
   @keyframes fadeIn {
@@ -58,7 +62,7 @@ export default function HeaderMobile({ mobile }: Props) {
 
   return (
     <HeaderMobileWrapper>
-      <HeaderLogo mobile={mobile} />
+      <HeaderLogo mobile={mobile} open={state.open} />
       <Nav className={state.open ? "open" : undefined} mobile={mobile} />
       <NavToggle />
     </HeaderMobileWrapper>

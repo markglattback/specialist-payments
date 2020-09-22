@@ -6,16 +6,12 @@ const BrandLogo = styled.div<Props>`
   display: flex;
   font-weight: 700;
   font-size: 1rem;
-  z-index: var(--zIndexFront);
+  z-index: ${({ open }) => (open ? "0" : "var(--zIndexFront)")};
   height: ${({ mobile }) => (mobile ? "48px" : "80px")};
   position: ${({ mobile }) => (mobile ? "absolute" : "static")};
   width: ${({ mobile }) => (mobile ? "100%" : "initial")};
-  justify-content: center;
-
-  /* ${({ mobile }) => {
-    if (mobile)
-      return "position: absolute; top:var(--paddingHalf); left:50%; transform: translateX(-75px);";
-  }} */
+  justify-content: flex-start;
+  padding: ${({ mobile }) => (mobile ? "0 var(--padding)" : "0")};
 
   img {
     display: inline-block;
@@ -26,16 +22,14 @@ const BrandLogo = styled.div<Props>`
 
 type Props = {
   mobile?: boolean;
+  open?: boolean;
 };
 
-export default function HeaderLogo({ mobile }: Props) {
+export default function HeaderLogo({ mobile, open }: Props) {
   return (
-    <BrandLogo mobile={mobile}>
+    <BrandLogo mobile={mobile} open={open}>
       <Link href="/">
-        <img
-          src={mobile ? "/sps-logo.svg" : "/sp-logo-horizontal.svg"}
-          alt="Specialist Payments Logo"
-        />
+        <img src="/sp-logo-horizontal.svg" alt="Specialist Payments Logo" />
       </Link>
     </BrandLogo>
   );

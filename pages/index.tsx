@@ -8,6 +8,7 @@ import Button from "styled-components/Button";
 import Link from "next/link";
 import ProductCard from "components/ProductCard";
 import { useEffect, useState, MouseEvent } from "react";
+import Benefit from "components/Benefit";
 
 const HeroContainer = styled(Container)`
   display: grid;
@@ -175,50 +176,71 @@ export default function Home() {
       </section>
       <section id="products" style={{ position: "relative" }}>
         <BackgroundSkew />
+
         <ProductContainer>
-          <h2>Our Products</h2>
-          <div className="products">
-            <ProductCard
-              product={{
-                title: "Card Readers",
-                iconComp: "Readers",
-                iconSrc: "/product card icons/readers.svg",
-                iconAltText: "Illustration of a Card Reader",
-                description: lorem,
-                href: "/card-readers",
-              }}
+          <article id="products">
+            <h2>Our Products</h2>
+            <div className="products">
+              <ProductCard
+                product={{
+                  title: "Card Readers",
+                  iconComp: "Readers",
+                  iconSrc: "/product card icons/readers.svg",
+                  iconAltText: "Illustration of a Card Reader",
+                  description: lorem,
+                  href: "/card-readers",
+                }}
+              />
+              <ProductCard
+                product={{
+                  title: "Payment Gateways",
+                  iconComp: "Gateways",
+                  iconSrc: "/product card icons/gateways.svg",
+                  iconAltText: "Illustration of a Payment Gateway",
+                  description: lorem,
+                  href: "/payment-gateways",
+                }}
+              />
+              <ProductCard
+                product={{
+                  title: "Payment Links",
+                  iconComp: "Links",
+                  iconSrc: "/product card icons/links.svg",
+                  iconAltText: "Illustration of a Payment Link",
+                  description: lorem,
+                  href: "/payment-links",
+                }}
+              />
+              <ProductCard
+                product={{
+                  title: "Phone Payments",
+                  iconComp: "Phone",
+                  iconSrc: "/product card icons/phone.svg",
+                  iconAltText: "Illustration of a Phone",
+                  description: lorem,
+                  href: "/phone-payments",
+                }}
+              />
+            </div>
+          </article>
+          <article id="why-us">
+            <h2>Client Benefits</h2>
+            <Benefit
+              icon="/benefit icons/support.svg"
+              title="24/7 Support"
+              details={lorem}
             />
-            <ProductCard
-              product={{
-                title: "Payment Gateways",
-                iconComp: "Gateways",
-                iconSrc: "/product card icons/gateways.svg",
-                iconAltText: "Illustration of a Payment Gateway",
-                description: lorem,
-                href: "/payment-gateways",
-              }}
+            <Benefit
+              icon="/benefit icons/account manager.svg"
+              title="Dedicated Account Manager"
+              details={lorem}
             />
-            <ProductCard
-              product={{
-                title: "Payment Links",
-                iconComp: "Links",
-                iconSrc: "/product card icons/links.svg",
-                iconAltText: "Illustration of a Payment Link",
-                description: lorem,
-                href: "/payment-links",
-              }}
+            <Benefit
+              icon="/benefit icons/next day delivery.svg"
+              title="Next Day Delivery"
+              details={lorem}
             />
-            <ProductCard
-              product={{
-                title: "Phone Payments",
-                iconComp: "Phone",
-                iconSrc: "/product card icons/phone.svg",
-                iconAltText: "Illustration of a Phone",
-                description: lorem,
-                href: "/phone-payments",
-              }}
-            />
-          </div>
+          </article>
           <Article id="epos">
             <div className="article-image">
               <EPOS style={{ height: "100%", width: "100%" }} />

@@ -147,7 +147,7 @@ function Quote(props: SVGProps<SVGSVGElement>) {
         style={{
           isolation: "isolate",
         }}
-        fill="#72cca7"
+        fill="#22b573"
       />
       <rect
         x={175}
