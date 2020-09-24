@@ -133,6 +133,9 @@ export default function QuoteForm() {
     stage: FormStages.STAGE_ONE,
     partOneState: initialPartOneState,
     partTwoState: initialPartTwoState,
+    submitted: false,
+    success: false,
+    failure: false,
   };
 
   function formReducer(state: FormState, action: Action): FormState {
@@ -145,6 +148,12 @@ export default function QuoteForm() {
         partOneDispatch({ type: "reset" });
         partTwoDispatch({ type: "reset" });
         return initialFormState;
+      case "submit":
+        return { ...state, submitted: true };
+      case "success":
+        return { ...initialFormState, success: true };
+      case "failure":
+        return { ...state, submitted: false, failure: true };
       default:
         return state;
     }
@@ -162,7 +171,9 @@ export default function QuoteForm() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    console.log("handleSubmit called");
+
+    // disable the form
+    formDispatch({ type: "submit" });
 
     const data = {
       ...partOneState,
@@ -178,32 +189,59 @@ export default function QuoteForm() {
     })
       .then(async (res) => {
         const result = await res.json();
-        console.log(result);
+        if (res.status >= 200 && res.status < 300) {
+          formDispatch({ type: "success" });
+        } else {
+          formDispatch({ type: "failure" });
+        }
       })
       .catch((err) => {
-        console.error(err);
+        formDispatch({ type: "failure" });
       });
+  }
+
+  if (formState.success) {
+    return <div>Success</div>;
   }
 
   return (
     <Form onSubmit={handleSubmit}>
       {formState.stage === FormStages.STAGE_ONE && (
         <>
-          <PartOne state={partOneState} dispatch={partOneDispatch} />
-          <Button type="button" onClick={nextStage}>
+          <PartOne
+            state={partOneState}
+            dispatch={partOneDispatch}
+            disabled={formState.submitted}
+          />
+          <Button
+            type="button"
+            onClick={nextStage}
+            disabled={formState.submitted}
+          >
             Next
           </Button>
         </>
       )}
       {formState.stage === FormStages.STAGE_TWO && (
         <>
-          <PartTwo state={partTwoState} dispatch={partTwoDispatch} />
-          <Button type="button" onClick={prevStage}>
+          <PartTwo
+            state={partTwoState}
+            dispatch={partTwoDispatch}
+            disabled={formState.submitted}
+          />
+          <Button
+            type="button"
+            onClick={prevStage}
+            disabled={formState.submitted}
+          >
             Back
           </Button>
-          <Button type="submit" primary>
+          <Button type="submit" primary disabled={formState.submitted}>
             Submit
           </Button>
+          {formState.failure && (
+            <div>It looks like something went wrong - please try again.</div>
+          )}
         </>
       )}
     </Form>

@@ -5,9 +5,11 @@ import TextInput from "../TextInput";
 export default function FormPartOne({
   state,
   dispatch,
+  disabled,
 }: {
   state: PartOneState;
   dispatch: Dispatch<Action>;
+  disabled: boolean;
 }) {
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     dispatch({ type: e.target.name, value: e.target.value } as {
@@ -17,7 +19,7 @@ export default function FormPartOne({
   }
 
   return (
-    <fieldset>
+    <fieldset disabled={disabled}>
       <legend>Your Details</legend>
       <TextInput
         type="text"

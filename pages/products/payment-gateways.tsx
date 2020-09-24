@@ -28,10 +28,7 @@ export default function PaymentGatewaysPage() {
           </div>
           <div className="information">
             <h1>Payment Gateways</h1>
-            <p>
-              We work with the most popular brands in the industry to give you
-              the edge over your competitors.
-            </p>
+            <p>E-Commerce made easy.</p>
           </div>
         </ProductHeroWrapper>
       </section>
@@ -42,7 +39,14 @@ export default function PaymentGatewaysPage() {
             <ProductArticle>
               <div className="article-text">
                 <h2>Heading</h2>
-                <p>{lorem}</p>
+                <p>
+                  Take payments through your website with one of our simple to
+                  use E-Commerce gateways. You can also accept payments
+                  globally, helping you to maximise revenue if you have an
+                  international customer base. Easy to set up, our developers
+                  will help tailor a bespoke product to fit your website making
+                  life easy for you.
+                </p>
               </div>
             </ProductArticle>
           </Container>

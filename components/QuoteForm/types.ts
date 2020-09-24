@@ -2,6 +2,9 @@ export type FormState = {
   stage: FormStages;
   partOneState: PartOneState;
   partTwoState: PartTwoState;
+  submitted: boolean;
+  success: boolean;
+  failure: boolean;
 };
 
 export enum FormStages {
@@ -59,5 +62,8 @@ export type Action =
   | { type: "reset" }
   | { type: "next" }
   | { type: "back" }
+  | { type: "submit" }
+  | { type: "success" }
+  | { type: "failure" }
   | { type: PartOneInputs | PartTwoInputs; value: string }
   | { type: CheckBoxInputs; checked: boolean };

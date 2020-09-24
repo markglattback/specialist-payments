@@ -10,9 +10,11 @@ import Label from "styled-components/Label";
 export default function FormPartTwo({
   state,
   dispatch,
+  disabled,
 }: {
   state: PartTwoState;
   dispatch: Dispatch<Action>;
+  disabled: boolean;
 }) {
   function handleChange(
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
@@ -43,7 +45,7 @@ export default function FormPartTwo({
   }
 
   return (
-    <fieldset>
+    <fieldset disabled={disabled}>
       <legend>Your Business</legend>
       <Select<PartTwoInputs>
         name={PartTwoInputs.customerType}
