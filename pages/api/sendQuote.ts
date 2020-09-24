@@ -69,11 +69,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     .toUpperCase()}${body.lastName.slice(1)}`;
 
   try {
-    let status = "";
-    await transporter.verify();
-    status = "got passed verify";
-    res.statusCode = 200;
-    res.json({ message: status });
+    await transporter.verify().then(() => /* do nothing */).catch((err) => {
+      throw Error(err.message);
+    });
 
     const message = {
       from: process.env.SMTP_USER,
@@ -135,6 +133,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (err) {
     console.error(err);
     res.statusCode = 500;
-    res.json({ message: err });
+    res.json({ message: err, env: process.env });
   }
 };
