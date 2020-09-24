@@ -39,7 +39,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
       <Main>
         <Component {...pageProps} />
       </Main>
-      <Footer />
+      <Footer mobile={state.mobile} />
     </>
   );
 }

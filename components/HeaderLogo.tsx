@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { useAppContext } from "../context/AppContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Logo from "./Logo";
+import { forwardRef, SVGProps } from "react";
 
 const BrandLogo = styled.div<Props>`
   display: flex;
@@ -11,6 +13,7 @@ const BrandLogo = styled.div<Props>`
   position: ${({ mobile }) => (mobile ? "absolute" : "static")};
   width: ${({ mobile }) => (mobile ? "100%" : "initial")};
   justify-content: flex-start;
+  align-items: center;
   padding: ${({ mobile }) => (mobile ? "0 var(--padding)" : "0")};
 
   img {
@@ -26,11 +29,20 @@ type Props = {
 };
 
 export default function HeaderLogo({ mobile, open }: Props) {
+  const LinkChild = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
+    ({ ...props }, ref) => {
+      return <Logo {...props} ref={ref} />;
+    }
+  );
+
+  const router = useRouter();
+
   return (
     <BrandLogo mobile={mobile} open={open}>
-      <Link href="/">
-        <img src="/sp-logo-horizontal.svg" alt="Specialist Payments Logo" />
-      </Link>
+      <Logo
+        onClick={() => router.push("/")}
+        style={{ height: `${mobile ? "30px" : "48px"}`, cursor: "pointer" }}
+      />
     </BrandLogo>
   );
 }

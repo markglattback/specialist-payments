@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Container from "styled-components/Container";
+import { useRouter } from "next/router";
 import Link from "next/link";
+import Logo from "./Logo";
+import { forwardRef, SVGProps } from "react";
 
 const FooterWrapper = styled.footer`
   background: var(--backgroundShade);
@@ -82,15 +85,31 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-type Props = {};
+type Props = {
+  mobile: boolean;
+};
 
-export default function Footer() {
+export default function Footer({ mobile }: Props) {
+  const LinkChild = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
+    ({ ...props }, ref) => {
+      return <Logo {...props} ref={ref} />;
+    }
+  );
+
+  const router = useRouter();
+
   return (
     <FooterWrapper>
       <Container>
         <div className="grid">
           <div className="logo">
-            <img src="/sp-logo-tight.svg" alt="Specialist Payments" />
+            <Logo
+              onClick={() => router.push("/")}
+              style={{
+                height: `${mobile ? "30px" : "48px"}`,
+                cursor: "pointer",
+              }}
+            />
           </div>
           <div className="contact">
             <div>

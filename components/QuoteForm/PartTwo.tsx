@@ -66,9 +66,9 @@ export default function FormPartTwo({
         value={state.businessType}
         onChange={handleSelectChange}
         options={[
-          { value: "permanent", displayValue: "Permanent" },
-          { value: "temporary", displayValue: "Temporary" },
-          { value: "seasonal", displayValue: "Seasonal" },
+          { value: "Permanent", displayValue: "Permanent" },
+          { value: "Temporary", displayValue: "Temporary" },
+          { value: "Seasonal", displayValue: "Seasonal" },
         ]}
         placeholder="Please select an option..."
       />
@@ -124,6 +124,7 @@ export default function FormPartTwo({
         label="Comments"
         onChange={handleChange}
         value={state.comments}
+        placeholder="Anything else you'd like to know?"
       />
     </fieldset>
   );
