@@ -367,69 +367,70 @@ export default function Select<I extends string>({
 
   return (
     <div>
-      <Label htmlFor={name}>{label}</Label>
+      <Label>
+        {label}
+        <SelectWrapper
+          tabIndex={0}
+          ref={parent}
+          onMouseUp={handleMouseUpEvent}
+          onFocus={handleFocusEvent}
+          onBlur={handleBlurEvent}
+        >
+          <input type="hidden" name={name} value={value || ""} />
+          <div className="input">
+            <div className="value">
+              <span>{context.selection.displayValue || placeholder}</span>
+            </div>
 
-      <SelectWrapper
-        tabIndex={0}
-        ref={parent}
-        onMouseUp={handleMouseUpEvent}
-        onFocus={handleFocusEvent}
-        onBlur={handleBlurEvent}
-      >
-        <input type="hidden" name={name} value={value || ""} />
-        <div className="input">
-          <div className="value">
-            <span>{context.selection.displayValue || placeholder}</span>
-          </div>
+            <div className="select-buttons">
+              {context.selection.value && (
+                <>
+                  <div
+                    className="select-button"
+                    onMouseUp={(e) => {
+                      console.log("clear mouseup");
 
-          <div className="select-buttons">
-            {context.selection.value && (
-              <>
-                <div
-                  className="select-button"
-                  onMouseUp={(e) => {
-                    console.log("clear mouseup");
+                      e.stopPropagation();
 
-                    e.stopPropagation();
+                      // prevents dropdown document handler running
+                      e.nativeEvent.stopImmediatePropagation();
 
-                    // prevents dropdown document handler running
-                    e.nativeEvent.stopImmediatePropagation();
-
-                    dispatch({ type: "RESET" });
-                  }}
-                >
-                  <Clear
-                    color="var(--backgroundHighTint)"
-                    hover="var(--backgroundShade)"
-                  />
+                      dispatch({ type: "RESET" });
+                    }}
+                  >
+                    <Clear
+                      color="var(--backgroundHighTint)"
+                      hover="var(--backgroundShade)"
+                    />
+                  </div>
+                  <span
+                    className="button-seperator"
+                    style={{ background: "var(--backgroundShade)" }}
+                  ></span>
+                </>
+              )}
+              {state !== "open" && (
+                <div className="select-button">
+                  <ToggleButton color="var(--backgroundShade)" />
                 </div>
-                <span
-                  className="button-seperator"
-                  style={{ background: "var(--backgroundShade)" }}
-                ></span>
-              </>
-            )}
-            {state !== "open" && (
-              <div className="select-button">
-                <ToggleButton color="var(--backgroundShade)" />
-              </div>
-            )}
-            {state === "open" && (
-              <div className="select-button">
-                <ToggleButton color="var(--backgroundShade)" reverse={true} />
-              </div>
-            )}
+              )}
+              {state === "open" && (
+                <div className="select-button">
+                  <ToggleButton color="var(--backgroundShade)" reverse={true} />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-        {state === "open" && (
-          <Dropdown
-            options={options}
-            dispatch={dispatch}
-            parent={parent}
-            highlightedOption={context.highlightedOption}
-          />
-        )}
-      </SelectWrapper>
+          {state === "open" && (
+            <Dropdown
+              options={options}
+              dispatch={dispatch}
+              parent={parent}
+              highlightedOption={context.highlightedOption}
+            />
+          )}
+        </SelectWrapper>
+      </Label>
     </div>
   );
 }
