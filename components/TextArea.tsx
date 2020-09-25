@@ -45,14 +45,16 @@ export default function TextArea<T extends string>({
 }: Props<T>) {
   return (
     <div>
-      <Label htmlFor={name}>{label}</Label>
-      <StyledTextArea
-        name={name}
-        value={value}
-        onChange={onChange}
-        {...props}
-        rows={4}
-      />
+      <Label>
+        {label}
+        <StyledTextArea
+          name={name}
+          value={value}
+          onChange={onChange}
+          {...props}
+          rows={4}
+        />
+      </Label>
     </div>
   );
 }
