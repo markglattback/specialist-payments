@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import OnlinePayments from "components/Product Illustrations/OnlinePayments";
 import CardReaders from "components/Product Illustrations/CardReaders";
 import EPOS from "components/Product Illustrations/EPOS";
 import ProductHeroWrapper from "styled-components/ProductHeroWrapper";
@@ -6,13 +7,14 @@ import ProductDetailWrapper from "styled-components/ProductDetailWrapper";
 import Container from "styled-components/Container";
 import SkewedBackgroundTint from "styled-components/SkewedBackgroundTint";
 import ProductArticle from "styled-components/ProductArticle";
+import PaymentGateways from "components/Product Illustrations/PaymentGateways";
 
-const EPOSArticle = styled.article`
+const CenteredArticle = styled.article`
   div.article-text {
     text-align: center;
 
     p {
-      text-align: left;
+      max-width: 600px;
     }
 
     h2 {
@@ -49,19 +51,21 @@ const SkewedBackground = styled(SkewedBackgroundTint)`
 let lorem =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis maiores quod quo harum hic dolores aspernatur delectus.";
 
-export default function CardReaderPage() {
+export default function OnlinePaymentsPage() {
   return (
     <>
       <section id="card-reader-heading">
         <ProductHeroWrapper>
           <div className="illustration">
-            <CardReaders style={{ height: "100%" }} />
+            <OnlinePayments style={{ height: "100%" }} />
           </div>
           <div className="information">
-            <h1>Card Readers</h1>
+            <h1>Online Payments</h1>
             <p>
-              We work with the most popular brands in the industry to give you
-              the edge over your competitors.
+              Do you have a website which you need to take payments through, or
+              do you have customers that like to pay by phone? Look no further
+              than our online options, as well as our pay link whereby you can
+              accept payments via your email
             </p>
           </div>
         </ProductHeroWrapper>
@@ -72,38 +76,17 @@ export default function CardReaderPage() {
           <Container>
             <ProductArticle>
               <div className="article-text">
-                <h2>Pax A920</h2>
-                <p>
-                  The Pax A920 is our latest card reader, and is the most
-                  popular and stylish card terminal on the market. Powered by
-                  Android and packed with a fantastic range of features.
-                </p>
+                <h2>Payment Gateways</h2>
+                <p>{lorem}</p>
               </div>
               <div className="article-image">
-                <img src="/A920.webp" alt="Pax A920 Card Reader" />
+                <PaymentGateways style={{ width: "100%" }} />
               </div>
             </ProductArticle>
           </Container>
         </ProductDetailWrapper>
         <ProductDetailWrapper>
-          <Container>
-            <EPOSArticle>
-              <div className="article-text">
-                <h2>Seamless POS Integration</h2>
-                <p>
-                  Whether you need a terminal which sits by your till, something
-                  portable you can take around your business premises or a
-                  terminal which you can take on the go, we have something for
-                  you. All of our card machines are EPOS compatible, possess the
-                  latest technology and as such are equipped with contactless
-                  capabilities as well as smart phone acceptance.{" "}
-                </p>
-              </div>
-              <div className="illustration">
-                <EPOS />
-              </div>
-            </EPOSArticle>
-          </Container>
+          <Container></Container>
         </ProductDetailWrapper>
       </section>
     </>

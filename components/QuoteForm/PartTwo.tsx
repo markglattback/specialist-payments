@@ -92,34 +92,35 @@ export default function FormPartTwo({
         placeholder="Please select an option..."
       />
 
-      <Label htmlFor="Payment Types">Payment Types</Label>
-
-      <CheckBoxGroup>
-        <CheckBox
-          name={CheckBoxInputs.cardMachine}
-          label="CardMachines"
-          onChange={handleCBChange}
-          value={state.paymentTypes.cardMachine}
-        />
-        <CheckBox
-          name={CheckBoxInputs.website}
-          label="Via a Website"
-          onChange={handleCBChange}
-          value={state.paymentTypes.website}
-        />
-        <CheckBox
-          name={CheckBoxInputs.email}
-          label="Via Email Link"
-          onChange={handleCBChange}
-          value={state.paymentTypes.email}
-        />
-        <CheckBox
-          name={CheckBoxInputs.phone}
-          label="Over the Phone"
-          onChange={handleCBChange}
-          value={state.paymentTypes.phone}
-        />
-      </CheckBoxGroup>
+      <Label>
+        Payment Types
+        <CheckBoxGroup>
+          <CheckBox
+            name={CheckBoxInputs.cardMachine}
+            label="CardMachines"
+            onChange={handleCBChange}
+            value={state.paymentTypes.cardMachine}
+          />
+          <CheckBox
+            name={CheckBoxInputs.website}
+            label="Via a Website"
+            onChange={handleCBChange}
+            value={state.paymentTypes.website}
+          />
+          <CheckBox
+            name={CheckBoxInputs.email}
+            label="Via Email Link"
+            onChange={handleCBChange}
+            value={state.paymentTypes.email}
+          />
+          <CheckBox
+            name={CheckBoxInputs.phone}
+            label="Over the Phone"
+            onChange={handleCBChange}
+            value={state.paymentTypes.phone}
+          />
+        </CheckBoxGroup>
+      </Label>
 
       <TextArea
         name={PartTwoInputs.comments}

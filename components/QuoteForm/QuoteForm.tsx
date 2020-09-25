@@ -32,6 +32,7 @@ export default function QuoteForm() {
     email: "",
     phone: "",
     business: "",
+    validationFailures: [],
   };
 
   function partOneReducer(state: PartOneState, action: Action): PartOneState {
@@ -46,6 +47,11 @@ export default function QuoteForm() {
         return { ...state, phone: action.value };
       case PartOneInputs.business:
         return { ...state, business: action.value };
+      case "validationFailure":
+        return {
+          ...state,
+          validationFailures: action.failures,
+        };
       case "reset":
         return initialPartOneState;
       default:
@@ -71,6 +77,7 @@ export default function QuoteForm() {
       email: false,
     },
     comments: "",
+    validationFailures: [],
   };
 
   function partTwoReducer(state: PartTwoState, action: Action): PartTwoState {
@@ -115,6 +122,11 @@ export default function QuoteForm() {
             phone: action.checked ? true : false,
           },
         };
+      case "validationFailure":
+        return {
+          ...state,
+          validationFailures: action.failures,
+        };
       case "reset":
         return initialPartTwoState;
       default:
@@ -148,6 +160,8 @@ export default function QuoteForm() {
         partOneDispatch({ type: "reset" });
         partTwoDispatch({ type: "reset" });
         return initialFormState;
+      case "update":
+        return { ...state, partOneState, partTwoState };
       case "submit":
         return { ...state, submitted: true };
       case "success":
@@ -161,8 +175,37 @@ export default function QuoteForm() {
 
   const [formState, formDispatch] = useReducer(formReducer, initialFormState);
 
+  function validatePartOne() {
+    const state = formState.partOneState;
+
+    const failures: string[] = [];
+
+    if (!state.firstName) failures.push(PartOneInputs.firstName);
+    if (!state.lastName) failures.push(PartOneInputs.lastName);
+    if (!state.email) failures.push(PartOneInputs.email);
+    if (!state.phone) failures.push(PartOneInputs.phone);
+    if (!state.business) failures.push(PartOneInputs.business);
+
+    return {
+      valid: failures.length > 0 ? false : true,
+      failures,
+    };
+  }
+
+  function partOneWrappedDispatch(action: Action) {
+    partOneDispatch(action);
+    formDispatch({ type: "update" });
+  }
+
   function nextStage() {
-    formDispatch({ type: "next" });
+    const { valid, failures } = validatePartOne();
+
+    if (!valid) {
+      partOneWrappedDispatch({ type: "validationFailure", failures });
+    } else {
+      partOneWrappedDispatch({ type: "validationFailure", failures: [] });
+      formDispatch({ type: "next" });
+    }
   }
 
   function prevStage() {
@@ -210,7 +253,7 @@ export default function QuoteForm() {
         <>
           <PartOne
             state={partOneState}
-            dispatch={partOneDispatch}
+            dispatch={partOneWrappedDispatch}
             disabled={formState.submitted}
           />
           <Button

@@ -15,7 +15,7 @@ export default styled(MaxContainer)`
   }
 
   p {
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }

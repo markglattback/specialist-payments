@@ -14,13 +14,8 @@ export default styled.article`
   }
 
   div.article-image {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 400px;
-
-    img {
-      width: 100%;
-    }
+    max-width: 500px;
+    padding: 0 var(--padding);
   }
 
   div.article-text {

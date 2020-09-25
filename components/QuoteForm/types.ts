@@ -18,6 +18,7 @@ export type PartOneState = {
   email: string;
   phone: string;
   business: string;
+  validationFailures: string[];
 };
 
 export enum PartOneInputs {
@@ -34,6 +35,7 @@ export type PartTwoState = {
   turnover: string;
   paymentTypes: PaymentTypes;
   comments: string;
+  validationFailures: string[];
 };
 
 export enum PartTwoInputs {
@@ -62,8 +64,10 @@ export type Action =
   | { type: "reset" }
   | { type: "next" }
   | { type: "back" }
+  | { type: "update" }
   | { type: "submit" }
   | { type: "success" }
   | { type: "failure" }
+  | { type: "validationFailure"; failures: string[] }
   | { type: PartOneInputs | PartTwoInputs; value: string }
   | { type: CheckBoxInputs; checked: boolean };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactChild } from "react";
+import { ReactNode } from "react";
 
 const StyledLabel = styled.label`
   display: block;
@@ -7,10 +7,9 @@ const StyledLabel = styled.label`
 `;
 
 type Props = {
-  htmlFor: string;
-  children: ReactChild;
+  children: ReactNode;
 };
 
-export default function Label({ htmlFor, children }: Props) {
-  return <StyledLabel htmlFor={htmlFor}>{children}</StyledLabel>;
+export default function Label({ children }: Props) {
+  return <StyledLabel>{children}</StyledLabel>;
 }

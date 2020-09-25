@@ -74,13 +74,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     const message = {
-      from: {
-        name: "Web Enquiry",
-        email: process.env.SMTP_USER as string,
-      },
+      from: `Quote Request <${process.env.SMTP_USER as string}>`,
       to: process.env.SMTP_USER as string,
       replyTo: body.email,
-      subject: `Web Enquiry - ${sender}`,
+      subject: body.business,
       text: `First Name: ${body.firstName},
       Last Name: ${body.lastName},
       Email: ${body.email},

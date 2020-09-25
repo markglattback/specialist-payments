@@ -1,5 +1,5 @@
 import { Action, PartOneState, PartOneInputs } from "./types";
-import { ChangeEvent, Dispatch } from "react";
+import { ChangeEvent, Dispatch, useEffect, useState } from "react";
 import TextInput from "../TextInput";
 
 export default function FormPartOne({
@@ -11,6 +11,25 @@ export default function FormPartOne({
   dispatch: Dispatch<Action>;
   disabled: boolean;
 }) {
+  const [invalidInputs, setValidInputs] = useState({
+    [PartOneInputs.firstName]: false,
+    [PartOneInputs.lastName]: false,
+    [PartOneInputs.email]: false,
+    [PartOneInputs.phone]: false,
+    [PartOneInputs.business]: false,
+  });
+
+  useEffect(() => {
+    console.log("useEffect in partOne called", state);
+
+    for (let error in state.validationFailures) {
+      setValidInputs({
+        ...invalidInputs,
+        [`${state.validationFailures[error]}`]: true,
+      });
+    }
+  }, [JSON.stringify(state)]);
+
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     dispatch({ type: e.target.name, value: e.target.value } as {
       type: PartOneInputs;
@@ -27,6 +46,7 @@ export default function FormPartOne({
         value={state.firstName}
         onChange={handleChange}
         label="First Name"
+        invalid={invalidInputs[PartOneInputs.firstName]}
       />
       <TextInput
         type="text"
@@ -34,6 +54,7 @@ export default function FormPartOne({
         value={state.lastName}
         onChange={handleChange}
         label="Last Name"
+        invalid={invalidInputs[PartOneInputs.lastName]}
       />
       <TextInput
         type="email"
@@ -41,6 +62,7 @@ export default function FormPartOne({
         value={state.email}
         onChange={handleChange}
         label="Email Address"
+        invalid={invalidInputs[PartOneInputs.email]}
       />
       <TextInput
         type="text"
@@ -50,6 +72,7 @@ export default function FormPartOne({
         value={state.phone}
         onChange={handleChange}
         label="Contact Number"
+        invalid={invalidInputs[PartOneInputs.phone]}
       />
       <TextInput
         type="text"
@@ -57,6 +80,7 @@ export default function FormPartOne({
         value={state.business}
         onChange={handleChange}
         label="Business Name"
+        invalid={invalidInputs[PartOneInputs.business]}
       />
     </fieldset>
   );

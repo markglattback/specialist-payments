@@ -7,8 +7,8 @@ import MaxContainer from "styled-components/MaxContainer";
 import Button from "styled-components/Button";
 import Link from "next/link";
 import ProductCard from "components/ProductCard";
-import { useEffect, useState, MouseEvent } from "react";
 import Benefit from "components/Benefit";
+import BusinessFinance from "components/Product Illustrations/BusinessFinance";
 
 const HeroContainer = styled(Container)`
   display: grid;
@@ -87,6 +87,10 @@ const ProductContainer = styled(MaxContainer)`
   }
 `;
 
+const SectionContainer = styled.div`
+  padding: 7rem 0;
+`;
+
 const Article = styled.article`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -101,11 +105,23 @@ const Article = styled.article`
     margin-bottom: 0;
   }
 
+  :nth-of-type(2) > div.article-image {
+    margin-left: 2.5rem;
+
+    @media (max-width: 414px) {
+      margin-left: auto;
+    }
+  }
+
   div.article-image {
     max-width: 400px;
   }
 
   div.article-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     h2 {
       font-size: 1.2rem;
       font-weight: 700;
@@ -144,7 +160,7 @@ const BackgroundSkew = styled.div`
   position: absolute;
   background: var(--backgroundTint);
   top: 10rem;
-  height: calc(100%);
+  height: calc(100% - 10rem);
   width: 100%;
   transform: skewY(-5deg);
 
@@ -192,7 +208,7 @@ export default function Home() {
 
         <ProductContainer>
           <article id="products">
-            <h2>Our Products</h2>
+            <h2>Payment Solutions</h2>
             <div className="products">
               <ProductCard
                 product={{
@@ -201,7 +217,7 @@ export default function Home() {
                   iconSrc: "/product card icons/readers.svg",
                   iconAltText: "Illustration of a Card Reader",
                   description: lorem,
-                  href: "/card-readers",
+                  href: "/products/card-readers",
                 }}
               />
               <ProductCard
@@ -211,7 +227,7 @@ export default function Home() {
                   iconSrc: "/product card icons/gateways.svg",
                   iconAltText: "Illustration of a Payment Gateway",
                   description: lorem,
-                  href: "/payment-gateways",
+                  href: "/products/payment-gateways",
                 }}
               />
               <ProductCard
@@ -221,7 +237,7 @@ export default function Home() {
                   iconSrc: "/product card icons/links.svg",
                   iconAltText: "Illustration of a Payment Link",
                   description: lorem,
-                  href: "/payment-links",
+                  href: "/products/payment-links",
                 }}
               />
               <ProductCard
@@ -231,7 +247,7 @@ export default function Home() {
                   iconSrc: "/product card icons/phone.svg",
                   iconAltText: "Illustration of a Phone",
                   description: lorem,
-                  href: "/phone-payments",
+                  href: "/products/phone-payments",
                 }}
               />
             </div>
@@ -269,6 +285,10 @@ export default function Home() {
               details="We'll take care of your PCI Compliance so you can focus on running your business."
             />
           </article>
+        </ProductContainer>
+      </section>
+      <section id="epos-business-finance">
+        <SectionContainer>
           <Article id="epos">
             <div className="article-image">
               <EPOS style={{ height: "100%", width: "100%" }} />
@@ -280,12 +300,22 @@ export default function Home() {
           </Article>
           <Article id="finance">
             <div className="article-text">
-              <h2>Business Finance</h2>
-              <p>{lorem}</p>
+              <h2>Flexible Business Finance</h2>
+              <p>
+                Pay us back when you get paid with our amazingly flexible
+                lending scheme. We agree a sum for you to borrow and a fixed %
+                to repay each month. If you have a bad month sales wise, relax,
+                you can pay us next month. No late penalties, no increases in
+                repayments and no hidden costs. Whether its a few hundred pounds
+                or a few million, we are simply here to support your business in
+                a way that suits you.
+              </p>
             </div>
-            <div className="article-image"></div>
+            <div className="article-image">
+              <BusinessFinance style={{ height: "100%", width: "100%" }} />
+            </div>
           </Article>
-        </ProductContainer>
+        </SectionContainer>
       </section>
     </div>
   );

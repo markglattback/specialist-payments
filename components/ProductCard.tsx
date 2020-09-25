@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import dynamic from "next/dynamic";
 import { FunctionComponent } from "react";
+import Link from "next/link";
 
 const ProductCardWrapper = styled.div`
   display: grid;
@@ -36,6 +37,14 @@ const ProductCardWrapper = styled.div`
     line-height: 1;
     color: inherit;
   }
+
+  a {
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 `;
 
 type Props = {
@@ -69,6 +78,11 @@ export default function ProductCard({ product }: Props) {
         <h3>{product.title}</h3>
       </div>
       <div className="description">{product.description}</div>
+      <div>
+        <Link href={product.href}>
+          <a>Find out more</a>
+        </Link>
+      </div>
     </ProductCardWrapper>
   );
 }
