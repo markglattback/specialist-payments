@@ -14,20 +14,61 @@ export default styled.article`
   }
 
   div.article-image {
+    display: flex;
+    justify-content: center;
     max-width: 500px;
     padding: 0 var(--padding);
+  }
+
+  div.article-image.reversed {
+    padding-left: 0;
+    padding-right: var(--paddingDouble);
   }
 
   div.article-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0 var(--paddingDouble);
 
     h2 {
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--brand);
       margin-bottom: 1.5rem;
+      text-align: left;
+    }
+  }
+
+  div.article-details {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    div.heading {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      text-align: center;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--brand);
+      }
+    }
+
+    div {
+      padding: 0 var(--padding);
+    }
+
+    div.text-left {
+      text-align: right;
+    }
+
+    div.text-right {
       text-align: left;
     }
   }

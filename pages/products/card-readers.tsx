@@ -46,6 +46,52 @@ const SkewedBackground = styled(SkewedBackgroundTint)`
   height: 100%;
 `;
 
+const CustomProductArticle = styled(ProductArticle)`
+  margin-bottom: 7rem;
+
+  :nth-of-type(2) {
+    margin-bottom: 0;
+
+    @media (max-width: 414px) {
+      margin-top: 3rem;
+    }
+  }
+
+  div.article-image {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+
+  div.article-image.large-image {
+    height: 400px;
+
+    @media (max-width: 414px) {
+      grid-row-start: 2;
+      height: 300px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  div.article-text {
+    h3 {
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  div.article-text.centred {
+    margin: 0 auto;
+  }
+`;
+
 let lorem =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis maiores quod quo harum hic dolores aspernatur delectus.";
 
@@ -70,7 +116,7 @@ export default function CardReaderPage() {
         <ProductDetailWrapper>
           <SkewedBackground />
           <Container>
-            <ProductArticle>
+            <CustomProductArticle>
               <div className="article-text">
                 <h2>Pax A920</h2>
                 <p>
@@ -82,7 +128,25 @@ export default function CardReaderPage() {
               <div className="article-image">
                 <img src="/A920.webp" alt="Pax A920 Card Reader" />
               </div>
-            </ProductArticle>
+            </CustomProductArticle>
+            <CustomProductArticle>
+              <div className="article-image large-image">
+                <img
+                  src="/a920-side.png"
+                  alt="Pax A920 Card Reader"
+                  style={{ height: "100%", width: "auto" }}
+                />
+              </div>
+              <div className="article-text centred">
+                <h3>Product Highlights</h3>
+                <ul>
+                  <li>4G + WIFI + GPS</li>
+                  <li>NFC Contactless</li>
+                  <li>Touch Screen</li>
+                  <li>Front and Rear Cameras</li>
+                </ul>
+              </div>
+            </CustomProductArticle>
           </Container>
         </ProductDetailWrapper>
         <ProductDetailWrapper>

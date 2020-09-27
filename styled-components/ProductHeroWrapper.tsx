@@ -11,13 +11,14 @@ export default styled(Container)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 5rem;
+    padding: 0 var(--paddingDouble);
   }
 
   div.illustration {
     display: flex;
     justify-content: center;
     height: 360px;
+    padding: 0 var(--paddingDouble);
   }
 
   @media (max-width: 414px) {

@@ -295,7 +295,11 @@ export default function Home() {
             </div>
             <div className="article-text">
               <h2>Seamless POS Integration</h2>
-              <p>{lorem}</p>
+              <p>
+                Our products can integrate seamslessly with POS systems. We'll
+                help you get set up whether you have an existing system or
+                require a new one.
+              </p>
             </div>
           </Article>
           <Article id="finance">

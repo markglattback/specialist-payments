@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import PaymentGateways from "components/Product Illustrations/PaymentGateways";
-import EPOS from "components/Product Illustrations/EPOS";
 import ProductHeroWrapper from "styled-components/ProductHeroWrapper";
 import ProductDetailWrapper from "styled-components/ProductDetailWrapper";
 import ProductArticle from "styled-components/ProductArticle";
