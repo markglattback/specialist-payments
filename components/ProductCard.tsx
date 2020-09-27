@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import dynamic from "next/dynamic";
-import { FunctionComponent } from "react";
+import { FunctionComponent, MouseEvent } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const ProductCardWrapper = styled.div`
   display: grid;
@@ -69,8 +70,14 @@ export default function ProductCard({ product }: Props) {
     ) as any;
   }
 
+  const router = useRouter();
+
+  function handleClick(e: MouseEvent) {
+    router.push(product.href);
+  }
+
   return (
-    <ProductCardWrapper>
+    <ProductCardWrapper onClick={handleClick}>
       <div className="icon">
         <IconComponent />
       </div>
