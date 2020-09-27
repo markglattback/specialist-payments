@@ -4,9 +4,13 @@ import "styles/normalize.css";
 import "styles/globals.css";
 import Head from "next/head";
 import AppContextProvider, { useAppContext } from "../context/AppContext";
+import useRouterWithScroll from "hooks/useRouterWithScroll";
 import Layout from "components/Layout";
 
 export default function MyApp(props: AppProps) {
+  // enable custom router transitions with scroll to top enabled
+  useRouterWithScroll({ behavior: "auto" });
+
   return (
     <>
       <Head>

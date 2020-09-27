@@ -10,6 +10,8 @@ import PaymentGateways from "components/Product Illustrations/PaymentGateways";
 import PaymentLinks from "components/Product Illustrations/PaymentLinks";
 import PhonePayments from "components/Product Illustrations/PhonePayments";
 import PhonePaymentsB from "components/Product Illustrations/PhonePaymentsB";
+import QuoteSection from "components/QuoteSection";
+import Head from "next/head";
 
 const SkewedBackground = styled(SkewedBackgroundTint)`
   top: 0;
@@ -22,6 +24,9 @@ let lorem =
 export default function OnlinePaymentsPage() {
   return (
     <>
+      <Head>
+        <title>Online Payments | Specialist Payments</title>
+      </Head>
       <section id="card-reader-heading">
         <ProductHeroWrapper>
           <div className="information">
@@ -137,6 +142,7 @@ export default function OnlinePaymentsPage() {
           </Container>
         </ProductDetailWrapper>
       </section>
+      <QuoteSection transparent />
     </>
   );
 }

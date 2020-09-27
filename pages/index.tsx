@@ -9,6 +9,7 @@ import Link from "next/link";
 import ProductCard from "components/ProductCard";
 import Benefit from "components/Benefit";
 import BusinessFinance from "components/Product Illustrations/BusinessFinance";
+import QuoteSection from "components/QuoteSection";
 
 const HeroContainer = styled(Container)`
   display: grid;
@@ -174,7 +175,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Specialist Payment Solutions</title>
+        <title>Merchant Payment Services | Specialist Payment</title>
       </Head>
       <section id="company-description" style={{ position: "relative" }}>
         <HeroContainer>
@@ -321,6 +322,7 @@ export default function Home() {
           </Article>
         </SectionContainer>
       </section>
+      <QuoteSection />
     </div>
   );
 }

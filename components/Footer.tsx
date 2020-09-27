@@ -159,17 +159,8 @@ export default function Footer({ mobile }: Props) {
               <Link href="/card-readers">
                 <a>Card Readers</a>
               </Link>
-              <Link href="/payment-gateways">
-                <a>Payment Gateways</a>
-              </Link>
-              <Link href="/payment-links">
-                <a>Payment Links</a>
-              </Link>
-              <Link href="/phone-payments">
-                <a>Phone Payments</a>
-              </Link>
-              <Link href="/business-finance">
-                <a>Business Finance</a>
+              <Link href="/online">
+                <a>Online Payments</a>
               </Link>
             </ul>
           </div>
@@ -178,9 +169,6 @@ export default function Footer({ mobile }: Props) {
             <ul>
               <Link href="/about">
                 <a>About Us</a>
-              </Link>
-              <Link href="/contact">
-                <a>Contact Us</a>
               </Link>
               <Link href="/partners">
                 <a>Partners</a>

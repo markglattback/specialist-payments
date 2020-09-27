@@ -13,9 +13,14 @@ export default styled.button<Props>`
   margin: var(--padding) 0;
   padding: var(--paddingHalf) var(--padding);
   background: ${({ primary }) =>
-    primary ? "var(--brand)" : "var(--brandTint)"};
+    primary ? "var(--brand)" : "var(--bodyColor)"};
   color: var(--background);
   border: none;
   cursor: pointer;
   z-index: var(--zIndexFront);
+
+  :hover {
+    background: ${({ primary }) =>
+      primary ? "var(--brandShade)" : "var(--bodyColorTint)"};
+  }
 `;

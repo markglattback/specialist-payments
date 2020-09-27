@@ -5,6 +5,7 @@ import ProductArticle from "styled-components/ProductArticle";
 import Container from "styled-components/Container";
 import SkewedBackgroundTint from "styled-components/SkewedBackgroundTint";
 import BusinessFinance from "components/Product Illustrations/BusinessFinance";
+import Head from "next/head";
 
 const Article = styled.article`
   div.article-text {
@@ -51,6 +52,9 @@ let lorem =
 export default function BusinessFinancePage() {
   return (
     <>
+      <Head>
+        <title>Business Finance | Specialist Payments</title>
+      </Head>
       <section id="business-finance-heading">
         <ProductHeroWrapper>
           <div className="information">

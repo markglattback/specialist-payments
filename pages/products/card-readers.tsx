@@ -6,6 +6,9 @@ import ProductDetailWrapper from "styled-components/ProductDetailWrapper";
 import Container from "styled-components/Container";
 import SkewedBackgroundTint from "styled-components/SkewedBackgroundTint";
 import ProductArticle from "styled-components/ProductArticle";
+import QuoteSection from "components/QuoteSection";
+import Head from "next/head";
+import MaxContainer from "styled-components/MaxContainer";
 
 const EPOSArticle = styled.article`
   div.article-text {
@@ -44,6 +47,12 @@ const EPOSArticle = styled.article`
 const SkewedBackground = styled(SkewedBackgroundTint)`
   top: 0;
   height: 100%;
+  clip-path: polygon(
+    calc(50% - 1000px) 0,
+    calc(50% + 1000px) 0,
+    calc(50% + 1000px) 100%,
+    calc(50% - 1000px) 100%
+  );
 `;
 
 const CustomProductArticle = styled(ProductArticle)`
@@ -92,12 +101,12 @@ const CustomProductArticle = styled(ProductArticle)`
   }
 `;
 
-let lorem =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis maiores quod quo harum hic dolores aspernatur delectus.";
-
 export default function CardReaderPage() {
   return (
     <>
+      <Head>
+        <title>Card Readers | Specialist Payments</title>
+      </Head>
       <section id="card-reader-heading">
         <ProductHeroWrapper>
           <div className="information">
@@ -170,6 +179,7 @@ export default function CardReaderPage() {
           </Container>
         </ProductDetailWrapper>
       </section>
+      <QuoteSection />
     </>
   );
 }

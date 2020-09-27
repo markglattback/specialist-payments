@@ -19,6 +19,7 @@ const ProductCardWrapper = styled.div`
   font-size: 16px;
   border-radius: var(--paddingHalf);
   z-index: 1;
+  cursor: pointer;
 
   @media (max-width: 414px) {
     max-width: 100%;
