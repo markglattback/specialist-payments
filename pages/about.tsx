@@ -7,7 +7,7 @@ const Wrapper = styled(Container)`
   text-align: center;
 
   div {
-    max-width: 800px;
+    max-width: 700px;
     padding-left: 1rem;
     margin: 0 auto;
     margin-bottom: 7rem;

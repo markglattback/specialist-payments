@@ -100,15 +100,15 @@ export default function CardReaderPage() {
     <>
       <section id="card-reader-heading">
         <ProductHeroWrapper>
-          <div className="illustration">
-            <CardReaders style={{ height: "100%" }} />
-          </div>
           <div className="information">
             <h1>Card Readers</h1>
             <p>
               We work with the most popular brands in the industry to give you
               the edge over your competitors.
             </p>
+          </div>
+          <div className="illustration">
+            <CardReaders style={{ height: "100%" }} />
           </div>
         </ProductHeroWrapper>
       </section>

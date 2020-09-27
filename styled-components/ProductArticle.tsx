@@ -23,6 +23,11 @@ export default styled.article`
   div.article-image.reversed {
     padding-left: 0;
     padding-right: var(--paddingDouble);
+
+    @media (max-width: 414px) {
+      padding-right: var(--padding);
+      grid-row-start: 2;
+    }
   }
 
   div.article-text {
@@ -47,10 +52,20 @@ export default styled.article`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+    @media (max-width: 414px) {
+      grid-column-end: 2;
+      grid-template-columns: 1fr;
+      margin-top: 3rem;
+    }
+
     div.heading {
       grid-column-start: 1;
       grid-column-end: 3;
       text-align: center;
+
+      @media (max-width: 414px) {
+        grid-column-end: 1;
+      }
 
       h3 {
         font-size: 1rem;
@@ -62,10 +77,17 @@ export default styled.article`
 
     div {
       padding: 0 var(--padding);
+      @media (max-width: 414px) {
+        padding: 0;
+      }
     }
 
     div.text-left {
       text-align: right;
+
+      @media (max-width: 414px) {
+        text-align: left;
+      }
     }
 
     div.text-right {
@@ -84,7 +106,8 @@ export default styled.article`
     }
 
     div.article-text {
-      text-align: center;
+      text-align: left;
+      padding: 0;
 
       h2 {
         text-align: center;
