@@ -5,17 +5,15 @@ import Head from "next/head";
 
 const Wrapper = styled(Container)`
   margin-top: 7rem;
+  margin-bottom: 7rem;
   text-align: center;
-
-  div {
-    max-width: 700px;
-    padding-left: 1rem;
-    margin: 0 auto;
-    margin-bottom: 7rem;
-  }
 
   h1 {
     margin-bottom: 3rem;
+
+    @media (max-width: 414px) {
+      margin-bottom: 7rem;
+    }
   }
 
   h2 {
@@ -26,19 +24,33 @@ const Wrapper = styled(Container)`
   p {
     text-align: left;
   }
-`;
 
-const BenefitWrapper = styled(Container)`
-  div.why-us {
-    max-width: 800px;
+  div.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: end center;
+    padding: 0;
     margin: 0 auto;
-    margin-bottom: 3rem;
-  }
 
-  h2 {
-    text-align: center;
-    color: var(--brand);
-    margin-bottom: 3rem;
+    @media (max-width: 414px) {
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center center;
+      grid-gap: 3rem;
+
+      div {
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 48px;
+    }
+
+    img {
+      height: 100%;
+    }
   }
 `;
 
@@ -53,16 +65,20 @@ export default function Partners() {
           <article>
             <div className="partners">
               <h1>Partners</h1>
-              <p>
-                Specialist Payments was launched with an ambition to make
-                payment solutions more cost effective and fairer. Card payments
-                have been increasing for many years, however, on the back of
-                Covid-19 , the world is experiencing a massive shift, and so is
-                the way businesses take payments. Whilst cash will still be
-                around for years to come, the demand for contactless payments is
-                almost an expectation for most customers these days, and even
-                more so with social distancing playing a role.
-              </p>
+            </div>
+            <div className="partner-grid">
+              <div style={{ height: "96px" }}>
+                <img src="/partners/pax.png" alt="Pax" />
+              </div>
+              <div>
+                <img src="/partners/truevo.png" alt="Truevo" />
+              </div>
+              <div>
+                <img src="/partners/posmart.svg" alt="POSmart" />
+              </div>
+              <div>
+                <img src="/partners/eposnow.svg" alt="EposNow" />
+              </div>
             </div>
           </article>
         </Wrapper>

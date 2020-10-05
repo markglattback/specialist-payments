@@ -16,7 +16,7 @@ const NavUL = styled.ul<{ mobile: boolean | undefined }>`
   list-style: none;
   margin: 0;
   padding: 0;
-  font-weight: bold;
+  /* font-weight: bold; */
 
   li {
     display: inline-flex;
@@ -36,7 +36,7 @@ const NavUL = styled.ul<{ mobile: boolean | undefined }>`
   a {
     display: inline-block;
     box-sizing: content-box;
-    margin: 0 calc(var(--padding) * 2);
+    margin: 0 var(--padding);
     white-space: nowrap;
     border-bottom: 2px solid transparent;
     cursor: pointer;
@@ -69,6 +69,7 @@ export default function Nav({
         <NavLink href="/business-finance" text="Business Finance" />
         <NavLink href="/partners" text="Partners" />
         <NavLink href="/about" text="About Us" />
+        <NavLink href="/contact" text="Contact" />
         <ResponsiveNavButton mobile={mobile} href="/quote" text="Get a Quote" />
       </NavUL>
     </nav>

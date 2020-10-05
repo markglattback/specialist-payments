@@ -32,7 +32,7 @@ const CategoryWrapper = styled.div<{ mobile?: boolean }>`
   display: inline-block;
   position: relative;
   font-size: inherit;
-  margin: 0 calc(var(--padding) * 2);
+  margin: 0 var(--padding);
   cursor: default;
 
   div.nav-dropdown {

@@ -8,6 +8,7 @@ const NavButtonWrapper = styled.div`
   button {
     margin-top: 0;
     margin-bottom: 0;
+    margin-left: var(--padding);
   }
 `;
 
