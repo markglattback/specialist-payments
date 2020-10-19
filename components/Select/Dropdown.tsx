@@ -1,5 +1,20 @@
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, MouseEvent, useRef } from "react";
 import { DropdownProps, Options } from "./types";
+import styled from "styled-components";
+
+const DropDownWrapper = styled.div`
+  position: absolute;
+  width: min(100%, 450px);
+  padding: 0.25rem 0;
+  background: white;
+  color: var(--backgroundShade);
+  font-weight: 700;
+  border: 1px solid var(--backgroundShade);
+  box-shadow: 0 0px 0 3px var(--brand);
+
+  z-index: var(--zIndexFront);
+  transform: translateY(-2px);
+`;
 
 export default function Dropdown({
   dispatch,
@@ -7,8 +22,10 @@ export default function Dropdown({
   options,
   parent,
 }: DropdownProps) {
-  function handleMouseUp(e: SyntheticEvent<HTMLDivElement>) {
-    e.stopPropagation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  function handleMouseDown(e: SyntheticEvent<HTMLDivElement>) {
+    e.preventDefault(); // prevents blur happening
 
     const el = e.target as HTMLDivElement;
     const value = el.dataset.value as string;
@@ -24,11 +41,27 @@ export default function Dropdown({
       },
     });
 
-    parent.current?.focus();
+    // hide dropdown immediately otherwise there'll be a delay
+    // before mouseup is fired
+    dropdownRef.current?.setAttribute("style", "opacity: 0;");
+  }
+
+  function handleMouseUp(e: MouseEvent) {
+    // prevent other select elements from firing mouseup handler
+    e.nativeEvent.stopImmediatePropagation();
+
+    // this will unmount dropdown
+    dispatch({
+      type: "TOGGLE",
+    });
   }
 
   return (
-    <div className="options" onMouseUp={handleMouseUp}>
+    <DropDownWrapper
+      ref={dropdownRef}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+    >
       {options.map((option, index) => {
         const highlighted = highlightedOption === index;
 
@@ -49,6 +82,6 @@ export default function Dropdown({
           </div>
         );
       })}
-    </div>
+    </DropDownWrapper>
   );
 }

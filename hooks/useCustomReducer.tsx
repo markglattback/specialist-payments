@@ -82,6 +82,7 @@ export default function useCustomReducer<
   const [state, dispatch] = useReducer(reducer, context, init);
 
   function customDispatch<A extends Action<C>>(action: A) {
+    console.time();
     const { type, ...args } = action;
     const currentState = schema.states[state.state];
     const nextState = currentState[type as A["type"]];
@@ -92,7 +93,6 @@ export default function useCustomReducer<
         dispatch({ state: nextState });
       } else if (typeof nextState === "function") {
         const result = nextState(state.state, state.context, partialContext);
-
         if (typeof result === "string") {
           dispatch({ state: result });
         } else if (typeof result === "object") {
@@ -100,7 +100,7 @@ export default function useCustomReducer<
         }
       }
     }
-
+    console.timeEnd();
     return;
   }
 

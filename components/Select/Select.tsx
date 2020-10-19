@@ -16,20 +16,25 @@ import useMachine, {
 } from "../../hooks/useCustomReducer";
 
 import Dropdown from "./Dropdown";
+import { useFormikContext } from "formik";
+import ErrorMessage from "components/ErrorMessage";
 
-const SelectWrapper = styled.div`
+const SelectWrapper = styled.div<{ showErrorState: boolean }>`
   background: var(--white);
   backdrop-filter: blur(5px);
   color: var(--backgroundShade);
-  font-weight: 300;
+  font-weight: 700;
   width: min(100%, 450px);
-  margin: 0.25rem 0 1rem 0;
+  margin: 0.25rem 0 0.25rem 0;
   border: 1px solid var(--backgroundShade);
   cursor: default;
+  box-shadow: ${({ showErrorState }) =>
+    showErrorState ? "0 0 0 3px red" : "none"};
+  z-index: 0;
 
   :focus {
     border: 1px solid var(--background);
-    box-shadow: 0 0 0 2px var(--foreground);
+    box-shadow: 0 0 0 3px var(--brand);
     outline: none;
   }
 
@@ -57,7 +62,12 @@ const SelectWrapper = styled.div`
   }
 
   div.options {
+    position: absolute;
+    width: 100%;
+    padding: var(--paddingHalf) 0;
+    background: white;
     border-top: 1px solid transparent;
+    z-index: var(--zIndexFront);
   }
 
   div.select-buttons {
@@ -95,18 +105,22 @@ const SelectWrapper = styled.div`
   }
 `;
 
-const StyledLabel = styled.label`
-  display: block;
-`;
-
-export default function Select<I extends string>({
+export default function Select({
+  id,
   name,
   value,
   label,
   placeholder,
   options,
+  onBlur,
   onChange,
-}: SelectProps<I>) {
+  errors,
+  touched,
+  ...props
+}: SelectProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { setFieldValue } = useFormikContext();
+
   function getSelectionIndex(context: SelectContext): number | undefined {
     const { selection } = context;
     return selection.index;
@@ -192,10 +206,10 @@ export default function Select<I extends string>({
     const newSelection = selection as SelectContext["selection"];
     const value = newSelection.value || "";
 
-    onChange({ name, value });
+    setFieldValue(id, value);
 
     return {
-      state: "closedWithFocus",
+      state: "open",
       context: {
         ...prevContext,
         highlightedOption: newSelection.index,
@@ -209,7 +223,7 @@ export default function Select<I extends string>({
     SelectSchema,
     SelectContext
   > = (prevState, prevContext) => {
-    onChange({ name, value: "" });
+    setFieldValue(id, "");
 
     return {
       state: prevState,
@@ -319,8 +333,6 @@ export default function Select<I extends string>({
   const parent = useRef<HTMLDivElement>(null);
 
   function handleMouseUpEvent(e: MouseEvent) {
-    console.log("toggled from inside select handleMouseUp");
-
     const { button } = e.nativeEvent;
     if (button === 0 || button === 1) {
       dispatch({ type: "TOGGLE" });
@@ -328,15 +340,15 @@ export default function Select<I extends string>({
   }
 
   function handleFocusEvent(e: FocusEvent) {
-    console.log("focus event");
-
     dispatch({ type: "FOCUS" });
   }
 
-  function handleBlurEvent(e: FocusEvent) {
-    console.log("blueevent");
-
+  function handleBlurEvent(e: FocusEvent<HTMLInputElement>) {
     dispatch({ type: "BLUR" });
+    e.target.id = id;
+    e.target.name = name;
+
+    onBlur(e);
   }
 
   useEffect(() => {
@@ -365,9 +377,11 @@ export default function Select<I extends string>({
     };
   }, []);
 
+  const showErrorState = touched && errors ? true : false;
+
   return (
     <div>
-      <Label>
+      <Label htmlFor={id}>
         {label}
         <SelectWrapper
           tabIndex={0}
@@ -375,8 +389,15 @@ export default function Select<I extends string>({
           onMouseUp={handleMouseUpEvent}
           onFocus={handleFocusEvent}
           onBlur={handleBlurEvent}
+          showErrorState={showErrorState}
         >
-          <input type="hidden" name={name} value={value || ""} />
+          <input
+            type="hidden"
+            ref={inputRef}
+            name={name}
+            onChange={onChange}
+            value={value || ""}
+          />
           <div className="input">
             <div className="value">
               <span>{context.selection.displayValue || placeholder}</span>
@@ -421,16 +442,17 @@ export default function Select<I extends string>({
               )}
             </div>
           </div>
-          {state === "open" && (
-            <Dropdown
-              options={options}
-              dispatch={dispatch}
-              parent={parent}
-              highlightedOption={context.highlightedOption}
-            />
-          )}
         </SelectWrapper>
+        {state === "open" && (
+          <Dropdown
+            options={options}
+            dispatch={dispatch}
+            parent={parent}
+            highlightedOption={context.highlightedOption}
+          />
+        )}
       </Label>
+      <ErrorMessage errors={errors} touched={touched} />
     </div>
   );
 }

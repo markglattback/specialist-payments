@@ -1,16 +1,12 @@
 import styled from "styled-components";
-import { ChangeEvent } from "react";
+import { ChangeEvent, PropsWithoutRef } from "react";
 
-type Props<T> = {
-  name: T;
+type Props = {
+  id: string;
+  name: string;
   label: string;
-  onChange: ChangeHandler;
   value: boolean;
-};
-
-type ChangeHandler = {
-  (e: ChangeEvent<HTMLInputElement>): void;
-};
+} & PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
 const CBWrapper = styled.div`
   display: block;
@@ -22,15 +18,16 @@ const Label = styled.label`
 `;
 
 export default function CheckBox<T extends string>({
+  id,
   label,
   name,
-  onChange,
   value,
-}: Props<T>) {
+  ...props
+}: Props) {
   return (
     <CBWrapper>
-      <input type="checkbox" name={name} onChange={onChange} checked={value} />
-      <Label htmlFor={name}>{label}</Label>
+      <input id={id} type="checkbox" name={name} checked={value} {...props} />
+      <Label htmlFor={id}>{label}</Label>
     </CBWrapper>
   );
 }

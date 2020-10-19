@@ -1,4 +1,10 @@
-import { Dispatch, RefObject, ChangeEvent } from "react";
+import {
+  Dispatch,
+  RefObject,
+  ChangeEvent,
+  FocusEvent,
+  PropsWithoutRef,
+} from "react";
 import { CustomDispatch } from "../../hooks/useCustomReducer";
 
 type Selection = {
@@ -42,18 +48,21 @@ export type Options = {
   value: string;
 };
 
-export type SelectProps<I> = {
-  name: I;
+export type SelectProps = {
+  id: string;
+  name: string;
   value: string;
   label: string;
   options: Options[];
-  onChange: SelectChangeHandler<I>;
   placeholder: string;
-  [key: string]: any;
-};
+  onBlur: FocusEvent;
+  onChange: ChangeEvent;
+  errors: string | undefined;
+  touched: boolean | undefined;
+} & PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
-export type SelectChangeHandler<I> = {
-  ({ name, value }: { name: I; value: string }): void;
+export type SelectChangeHandler = {
+  ({ name, value }: { name: string; value: string }): void;
 };
 
 export type DropdownProps = {

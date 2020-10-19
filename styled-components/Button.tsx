@@ -18,6 +18,7 @@ export default styled.button<Props>`
   border: none;
   cursor: pointer;
   z-index: var(--zIndexFront);
+  opacity: ${({ disabled }) => (disabled ? "0.5" : "1")};
 
   :hover {
     background: ${({ primary }) =>

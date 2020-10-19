@@ -1,8 +1,10 @@
-import QuoteForm from "components/QuoteForm/QuoteForm";
+// import QuoteForm from "components/QuoteForm/QuoteForm";
+import QuoteForm from "components/QuoteForm/FormikForm";
 import QuoteIllustration from "../components/Product Illustrations/Quote";
 import Container from "styled-components/Container";
 import styled from "styled-components";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const Grid = styled.div`
   display: grid;
