@@ -4,6 +4,7 @@ import Container from "styled-components/Container";
 import styled from "styled-components";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import FormErrorMessage from "components/FormErrorMessage";
 
 const Grid = styled.div`
   display: grid;
@@ -43,6 +44,8 @@ const SectionContainer = styled(Container)`
 
 export default function Quote() {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
+
   return (
     <>
       <Head>
@@ -58,7 +61,10 @@ export default function Quote() {
           <Grid>
             <div>
               {!formSubmitted ? (
-                <QuoteForm updateParent={setFormSubmitted} />
+                <QuoteForm
+                  updateParent={setFormSubmitted}
+                  showError={setShowError}
+                />
               ) : (
                 <p>We'll get back to you within 48 hours</p>
               )}
@@ -69,6 +75,7 @@ export default function Quote() {
           </Grid>
         </SectionContainer>
       </section>
+      {showError && <FormErrorMessage close={setShowError} />}
     </>
   );
 }

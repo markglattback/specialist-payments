@@ -78,11 +78,12 @@ export default function QuoteForm({
           } else {
             setSubmitting(false);
             updateParent(false);
-            // display error message try again
+            showError(true);
           }
         } catch (err) {
           setSubmitting(false);
           updateParent(false);
+          showError(true);
         }
       }}
     >

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
+import FormErrorMessage from "components/FormErrorMessage";
 
 const Grid = styled.div`
   display: grid;
@@ -67,6 +68,7 @@ type Props = {
 
 export default function Contact(props: Props) {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
 
   return (
     <>
@@ -134,6 +136,7 @@ export default function Contact(props: Props) {
           </Grid>
         </SectionContainer>
       </section>
+      {showError && <FormErrorMessage close={setShowError} />}
     </>
   );
 }

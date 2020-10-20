@@ -75,8 +75,10 @@ const validationSchema = yup.object({
 
 export default function QuoteForm({
   updateParent,
+  showError,
 }: {
   updateParent: Dispatch<SetStateAction<boolean>>;
+  showError: Dispatch<SetStateAction<boolean>>;
 }) {
   const [stage, setStage] = useState<FormStages>(FormStages.STAGE_ONE);
 
@@ -139,10 +141,12 @@ export default function QuoteForm({
             setSubmitting(false);
             updateParent(false);
             // display error message try again
+            showError(true);
           }
         } catch (err) {
           setSubmitting(false);
           updateParent(false);
+          showError(true);
         }
       }}
     >
