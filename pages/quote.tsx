@@ -1,10 +1,9 @@
-// import QuoteForm from "components/QuoteForm/QuoteForm";
-import QuoteForm from "components/QuoteForm/FormikForm";
+import QuoteForm from "components/Forms/QuoteForm";
 import QuoteIllustration from "../components/Product Illustrations/Quote";
 import Container from "styled-components/Container";
 import styled from "styled-components";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Grid = styled.div`
   display: grid;
@@ -43,6 +42,7 @@ const SectionContainer = styled(Container)`
 `;
 
 export default function Quote() {
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   return (
     <>
       <Head>
@@ -50,10 +50,18 @@ export default function Quote() {
       </Head>
       <section id="quote-form">
         <SectionContainer>
-          <h1>Get a Personalised Quote</h1>
+          <h1>
+            {!formSubmitted
+              ? "Get a Personalised Quote"
+              : "Thank you for getting in touch"}
+          </h1>
           <Grid>
             <div>
-              <QuoteForm />
+              {!formSubmitted ? (
+                <QuoteForm updateParent={setFormSubmitted} />
+              ) : (
+                <p>We'll get back to you within 48 hours</p>
+              )}
             </div>
             <div className="illustration">
               <QuoteIllustration style={{ width: "100%" }} />

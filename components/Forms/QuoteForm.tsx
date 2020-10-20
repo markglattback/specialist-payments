@@ -1,14 +1,16 @@
-import { Formik, Field, useFormikContext } from "formik";
+import { Formik, Field, FormikProps } from "formik";
 import * as yup from "yup";
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import TextInput from "components/TextInput";
 import styled from "styled-components";
+import ButtonGroup from "styled-components/ButtonGroup";
 import Button from "styled-components/Button";
 import Select from "components/Select/Select";
 import CheckBoxGroup from "components/CheckBoxGroup";
-import CheckBox from "components/CheckBox";
 import Label from "styled-components/Label";
 import CheckBoxLabel from "styled-components/CheckBoxLabel";
+import TextArea from "components/TextArea";
+import InlineInputGroup from "styled-components/InlineInputGroup";
 
 const initialPartOneState = {
   firstName: "",
@@ -58,7 +60,7 @@ const Form = styled.form`
 
 const validationSchema = yup.object({
   firstName: yup.string().required("Please enter your first name"),
-  lastName: yup.string().required("Please enter your last name"),
+  lastName: yup.string(),
   email: yup
     .string()
     .email("Please enter a valid email address")
@@ -66,13 +68,16 @@ const validationSchema = yup.object({
   phone: yup.string().required("Please provide a contact number"),
   business: yup.string().required("Please enter your business name"),
   customerType: yup.string().required("Please select an option"),
+  businessType: yup.string().required("Please select an option"),
+  turnover: yup.string().required("Please select an option"),
+  comments: yup.string(),
 });
 
-function NextStageButton() {
-  const {} = useFormikContext();
-}
-
-export default function QuoteForm() {
+export default function QuoteForm({
+  updateParent,
+}: {
+  updateParent: Dispatch<SetStateAction<boolean>>;
+}) {
   const [stage, setStage] = useState<FormStages>(FormStages.STAGE_ONE);
 
   const initialValues = {
@@ -80,41 +85,97 @@ export default function QuoteForm() {
     ...initialPartTwoState,
   };
 
-  function handleSubmit() {}
+  function isPartOneInvalid(
+    formik: FormikProps<{
+      customerType: string;
+      businessType: string;
+      turnover: string;
+      paymentTypes: never[];
+      comments: string;
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      business: string;
+    }>
+  ): boolean {
+    // if the form hasn't been touched
+    if (!formik.dirty) return true;
+
+    // if any of the part one fields have an error
+    type PartOneFields = Pick<
+      typeof formik["errors"],
+      keyof typeof initialPartOneState
+    >;
+
+    for (let field in initialPartOneState as PartOneFields) {
+      if (formik.errors[field as keyof PartOneFields]) {
+        return true;
+      }
+    }
+
+    // good to go
+    return false;
+  }
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={handleSubmit}
+      onSubmit={async (values, { setSubmitting }) => {
+        try {
+          const res = await fetch("/api/sendQuote", {
+            method: "POST",
+            body: JSON.stringify(values),
+            headers: {
+              "content-type": "application/json",
+            },
+          });
+
+          if (res.status >= 200 && res.status < 300) {
+            setSubmitting(false);
+            updateParent(true);
+          } else {
+            setSubmitting(false);
+            updateParent(false);
+            // display error message try again
+          }
+        } catch (err) {
+          setSubmitting(false);
+          updateParent(false);
+        }
+      }}
     >
       {(formik) => (
         <Form onSubmit={formik.handleSubmit}>
           {stage === FormStages.STAGE_ONE && (
-            <fieldset>
+            <fieldset disabled={formik.isSubmitting}>
               <legend>Your Details</legend>
-              <Field
-                id={PartOneInputs.firstName}
-                name={PartOneInputs.firstName}
-                label="First Name"
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-                value={formik.values.firstName}
-                errors={formik.errors.firstName}
-                touched={formik.touched.firstName}
-                component={TextInput}
-              />
-              <Field
-                id={PartOneInputs.lastName}
-                name={PartOneInputs.lastName}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-                value={formik.values.lastName}
-                label="Last Name"
-                errors={formik.errors.lastName}
-                touched={formik.touched.lastName}
-                component={TextInput}
-              />
+              <InlineInputGroup>
+                <Field
+                  id={PartOneInputs.firstName}
+                  name={PartOneInputs.firstName}
+                  label="First Name"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.firstName}
+                  errors={formik.errors.firstName}
+                  touched={formik.touched.firstName}
+                  component={TextInput}
+                />
+                <Field
+                  id={PartOneInputs.lastName}
+                  name={PartOneInputs.lastName}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.lastName}
+                  label="Last Name"
+                  errors={formik.errors.lastName}
+                  touched={formik.touched.lastName}
+                  component={TextInput}
+                  optional
+                />
+              </InlineInputGroup>
               <Field
                 id={PartOneInputs.email}
                 name={PartOneInputs.email}
@@ -143,24 +204,27 @@ export default function QuoteForm() {
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.business}
-                label="Business"
+                label="Business Name"
                 errors={formik.errors.business}
                 touched={formik.touched.business}
                 component={TextInput}
               />
-              <Button
-                type="button"
-                onClick={() => {
-                  if (formik.isValid) setStage(FormStages.STAGE_TWO);
-                }}
-                disabled={!formik.dirty || !formik.isValid}
-              >
-                Next
-              </Button>
+              <ButtonGroup>
+                <Button
+                  type="button"
+                  onClick={() => {
+                    if (!isPartOneInvalid(formik))
+                      setStage(FormStages.STAGE_TWO);
+                  }}
+                  disabled={isPartOneInvalid(formik)}
+                >
+                  Next
+                </Button>
+              </ButtonGroup>
             </fieldset>
           )}
           {stage === FormStages.STAGE_TWO && (
-            <fieldset>
+            <fieldset disabled={formik.isSubmitting}>
               <legend>Your Business</legend>
               <Field
                 id={PartTwoInputs.customerType}
@@ -256,8 +320,37 @@ export default function QuoteForm() {
                   </CheckBoxLabel>
                 </CheckBoxGroup>
               </Label>
-              {<div>{JSON.stringify(formik.values)}</div>}
-              {<div>{JSON.stringify(formik.touched)}</div>}
+              <Field
+                id={PartTwoInputs.comments}
+                name={PartTwoInputs.comments}
+                label="Comments"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.comments}
+                errors={formik.errors.comments}
+                touched={formik.touched.comments}
+                component={TextArea}
+                placeholder="Anything else you'd like to know?"
+              />
+              <ButtonGroup style={{ maxWidth: "450px" }}>
+                <Button
+                  type="button"
+                  onClick={() => {
+                    setStage(FormStages.STAGE_ONE);
+                  }}
+                >
+                  Back
+                </Button>
+                <Button
+                  type="submit"
+                  primary
+                  disabled={
+                    !formik.dirty || !formik.isValid || formik.isSubmitting
+                  }
+                >
+                  Request Quote
+                </Button>
+              </ButtonGroup>
             </fieldset>
           )}
         </Form>

@@ -11,12 +11,13 @@ import ErrorMessage from "./ErrorMessage";
 
 type Props = {
   label: string;
+  optional: boolean | undefined;
   errors: string | undefined;
   touched: boolean | undefined;
   id: string;
 } & PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
-type OmittableProps = "label" | "errors" | "touched" | "id";
+type OmittableProps = "label" | "errors" | "touched" | "id" | "optional";
 
 type StyledProps = Omit<Props, OmittableProps> & { showErrorState: boolean };
 
@@ -27,7 +28,7 @@ const StyledInput = styled.input<StyledProps>`
   color: var(--backgroundShade);
   font-weight: 700;
   width: min(100%, 450px);
-  margin: 0.25rem 0 0.25rem 0;
+  margin: 0.25rem 0;
   padding: 0.75rem 0.5rem;
   border: 1px solid var(--backgroundShade);
   box-shadow: ${({ showErrorState }) =>
@@ -46,10 +47,16 @@ const BlockWrapper = styled.div`
     margin-bottom: 0rem;
     color: red;
   }
+
+  span.optional {
+    color: var(--bodyColor);
+    margin-left: var(--paddingHalf);
+  }
 `;
 
 export default function TextInput({
   label,
+  optional,
   errors,
   touched,
   id,
@@ -62,6 +69,7 @@ export default function TextInput({
       <div className="input">
         <Label htmlFor={id}>
           {label}
+          {optional && <span className="optional">(optional)</span>}
           <StyledInput
             id={id}
             type="text"

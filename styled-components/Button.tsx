@@ -20,8 +20,12 @@ export default styled.button<Props>`
   z-index: var(--zIndexFront);
   opacity: ${({ disabled }) => (disabled ? "0.5" : "1")};
 
-  :hover {
+  :not(:disabled):hover {
     background: ${({ primary }) =>
       primary ? "var(--brandShade)" : "var(--bodyColorTint)"};
+  }
+
+  :disabled {
+    cursor: default;
   }
 `;

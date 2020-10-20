@@ -8,10 +8,6 @@ type ReqBody = {
   email: string;
   phone: string;
   business: string;
-  customerType: string;
-  businessType: string;
-  turnover: string;
-  paymentTypes: string[];
   comments: string;
 };
 
@@ -38,13 +34,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       Email: ${body.email},
       Phone: ${body.phone},
       Business Name: ${body.business},
-      Customer Type: ${body.customerType},
-      Business Type: ${body.businessType},
-      Turnover: ${body.turnover},
-      Payment Types: ${body.paymentTypes.join(", ")},
       Comments: ${body.comments},
       `,
-      html: `<h1 style="font-size: 1.25em">Web Enquiry</h1>
+      html: `<h1 style="font-size: 1.25em">Message Received</h1>
       <p><span style="font-weight: bold;">First Name:</span> ${validator.escape(
         body.firstName
       )}</p>
@@ -59,18 +51,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       )}</p>
       <p><span style="font-weight: bold;">Business Name:</span> ${validator.escape(
         body.business
-      )}</p>
-      <p><span style="font-weight: bold;">Customer Type:</span> ${validator.escape(
-        body.customerType
-      )}</p>
-      <p><span style="font-weight: bold;">Business Type:</span> ${validator.escape(
-        body.businessType
-      )}</p>
-      <p><span style="font-weight: bold;">Turnover:</span> ${validator.escape(
-        body.turnover
-      )}</p>
-      <p><span style="font-weight: bold;">Payment Types:</span> ${validator.escape(
-        body.paymentTypes.join(", ")
       )}</p>
       <p><span style="font-weight: bold;">Comments:</span> ${validator.escape(
         body.comments

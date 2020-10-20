@@ -110,6 +110,7 @@ export default function Select({
   name,
   value,
   label,
+  optional,
   placeholder,
   options,
   onBlur,
@@ -383,6 +384,16 @@ export default function Select({
     <div>
       <Label htmlFor={id}>
         {label}
+        {optional && (
+          <span
+            style={{
+              color: "var(--bodyColor)",
+              marginLeft: "var(--paddingHalf)",
+            }}
+          >
+            (optional)
+          </span>
+        )}
         <SelectWrapper
           tabIndex={0}
           ref={parent}

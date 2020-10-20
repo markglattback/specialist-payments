@@ -54,6 +54,7 @@ export type SelectProps = {
   value: string;
   label: string;
   options: Options[];
+  optional: boolean | undefined;
   placeholder: string;
   onBlur: FocusEvent;
   onChange: ChangeEvent;
