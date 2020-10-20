@@ -53,8 +53,10 @@ const validationSchema = yup.object({
 
 export default function QuoteForm({
   updateParent,
+  showError,
 }: {
   updateParent: Dispatch<SetStateAction<boolean>>;
+  showError: Dispatch<SetStateAction<boolean>>;
 }) {
   const initialValues = initialState;
 
