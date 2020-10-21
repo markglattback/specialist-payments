@@ -99,6 +99,14 @@ const ProductContainer = styled(MaxContainer)`
 
 const SectionContainer = styled.div`
   padding: 7rem 0;
+
+  @media (max-width: 1024px) {
+    padding: 7rem var(--padding);
+  }
+
+  @media (max-width: 414px) {
+    padding: 7rem 0;
+  }
 `;
 
 const Article = styled.article`
@@ -106,7 +114,6 @@ const Article = styled.article`
   grid-template-columns: repeat(2, 1fr);
   max-width: var(--maxWidth);
   margin: 10rem auto;
-  /* color: var(--bodyColorTint); */
 
   :nth-of-type(1) {
     margin-top: 0;

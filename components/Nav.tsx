@@ -26,11 +26,7 @@ const NavUL = styled.ul<{ mobile: boolean | undefined }>`
 
   li.active > a,
   li:hover > a {
-    border-bottom: 2px solid var(--brand);
-
-    @media (max-width: 414px) {
-      border-bottom: none;
-    }
+    color: var(--brand);
   }
 
   li:hover {
@@ -42,9 +38,7 @@ const NavUL = styled.ul<{ mobile: boolean | undefined }>`
     box-sizing: content-box;
     margin: 0 var(--padding);
     white-space: nowrap;
-    border-bottom: 2px solid transparent;
     cursor: pointer;
-    transform: translateY(calc((1rem - 16px) / 2));
   }
 
   li:first-of-type a {
@@ -73,7 +67,7 @@ export default function Nav({
         <NavLink href="/business-finance" text="Business Finance" />
         <NavLink href="/partners" text="Partners" />
         <NavLink href="/about" text="About Us" />
-        <NavLink href="/contact" text="Contact" />
+        <NavLink href="/contact" text="Contact Us" />
         <ResponsiveNavButton mobile={mobile} href="/quote" text="Get a Quote" />
       </NavUL>
     </nav>

@@ -32,12 +32,12 @@ html {
   html {
     font-size: calc(
       var(--fontMin) + (var(--fontMax) - var(--fontMin)) *
-        ((100vw - 320px) / 680)
+        ((100vw - 320px) / 580)
     );
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   html {
     font-size: var(--fontMax);
   }

@@ -17,12 +17,12 @@ export default styled.button<Props>`
   color: var(--background);
   border: none;
   cursor: pointer;
-  z-index: var(--zIndexFront);
-  opacity: ${({ disabled }) => (disabled ? "0.5" : "1")};
+  z-index: var(--zIndexForwards);
+  filter: ${({ disabled }) => (disabled ? "contrast(50%)" : "none")};
 
   :not(:disabled):hover {
     background: ${({ primary }) =>
-      primary ? "var(--brandShade)" : "var(--bodyColorTint)"};
+      primary ? "var(--brandShade)" : "var(--brand)"};
   }
 
   :disabled {

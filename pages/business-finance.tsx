@@ -6,6 +6,7 @@ import Container from "styled-components/Container";
 import SkewedBackgroundTint from "styled-components/SkewedBackgroundTint";
 import BusinessFinance from "components/Product Illustrations/BusinessFinance";
 import Head from "next/head";
+import QuoteSection from "components/QuoteSection";
 
 const Article = styled.article`
   div.article-text {
@@ -93,6 +94,7 @@ export default function BusinessFinancePage() {
           </Container>
         </ProductDetailWrapper>
       </section>
+      <QuoteSection />
     </>
   );
 }

@@ -15,6 +15,11 @@ const Grid = styled.div`
   @media (max-width: 414px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 0 var(--padding);
+    place-items: center;
+
+    h2 {
+      text-align: center;
+    }
   }
 
   div.contact-info {
@@ -67,7 +72,7 @@ type Props = {
 };
 
 export default function Contact(props: Props) {
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(true);
   const [showError, setShowError] = useState<boolean>(false);
 
   return (

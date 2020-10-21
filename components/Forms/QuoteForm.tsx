@@ -247,7 +247,7 @@ export default function QuoteForm({
                     displayValue: "I want to switch from my current provider",
                   },
                 ]}
-                placeholder="Please select an option..."
+                placeholder="I am..."
               />
               <Field
                 id={PartTwoInputs.businessType}
@@ -264,7 +264,7 @@ export default function QuoteForm({
                   { value: "Temporary", displayValue: "Temporary" },
                   { value: "Seasonal", displayValue: "Seasonal" },
                 ]}
-                placeholder="Please select an option..."
+                placeholder="The nature of my business is..."
               />
               <Field
                 id={PartTwoInputs.turnover}
@@ -285,10 +285,10 @@ export default function QuoteForm({
                   { value: "1m", displayValue: "Up to £1,000,000" },
                   { value: "unknown", displayValue: "I'm not sure" },
                 ]}
-                placeholder="Please select an option..."
+                placeholder="My estimated monthly card payments turnover is..."
               />
               <Label htmlFor={PartTwoInputs.paymentTypes}>
-                Payment Types
+                How do you want to accept payments?
                 <CheckBoxGroup>
                   <CheckBoxLabel htmlFor="Card Readers">
                     <Field
@@ -304,7 +304,7 @@ export default function QuoteForm({
                       name={PartTwoInputs.paymentTypes}
                       value="Payment Gateways"
                     />
-                    Payment Gateways
+                    Payment Gateways (E-commerce)
                   </CheckBoxLabel>
                   <CheckBoxLabel htmlFor="Payment Links">
                     <Field

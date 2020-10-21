@@ -81,6 +81,8 @@ const CategoryWrapper = styled.div<{ mobile?: boolean }>`
       padding: var(--padding) 0 0 0;
       color: var(--white);
       text-align: left;
+      background: transparent;
+      box-shadow: none;
     }
 
     span {

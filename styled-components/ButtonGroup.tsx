@@ -10,15 +10,15 @@ export default styled.div`
     width: min(100%, 450px);
   }
 
-  button:first-of-type {
-    margin-right: var(--padding);
+  button:nth-of-type(2) {
+    margin-left: var(--padding);
   }
 
   @media (max-width: 414px) {
     flex-direction: column;
 
-    button:first-of-type {
-      margin-right: 0;
+    button:nth-of-type(2) {
+      margin-left: 0;
     }
   }
 `;

@@ -29,7 +29,8 @@ const FooterWrapper = styled.footer`
     }
 
     @media (max-width: 1024px) {
-      grid-template-columns: repeat(2, 50%);
+      margin: 0 var(--padding);
+      grid-template-columns: 2fr 1fr 1fr;
     }
 
     @media (max-width: 414px) {
@@ -45,6 +46,10 @@ const FooterWrapper = styled.footer`
     img {
       display: inline-block;
       width: 156px;
+    }
+
+    @media (max-width: 1024px) {
+      grid-column-end: 2;
     }
 
     @media (max-width: 414px) {
@@ -67,6 +72,7 @@ const FooterWrapper = styled.footer`
 
     @media (max-width: 1024px) {
       grid-column-start: 1;
+      grid-column-end: 2;
       grid-row-start: 2;
     }
 
@@ -105,6 +111,16 @@ const FooterWrapper = styled.footer`
       grid-row-start: 3;
       grid-row-end: 4;
     }
+  }
+
+  div.social-media {
+    display: flex;
+    margin: 0 auto;
+    margin-top: var(--paddingDouble);
+    gap: 1rem;
+    height: 36px;
+    justify-content: center;
+    fill: var(--bodyColor);
   }
 
   div.additional-details {
@@ -170,14 +186,19 @@ export default function Footer({ mobile }: Props) {
               <Link href="/about">
                 <a>About Us</a>
               </Link>
+              <Link href="/contact">
+                <a>Contact Us</a>
+              </Link>
               <Link href="/partners">
                 <a>Partners</a>
               </Link>
-              <Link href="/privacy-policy">
-                <a>Privacy Policy</a>
-              </Link>
             </ul>
           </div>
+        </div>
+        <div className="social-media">
+          <img src="/social/linkedin.svg" alt="LinkedIn" height="100%" />
+          <img src="/social/instagram.svg" alt="LinkedIn" height="100%" />
+          <img src="/social/facebook.svg" alt="LinkedIn" height="100%" />
         </div>
         <div className="additional-details">
           <p>

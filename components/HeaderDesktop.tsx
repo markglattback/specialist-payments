@@ -8,7 +8,7 @@ const HeaderDesktopWrapper = styled.header`
   top: 0px;
   left: 0px;
   width: 100%;
-  padding: 0 0;
+  padding: 0 var(--padding);
   background: var(--background);
   font-size: 16px;
   z-index: var(--zIndexFront);
