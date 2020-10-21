@@ -34,6 +34,12 @@ const ProductCardWrapper = styled.div`
     height: 60px;
   }
 
+  div.description {
+    @media (max-width: 414px) {
+      height: calc(1rem * 1.5 * 3);
+    }
+  }
+
   h3 {
     font-size: 16px;
     font-weight: 700;

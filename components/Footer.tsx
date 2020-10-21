@@ -117,10 +117,13 @@ const FooterWrapper = styled.footer`
     display: flex;
     margin: 0 auto;
     margin-top: var(--paddingDouble);
-    gap: 1rem;
     height: 36px;
     justify-content: center;
     fill: var(--bodyColor);
+
+    img {
+      margin: 0 0.5rem;
+    }
 
     img:hover {
       cursor: pointer;
