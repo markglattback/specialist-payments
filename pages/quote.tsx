@@ -19,6 +19,7 @@ const Grid = styled.div`
   @media (max-width: 414px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 0 var(--padding);
+    text-align: center;
 
     div.illustration {
       grid-row-start: 1;
@@ -69,9 +70,11 @@ export default function Quote() {
                 <p>We'll get back to you within 48 hours</p>
               )}
             </div>
-            <div className="illustration">
-              <QuoteIllustration style={{ width: "100%" }} />
-            </div>
+            {!formSubmitted && (
+              <div className="illustration">
+                <QuoteIllustration style={{ width: "100%" }} />
+              </div>
+            )}
           </Grid>
         </SectionContainer>
       </section>

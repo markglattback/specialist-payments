@@ -15,7 +15,7 @@ const Grid = styled.div`
   @media (max-width: 414px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 0 var(--padding);
-    place-items: center;
+    text-align: center;
 
     h2 {
       text-align: center;

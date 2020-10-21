@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 export const StyledLabel = styled.label`
   display: block;
   font-size: 0.8rem;
+  text-align: left;
 `;
 
 type Props = {
