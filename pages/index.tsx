@@ -246,7 +246,7 @@ export default function Home() {
                   iconAltText: "Illustration of a Payment Gateway",
                   description:
                     "Open up your business to the world of e-commerce with our easy to use payment gateways.",
-                  href: "/products/payment-gateways",
+                  href: "/products/online",
                 }}
               />
               <ProductCard
@@ -257,7 +257,7 @@ export default function Home() {
                   iconAltText: "Illustration of a Payment Link",
                   description:
                     "Simple and secure payment links make it easy for your customers to pay you.",
-                  href: "/products/payment-links",
+                  href: "/products/online",
                 }}
               />
               <ProductCard
@@ -268,7 +268,7 @@ export default function Home() {
                   iconAltText: "Illustration of a Phone",
                   description:
                     "Take advantage of low rates if your customers need to call you to make a payment.",
-                  href: "/products/phone-payments",
+                  href: "/products/online",
                 }}
               />
             </div>

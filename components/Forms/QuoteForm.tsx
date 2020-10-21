@@ -241,10 +241,10 @@ export default function QuoteForm({
                 touched={formik.touched.customerType}
                 component={Select}
                 options={[
-                  { value: "New", displayValue: "I am a new customer" },
+                  { value: "New", displayValue: "New to Card Payments" },
                   {
                     value: "Switching",
-                    displayValue: "I want to switch from my current provider",
+                    displayValue: "Looking to switch providers",
                   },
                 ]}
                 placeholder="I am..."
@@ -260,7 +260,7 @@ export default function QuoteForm({
                 touched={formik.touched.businessType}
                 component={Select}
                 options={[
-                  { value: "Permanent", displayValue: "Permanent" },
+                  { value: "Permanent", displayValue: "All Year Round" },
                   { value: "Temporary", displayValue: "Temporary" },
                   { value: "Seasonal", displayValue: "Seasonal" },
                 ]}
@@ -277,12 +277,14 @@ export default function QuoteForm({
                 touched={formik.touched.turnover}
                 component={Select}
                 options={[
-                  { value: "1k", displayValue: "Up to £1,000" },
-                  { value: "10k", displayValue: "Up to £10,000" },
-                  { value: "50k", displayValue: "Up to £50,000" },
-                  { value: "100k", displayValue: "Up to £100,000" },
-                  { value: "500k", displayValue: "Up to £500,000" },
-                  { value: "1m", displayValue: "Up to £1,000,000" },
+                  { value: "£100", displayValue: "Under £100" },
+                  { value: "£1k", displayValue: "£100 > £1,000" },
+                  { value: "£10k", displayValue: "£1,000 > £10,000" },
+                  { value: "£50k", displayValue: "£10,000 > £50,000" },
+                  { value: "£100k", displayValue: "£50,000 > £100,000" },
+                  { value: "£500k", displayValue: "£100,000 > £500,000" },
+                  { value: "£1m", displayValue: "£500,000 > £1,000,000" },
+                  { value: "Over £1m", displayValue: "£1,000,000 +" },
                   { value: "unknown", displayValue: "I'm not sure" },
                 ]}
                 placeholder="My estimated monthly card payments turnover is..."

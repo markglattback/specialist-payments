@@ -63,12 +63,16 @@ export default function OnlinePaymentsPage() {
                   <h3>Expand your business</h3>
                 </div>
                 <div className="text-left">
-                  You'll be able to accept payments globally, helping you to
-                  reach new customers and maximise revenure.
+                  <p>
+                    You'll be able to accept payments globally, helping you to
+                    reach new customers and maximise revenure.
+                  </p>
                 </div>
                 <div className="text-right">
-                  It's easy to set up, and our developers will help tailor a
-                  bespoke product to fit your website.
+                  <p>
+                    It's easy to set up, and our developers will help tailor a
+                    bespoke product to fit your website.
+                  </p>
                 </div>
               </div>
             </ProductArticle>

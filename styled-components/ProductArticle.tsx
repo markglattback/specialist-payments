@@ -86,12 +86,16 @@ export default styled.article`
       text-align: right;
 
       @media (max-width: 414px) {
-        text-align: left;
+        text-align: center;
       }
     }
 
     div.text-right {
       text-align: left;
+
+      @media (max-width: 414px) {
+        text-align: center;
+      }
     }
   }
 
@@ -106,7 +110,7 @@ export default styled.article`
     }
 
     div.article-text {
-      text-align: left;
+      text-align: center;
       padding: 0;
 
       h2 {

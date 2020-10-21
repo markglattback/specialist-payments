@@ -11,9 +11,12 @@ const DropDownWrapper = styled.div`
   font-weight: 700;
   border: 1px solid var(--backgroundShade);
   box-shadow: 0 0px 0 3px var(--brand);
-
   z-index: var(--zIndexFront);
   transform: translateY(-2px);
+
+  @media (max-width: 414px) {
+    width: calc(100vw - var(--paddingDouble));
+  }
 `;
 
 export default function Dropdown({

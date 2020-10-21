@@ -27,7 +27,7 @@ export default styled(Container)`
     margin-bottom: 5rem;
 
     div.information {
-      text-align: left;
+      text-align: center;
       margin: 0 var(--padding);
       margin-bottom: 4rem;
     }

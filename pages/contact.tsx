@@ -72,7 +72,7 @@ type Props = {
 };
 
 export default function Contact(props: Props) {
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(true);
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [showError, setShowError] = useState<boolean>(false);
 
   return (

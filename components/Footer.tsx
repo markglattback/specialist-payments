@@ -121,6 +121,10 @@ const FooterWrapper = styled.footer`
     height: 36px;
     justify-content: center;
     fill: var(--bodyColor);
+
+    img:hover {
+      cursor: pointer;
+    }
   }
 
   div.additional-details {
@@ -167,6 +171,13 @@ export default function Footer({ mobile }: Props) {
                 <br />
                 <span className="phone">020 8167 9061</span>
               </p>
+              <p>
+                2-5, 1 Grosvenor Road
+                <br />
+                Wanstead
+                <br />
+                London, E11 2EW
+              </p>
             </div>
           </div>
           <div className="footer-links products">
@@ -196,9 +207,15 @@ export default function Footer({ mobile }: Props) {
           </div>
         </div>
         <div className="social-media">
-          <img src="/social/linkedin.svg" alt="LinkedIn" height="100%" />
-          <img src="/social/instagram.svg" alt="LinkedIn" height="100%" />
-          <img src="/social/facebook.svg" alt="LinkedIn" height="100%" />
+          <Link href="https://www.linkedin.com/company/specialistpayments">
+            <img src="/social/linkedin.svg" alt="LinkedIn" height="100%" />
+          </Link>
+          <Link href="https://www.instagram.com/specialistpayments/">
+            <img src="/social/instagram.svg" alt="LinkedIn" height="100%" />
+          </Link>
+          <Link href="https://www.facebook.com/specialistpayments/">
+            <img src="/social/facebook.svg" alt="LinkedIn" height="100%" />
+          </Link>
         </div>
         <div className="additional-details">
           <p>
