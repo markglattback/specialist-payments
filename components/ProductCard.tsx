@@ -11,7 +11,6 @@ const ProductCardWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-gap: var(--padding);
   padding: var(--padding);
-  height: 100%;
   max-width: 230px;
   margin: 0 var(--paddingHalf);
   background: var(--brand);
@@ -20,6 +19,10 @@ const ProductCardWrapper = styled.div`
   border-radius: var(--paddingHalf);
   z-index: 1;
   cursor: pointer;
+
+  :hover {
+    box-shadow: 0 0 0 3px var(--brandTint);
+  }
 
   @media (max-width: 414px) {
     max-width: 100%;

@@ -4,7 +4,6 @@
   --backgroundShade: #0d1526;
   --background: #142038;
   --backgroundTint: #1f2b42;
-  /* --backgroundTint: #1e2e3f; */
   --backgroundHighTint: #47576a;
   --brandShade: #43b185;
   --brand: #72cca7;
@@ -83,7 +82,7 @@ h6 {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--white);
 }

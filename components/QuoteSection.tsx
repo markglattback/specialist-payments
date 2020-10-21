@@ -27,6 +27,10 @@ const Section = styled.section`
       margin: 1.5rem auto 0 auto;
     }
   }
+
+  @media (max-width: 414px) {
+    padding: 0 var(--paddingDouble);
+  }
 `;
 
 const WideContainer = styled(MaxContainer)<{ transparent?: boolean }>`

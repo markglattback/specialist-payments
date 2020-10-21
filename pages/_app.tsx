@@ -8,8 +8,6 @@ import useRouterWithScroll from "hooks/useRouterWithScroll";
 import Layout from "components/Layout";
 
 export default function MyApp(props: AppProps) {
-  console.log(props.pageProps);
-
   // enable custom router transitions with scroll to top enabled
   useRouterWithScroll({ behavior: "auto" });
 

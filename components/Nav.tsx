@@ -27,6 +27,10 @@ const NavUL = styled.ul<{ mobile: boolean | undefined }>`
   li.active > a,
   li:hover > a {
     border-bottom: 2px solid var(--brand);
+
+    @media (max-width: 414px) {
+      border-bottom: none;
+    }
   }
 
   li:hover {

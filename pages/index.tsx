@@ -22,6 +22,14 @@ const HeroContainer = styled(Container)`
     flex-direction: column;
     justify-content: center;
     margin-left: 5rem;
+
+    h1 {
+      margin: 1.6rem 0;
+    }
+
+    p {
+      margin: 1.6rem 0;
+    }
   }
 
   div.hero-image {
@@ -78,6 +86,7 @@ const ProductContainer = styled(MaxContainer)`
     display: flex;
     max-width: var(--maxWidth);
     justify-content: space-evenly;
+    align-items: stretch;
     margin: 0 auto;
     margin-top: var(--padding);
     margin-bottom: 10rem;
@@ -217,7 +226,8 @@ export default function Home() {
                   iconComp: "Readers",
                   iconSrc: "/product card icons/readers.svg",
                   iconAltText: "Illustration of a Card Reader",
-                  description: lorem,
+                  description:
+                    "Take card payments with products from the most popular brands in the industry.",
                   href: "/products/card-readers",
                 }}
               />
@@ -227,7 +237,8 @@ export default function Home() {
                   iconComp: "Gateways",
                   iconSrc: "/product card icons/gateways.svg",
                   iconAltText: "Illustration of a Payment Gateway",
-                  description: lorem,
+                  description:
+                    "Open up your business to the world of e-commerce with our easy to use payment gateways.",
                   href: "/products/payment-gateways",
                 }}
               />
@@ -237,7 +248,8 @@ export default function Home() {
                   iconComp: "Links",
                   iconSrc: "/product card icons/links.svg",
                   iconAltText: "Illustration of a Payment Link",
-                  description: lorem,
+                  description:
+                    "Simple and secure payment links make it easy for your customers to pay you.",
                   href: "/products/payment-links",
                 }}
               />
@@ -247,7 +259,8 @@ export default function Home() {
                   iconComp: "Phone",
                   iconSrc: "/product card icons/phone.svg",
                   iconAltText: "Illustration of a Phone",
-                  description: lorem,
+                  description:
+                    "Take advantage of low rates if your customers need to call you to make a payment.",
                   href: "/products/phone-payments",
                 }}
               />

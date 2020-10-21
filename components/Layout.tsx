@@ -11,8 +11,6 @@ const Main = styled.main`
 `;
 
 export default function Layout({ Component, pageProps }: AppProps) {
-  console.log(pageProps);
-
   const { state, dispatch } = useAppContext();
 
   useLayoutEffect(() => {

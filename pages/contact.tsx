@@ -83,7 +83,10 @@ export default function Contact(props: Props) {
           <Grid>
             <div>
               {!formSubmitted ? (
-                <ContactForm updateParent={setFormSubmitted} />
+                <ContactForm
+                  updateParent={setFormSubmitted}
+                  showError={setShowError}
+                />
               ) : (
                 <p>We'll get back to you soon!</p>
               )}
