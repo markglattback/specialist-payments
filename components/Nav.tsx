@@ -60,7 +60,7 @@ export default function Nav({
           category="Products"
           links={[
             { text: "Card Readers", href: "/products/card-readers" },
-            { text: "Online Payments", href: "/products/online" },
+            { text: "Online Payments", href: "/products/online-payments" },
           ]}
           mobile={mobile}
         />

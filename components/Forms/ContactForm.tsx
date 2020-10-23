@@ -41,7 +41,7 @@ const Form = styled.form`
 
 const validationSchema = yup.object({
   firstName: yup.string().required("Please enter your first name"),
-  lastName: yup.string(),
+  lastName: yup.string().required("Please enter your last name"),
   email: yup
     .string()
     .email("Please enter a valid email address")
@@ -114,7 +114,6 @@ export default function QuoteForm({
                 errors={formik.errors.lastName}
                 touched={formik.touched.lastName}
                 component={TextInput}
-                optional
               />
             </InlineInputGroup>
             <InlineInputGroup>

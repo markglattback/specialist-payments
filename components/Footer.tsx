@@ -120,7 +120,13 @@ const FooterWrapper = styled.footer`
     justify-content: center;
     fill: var(--bodyColor);
 
+    a {
+      display: block;
+      height: 100%;
+    }
+
     img {
+      display: block;
       margin: 0 0.5rem;
     }
 
@@ -209,15 +215,27 @@ export default function Footer({ mobile }: Props) {
           </div>
         </div>
         <div className="social-media">
-          <Link href="https://www.linkedin.com/company/specialistpayments">
+          <a
+            href="https://www.linkedin.com/company/specialistpayments"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src="/social/linkedin.svg" alt="LinkedIn" height="100%" />
-          </Link>
-          <Link href="https://www.instagram.com/specialistpayments/">
+          </a>
+          <a
+            href="https://www.instagram.com/specialistpayments/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src="/social/instagram.svg" alt="LinkedIn" height="100%" />
-          </Link>
-          <Link href="https://www.facebook.com/specialistpayments/">
+          </a>
+          <a
+            href="https://www.facebook.com/specialistpayments/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src="/social/facebook.svg" alt="LinkedIn" height="100%" />
-          </Link>
+          </a>
         </div>
         <div className="additional-details">
           <p>

@@ -201,7 +201,10 @@ export default function Home() {
     <div>
       <Head>
         <title>Merchant Payment Services | Specialist Payment</title>
-        <meta name="description" content="At Specialist Payments we focus on helping businesses streamline the way they take payments to maximise revenue by offering the cheapest card machine service." />
+        <meta
+          name="description"
+          content="At Specialist Payments we focus on helping businesses streamline the way they take payments to maximise revenue by offering the cheapest card machine service."
+        />
       </Head>
       <section id="company-description" style={{ position: "relative" }}>
         <HeroContainer>
@@ -256,7 +259,7 @@ export default function Home() {
                   iconAltText: "Illustration of a Payment Gateway",
                   description:
                     "Open up your business to the world of e-commerce with our easy to use payment gateways.",
-                  href: "/products/online",
+                  href: "/products/online-payments",
                 }}
               />
               <ProductCard
@@ -267,7 +270,7 @@ export default function Home() {
                   iconAltText: "Illustration of a Payment Link",
                   description:
                     "Simple and secure payment links make it easy for your customers to pay you.",
-                  href: "/products/online",
+                  href: "/products/online-payments",
                 }}
               />
               <ProductCard
@@ -278,7 +281,7 @@ export default function Home() {
                   iconAltText: "Illustration of a Phone",
                   description:
                     "Take advantage of low rates if your customers need to call you to make a payment.",
-                  href: "/products/online",
+                  href: "/products/online-payments",
                 }}
               />
             </div>

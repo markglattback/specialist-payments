@@ -61,8 +61,8 @@ export default function BusinessFinancePage() {
           <div className="information">
             <h1>Business Finance</h1>
             <p>
-              Our relaxed approach to business finance gives your business the
-              best chance to grow.
+              Next day settlements available to help with your business
+              cashflow.
             </p>
           </div>
           <div
