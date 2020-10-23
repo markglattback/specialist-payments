@@ -146,7 +146,7 @@ export default function CardReaderPage() {
             <CustomProductArticle>
               <div className="article-image large-image">
                 <img
-                  src="/a920-side.png"
+                  src="/a920-branded-front.png"
                   alt="Pax A920 Card Reader"
                   style={{ height: "100%", width: "auto" }}
                 />
