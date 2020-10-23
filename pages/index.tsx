@@ -136,6 +136,7 @@ const Article = styled.article`
 
     @media (max-width: 414px) {
       margin-left: auto;
+      margin-right: auto;
     }
   }
 
