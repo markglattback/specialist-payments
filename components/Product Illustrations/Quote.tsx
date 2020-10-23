@@ -2,7 +2,8 @@ import { SVGProps } from "react";
 
 function Quote(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 500 500" {...props}>
+    <svg viewBox="0 0 500 500" {...props} role="img">
+      <title>Quote Calculator</title>
       <defs>
         <linearGradient
           id="prefix__a"

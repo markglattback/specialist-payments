@@ -67,7 +67,7 @@ export default function Quote() {
                   showError={setShowError}
                 />
               ) : (
-                <p>We'll get back to you within 48 hours</p>
+                <p>We'll get back to you within 24 hours</p>
               )}
             </div>
             {!formSubmitted && (

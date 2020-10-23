@@ -3,11 +3,12 @@ import { HTMLAttributes } from "react";
 export default function Readers({ style }: HTMLAttributes<SVGAElement>) {
   return (
     <svg
-      id="Layer_1"
-      data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 60 60"
+      style={style}
+      role="img"
     >
+      <title>Card Readers</title>
       <rect style={{ fill: "var(--brandShade)" }} width="60" height="60" />
       <path
         style={{ fill: "#202026" }}

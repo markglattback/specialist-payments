@@ -2,7 +2,13 @@ import { HTMLAttributes } from "react";
 
 export default function HeroImage({ style }: HTMLAttributes<SVGAElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" style={style}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 500 360"
+      style={style}
+      role="img"
+    >
+      <title>Card Reader</title>
       <defs></defs>
       <g id="Layer_4" data-name="Layer 4">
         <g id="Layer_3" data-name="Layer 3">

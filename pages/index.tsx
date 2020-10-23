@@ -25,10 +25,19 @@ const HeroContainer = styled(Container)`
 
     h1 {
       margin: 1.6rem 0;
+      opacity: 0;
+      animation: fade-in 0.8s forwards;
     }
 
     p {
       margin: 1.6rem 0;
+      opacity: 0;
+      animation: fade-in 0.675s 0.15s forwards;
+    }
+
+    button {
+      opacity: 0;
+      animation: fade-in 0.55s 0.3s forwards;
     }
   }
 
@@ -85,7 +94,7 @@ const ProductContainer = styled(MaxContainer)`
   div.products {
     display: flex;
     max-width: var(--maxWidth);
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: stretch;
     margin: 0 auto;
     margin-top: var(--padding);
@@ -192,6 +201,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Merchant Payment Services | Specialist Payment</title>
+        <meta name="description" content="At Specialist Payments we focus on helping businesses streamline the way they take payments to maximise revenue by offering the cheapest card machine service." />
       </Head>
       <section id="company-description" style={{ position: "relative" }}>
         <HeroContainer>

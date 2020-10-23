@@ -2,12 +2,8 @@ import { HTMLAttributes } from "react";
 
 export default function Gateways({ style }: HTMLAttributes<SVGAElement>) {
   return (
-    <svg
-      id="Layer_1"
-      data-name="Layer 1"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 60 60"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" role="img">
+      <title>E-commerce Payment Gateways</title>
       <defs></defs>
       <rect style={{ fill: "var(--brandShade)" }} width="60" height="60" />
       <polyline

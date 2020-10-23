@@ -20,6 +20,16 @@ const ProductCardWrapper = styled.div`
   z-index: 1;
   cursor: pointer;
 
+  @media (min-width: 1024px) {
+    :first-of-type {
+      margin-left: 0;
+    }
+
+    :last-of-type {
+      margin-right: 0;
+    }
+  }
+
   :hover {
     box-shadow: 0 0 0 3px var(--brandTint);
   }

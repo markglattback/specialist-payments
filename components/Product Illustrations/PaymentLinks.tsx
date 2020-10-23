@@ -2,7 +2,8 @@ import { SVGProps } from "react";
 
 function PaymentLinks(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg data-name="Layer 1" viewBox="0 0 667 480" {...props}>
+    <svg data-name="Layer 1" viewBox="0 0 667 480" {...props} role="img">
+      <title>Secure Payment Links</title>
       <path
         d="M61.89 313s8.75 13.89 5.63 17.65S91 334.53 91 334.53s-4-20.2-2.82-24.85z"
         fill="#ffb8b8"

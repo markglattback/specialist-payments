@@ -29,7 +29,6 @@ const FooterWrapper = styled.footer`
     }
 
     @media (max-width: 1024px) {
-      margin: 0 var(--padding);
       grid-template-columns: 2fr 1fr 1fr;
     }
 

@@ -3,12 +3,12 @@ import { HTMLAttributes } from "react";
 export default function Links({ style }: HTMLAttributes<SVGAElement>) {
   return (
     <svg
-      id="Layer_1"
-      data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 60 60"
       style={style}
+      role="img"
     >
+      <title>Secure Payment Links</title>
       <defs>
         <style></style>
         <filter

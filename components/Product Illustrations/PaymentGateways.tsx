@@ -2,7 +2,8 @@ import { SVGProps } from "react";
 
 export default function PaymentGateways(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 800 480" {...props}>
+    <svg viewBox="0 0 800 480" {...props} role="img">
+      <title>E-commerce Payment Gateways</title>
       <defs>
         <linearGradient
           id="linear-gradient"

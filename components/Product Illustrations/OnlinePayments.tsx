@@ -2,7 +2,8 @@ import { SVGProps } from "react";
 
 function OnlinePayments(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg data-name="Layer 1" viewBox="0 0 667 480" {...props}>
+    <svg data-name="Layer 1" viewBox="0 0 667 480" {...props} role="img">
+      <title>Online Payments</title>
       <path
         data-name="Back Leg"
         d="M217.89 161.48l1.94 26 47 1.16 20.56 47 11.26-4.66S285.8 186.7 280 172.73s-28-3.88-28-3.88l-1.9-3.85z"

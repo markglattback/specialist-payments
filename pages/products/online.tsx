@@ -9,7 +9,6 @@ import ProductArticle from "styled-components/ProductArticle";
 import PaymentGateways from "components/Product Illustrations/PaymentGateways";
 import PaymentLinks from "components/Product Illustrations/PaymentLinks";
 import PhonePayments from "components/Product Illustrations/PhonePayments";
-import PhonePaymentsB from "components/Product Illustrations/PhonePaymentsB";
 import QuoteSection from "components/QuoteSection";
 import Head from "next/head";
 
@@ -26,6 +25,10 @@ export default function OnlinePaymentsPage() {
     <>
       <Head>
         <title>Online Payments | Specialist Payments</title>
+        <meta
+          name="description"
+          content="Accept payments online with e-commerce payment gateways, or generate and send your customers secure payment links."
+        />
       </Head>
       <section id="card-reader-heading">
         <ProductHeroWrapper>
@@ -116,7 +119,7 @@ export default function OnlinePaymentsPage() {
           <Container>
             <ProductArticle>
               <div className="article-image reversed">
-                <PhonePaymentsB style={{ width: "80%" }} />
+                <PhonePayments style={{ width: "80%" }} />
               </div>
               <div className="article-text">
                 <h2>Phone Payments</h2>

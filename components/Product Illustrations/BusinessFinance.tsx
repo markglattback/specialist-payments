@@ -2,7 +2,8 @@ import { SVGProps } from "react";
 
 function BusinessFinance(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg data-name="Layer 1" viewBox="0 0 667 480" {...props}>
+    <svg data-name="Layer 1" viewBox="0 0 667 480" {...props} role="img">
+      <title>Flexible Business Finance</title>
       <path fill="#e6e6e6" d="M30 263h5v4h-5z" />
       <path
         d="M461 267h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-17 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-17 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-17 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-17 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-17 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9zm-18 0h-9v-4h9z"

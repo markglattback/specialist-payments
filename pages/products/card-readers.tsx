@@ -31,7 +31,7 @@ const EPOSArticle = styled.article`
     margin: 0 auto;
 
     img {
-      width: 100%;
+      height: 100%;
     }
 
     @media (max-width: 414px) {
@@ -106,14 +106,18 @@ export default function CardReaderPage() {
     <>
       <Head>
         <title>Card Readers | Specialist Payments</title>
+        <meta
+          name="description"
+          content="Take card payments with modern wireless card readers from the industry's favourite brands."
+        />
       </Head>
       <section id="card-reader-heading">
         <ProductHeroWrapper>
           <div className="information">
             <h1>Card Readers</h1>
             <p>
-              We work with the most popular brands in the industry to give you
-              the edge over your competitors.
+              Get your business set up to take card payments with our wireless
+              card readers from the most popular brands in the industry.
             </p>
           </div>
           <div className="illustration">
@@ -127,11 +131,12 @@ export default function CardReaderPage() {
           <Container>
             <CustomProductArticle>
               <div className="article-text">
-                <h2>Pax A920</h2>
+                <h2>Powerful hardware in a stylish design</h2>
                 <p>
-                  The Pax A920 is our latest card reader, and is the most
-                  popular and stylish card terminal on the market. Powered by
-                  Android and packed with a fantastic range of features.
+                  The revolutionary terminal that started it all. The Pax A920
+                  combines the full features of an Android tablet with a
+                  powerful POS payment terminal, all in a sleek and compact
+                  design.
                 </p>
               </div>
               <div className="article-image">
@@ -147,12 +152,19 @@ export default function CardReaderPage() {
                 />
               </div>
               <div className="article-text centred">
-                <h3>Product Highlights</h3>
+                <h3>Key Features</h3>
                 <ul>
+                  <li>Powered by Android 7.1</li>
+                  <li>Cortex A7 Processor</li>
+                  <li>5" Capacitive Touch Screen</li>
                   <li>4G + WIFI + GPS</li>
-                  <li>NFC Contactless</li>
-                  <li>Touch Screen</li>
+                  <li>5250mAh capacity battery</li>
                   <li>Front and Rear Cameras</li>
+                  <li>NFC Contactless</li>
+                  <li>PIN on glass</li>
+                  <li>PCI PTS 5.x SRED</li>
+                  <li>ATEX Certified</li>
+                  <li>Optional Docking Station</li>
                 </ul>
               </div>
             </CustomProductArticle>

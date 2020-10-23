@@ -2,7 +2,8 @@ import { SVGProps } from "react";
 
 function SvgComponent(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 800 480" {...props}>
+    <svg viewBox="0 0 800 480" {...props} role="img">
+      <title>Electronic Point of Sale</title>
       <defs>
         <style>
           {
