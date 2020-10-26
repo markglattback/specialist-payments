@@ -4,6 +4,7 @@ import { useAppContext } from "../context/AppContext";
 import Header from "./Header";
 import styled from "styled-components";
 import Footer from "./Footer";
+import CookieConsent from "react-cookie-consent";
 
 const Main = styled.main`
   padding: calc(16px * 2 + 3rem) 0 0 0;
@@ -40,6 +41,22 @@ export default function Layout({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Main>
       <Footer mobile={state.mobile} />
+      <CookieConsent
+        style={{
+          background: "var(--backgroundShade)",
+          color: "var(--white)",
+        }}
+        buttonStyle={{
+          background: "var(--brand)",
+          color: "var(--background)",
+          margin: "1rem",
+        }}
+        contentStyle={{
+          margin: "1rem",
+        }}
+      >
+        This website uses cookies to track usage and to improve user experience.
+      </CookieConsent>
     </>
   );
 }

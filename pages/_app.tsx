@@ -24,7 +24,7 @@ export default function MyApp(props: AppProps) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-SCQBJ14NSE');`,
+  gtag('config', 'G-SCQBJ14NSE', { 'anonymize_ip': true });`,
           }}
         ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
