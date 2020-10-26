@@ -194,7 +194,7 @@ export default function Footer({ mobile }: Props) {
               <Link href="/products/card-readers">
                 <a>Card Readers</a>
               </Link>
-              <Link href="/producst/online">
+              <Link href="/products/online">
                 <a>Online Payments</a>
               </Link>
             </ul>
