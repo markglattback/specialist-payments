@@ -17,7 +17,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
     function calcWidth() {
       const width = window.screen.width;
 
-      if (width <= 414) {
+      if (width <= 480) {
         dispatch({ type: "ENTER_MOBILE_MODE" });
       } else {
         dispatch({ type: "EXIT_MOBILE_MODE" });
