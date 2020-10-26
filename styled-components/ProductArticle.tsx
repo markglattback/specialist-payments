@@ -24,7 +24,7 @@ export default styled.article`
     padding-left: 0;
     padding-right: var(--paddingDouble);
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       padding-right: var(--padding);
       grid-row-start: 2;
     }
@@ -52,7 +52,7 @@ export default styled.article`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-column-end: 2;
       grid-template-columns: 1fr;
       margin-top: 3rem;
@@ -63,7 +63,7 @@ export default styled.article`
       grid-column-end: 3;
       text-align: center;
 
-      @media (max-width: 414px) {
+      @media screen and (max-width: 480px) {
         grid-column-end: 1;
       }
 
@@ -77,7 +77,7 @@ export default styled.article`
 
     div {
       padding: 0 var(--padding);
-      @media (max-width: 414px) {
+      @media screen and (max-width: 480px) {
         padding: 0;
       }
     }
@@ -85,7 +85,7 @@ export default styled.article`
     div.text-left {
       text-align: right;
 
-      @media (max-width: 414px) {
+      @media screen and (max-width: 480px) {
         text-align: center;
       }
     }
@@ -93,13 +93,13 @@ export default styled.article`
     div.text-right {
       text-align: left;
 
-      @media (max-width: 414px) {
+      @media screen and (max-width: 480px) {
         text-align: center;
       }
     }
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     margin: 0 var(--paddingDouble);
     grid-template-columns: calc(100%);
     grid-template-rows: repeat(auto);

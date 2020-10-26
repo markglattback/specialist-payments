@@ -12,7 +12,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 7rem;
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 0 var(--padding);
     text-align: center;
@@ -26,7 +26,7 @@ const Grid = styled.div`
     text-align: left;
     margin: 1.25rem var(--paddingDouble) 0 var(--paddingDouble);
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       margin-top: 3rem;
     }
   }
@@ -53,7 +53,7 @@ const Grid = styled.div`
 const SectionContainer = styled(Container)`
   margin-top: 7rem;
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     h1 {
       text-align: center;
       padding: 0 var(--paddingDouble);

@@ -17,7 +17,6 @@ type ReqBody = {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const body: ReqBody = req.body;
-  console.log(process.env.SENDGRID_API_KEY);
 
   sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 

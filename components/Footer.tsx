@@ -32,7 +32,7 @@ const FooterWrapper = styled.footer`
       grid-template-columns: 2fr 1fr 1fr;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-template-columns: repeat(1, 1fr);
       margin: 0 var(--padding);
       text-align: center;
@@ -51,7 +51,7 @@ const FooterWrapper = styled.footer`
       grid-column-end: 2;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-column-end: 2;
     }
   }
@@ -75,7 +75,7 @@ const FooterWrapper = styled.footer`
       grid-row-start: 2;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-row-start: 4;
       grid-column-end: 2;
     }
@@ -99,14 +99,14 @@ const FooterWrapper = styled.footer`
       flex-direction: column;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-row-start: 2;
       grid-row-end: 3;
     }
   }
 
   div.footer-links.company {
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-row-start: 3;
       grid-row-end: 4;
     }
@@ -140,7 +140,7 @@ const FooterWrapper = styled.footer`
     font-size: 13px;
     text-align: center;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       padding: 0;
     }
   }

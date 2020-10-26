@@ -11,7 +11,7 @@ const Wrapper = styled(Container)`
   h1 {
     margin-bottom: 3rem;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       margin-bottom: 7rem;
     }
   }
@@ -32,7 +32,7 @@ const Wrapper = styled(Container)`
     padding: 0;
     margin: 0 auto;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-template-columns: repeat(1, 1fr);
       place-items: center center;
       grid-gap: 3rem;

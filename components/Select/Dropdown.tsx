@@ -14,7 +14,7 @@ const DropDownWrapper = styled.div`
   z-index: var(--zIndexFront);
   transform: translateY(-2px);
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     width: calc(100vw - var(--paddingDouble));
   }
 `;

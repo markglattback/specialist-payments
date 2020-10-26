@@ -11,7 +11,7 @@ const Toggle = styled.div`
   cursor: pointer;
   z-index: var(--zIndexFront);
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     display: block;
     margin: 0 var(--paddingHalf) 0 auto;
   }

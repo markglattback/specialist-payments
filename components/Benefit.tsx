@@ -17,7 +17,7 @@ const BenefitWrapper = styled.div`
       display: inline-block;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       width: 30px;
       height: 30px;
     }

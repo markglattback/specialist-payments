@@ -61,7 +61,7 @@ const CategoryWrapper = styled.div<{ mobile?: boolean }>`
     }
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
     text-align: left;

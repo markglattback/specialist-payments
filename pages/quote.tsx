@@ -16,7 +16,7 @@ const Grid = styled.div`
     margin-left: var(--paddingDouble);
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 0 var(--padding);
     text-align: center;
@@ -35,7 +35,7 @@ const Grid = styled.div`
 const SectionContainer = styled(Container)`
   margin-top: 7rem;
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     h1 {
       text-align: center;
       padding: 0 var(--paddingDouble);

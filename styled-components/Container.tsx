@@ -9,7 +9,7 @@ export default styled.div`
     padding: 0 var(--padding);
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     padding: 0;
   }
 `;

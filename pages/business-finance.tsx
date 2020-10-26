@@ -32,12 +32,12 @@ const Article = styled.article`
       width: 100%;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       margin: var(--paddingDouble) auto;
     }
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     margin: 0 var(--paddingDouble);
   }
 `;

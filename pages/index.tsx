@@ -47,7 +47,7 @@ const HeroContainer = styled(Container)`
     height: 360px;
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     grid-template-columns: 1fr;
     margin-top: 3rem;
     margin-bottom: 5rem;
@@ -73,7 +73,7 @@ const ProductContainer = styled(MaxContainer)`
   position: relative;
   padding-bottom: 7rem;
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     padding-top: 5rem;
   }
 
@@ -100,7 +100,7 @@ const ProductContainer = styled(MaxContainer)`
     margin-top: var(--padding);
     margin-bottom: 10rem;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       flex-direction: column;
     }
   }
@@ -113,7 +113,7 @@ const SectionContainer = styled.div`
     padding: 7rem var(--padding);
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     padding: 7rem 0;
   }
 `;
@@ -134,7 +134,7 @@ const Article = styled.article`
   :nth-of-type(2) > div.article-image {
     margin-left: 2.5rem;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       margin-left: auto;
       margin-right: auto;
     }
@@ -158,7 +158,7 @@ const Article = styled.article`
     }
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     margin: 0 var(--paddingDouble);
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto);
@@ -191,7 +191,7 @@ const BackgroundSkew = styled.div`
   width: 100%;
   transform: skewY(-5deg);
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     top: 0rem;
     height: 100%;
   }

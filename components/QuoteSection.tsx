@@ -28,7 +28,7 @@ const Section = styled.section`
     }
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     padding: 0 var(--paddingDouble);
   }
 `;

@@ -31,7 +31,7 @@ export default styled(Container)`
     padding: 0 var(--paddingDouble);
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     grid-template-columns: 1fr;
     margin-top: 3rem;
     margin-bottom: 5rem;

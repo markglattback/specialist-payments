@@ -14,7 +14,7 @@ export default styled.div`
     margin-left: var(--padding);
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
 
     button:nth-of-type(2) {

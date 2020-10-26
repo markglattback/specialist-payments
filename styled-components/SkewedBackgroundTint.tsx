@@ -16,7 +16,7 @@ export default styled.div`
     calc(50% - 1000px) 100%
   );
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     top: 0rem;
     /* height: 100%; */
   }

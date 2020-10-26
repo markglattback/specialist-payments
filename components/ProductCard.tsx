@@ -34,7 +34,7 @@ const ProductCardWrapper = styled.div`
     box-shadow: 0 0 0 3px var(--brandTint);
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     max-width: 100%;
     margin: var(--padding) var(--padding);
   }
@@ -45,7 +45,7 @@ const ProductCardWrapper = styled.div`
   }
 
   div.description {
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       height: calc(1rem * 1.5 * 3);
     }
   }

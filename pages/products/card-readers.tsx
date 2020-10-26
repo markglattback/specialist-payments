@@ -34,12 +34,12 @@ const EPOSArticle = styled.article`
       height: 100%;
     }
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       margin: var(--paddingDouble) auto;
     }
   }
 
-  @media (max-width: 414px) {
+  @media screen and (max-width: 480px) {
     margin: 0 var(--paddingDouble);
   }
 `;
@@ -61,7 +61,7 @@ const CustomProductArticle = styled(ProductArticle)`
   :nth-of-type(2) {
     margin-bottom: 0;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       margin-top: 3rem;
     }
   }
@@ -75,7 +75,7 @@ const CustomProductArticle = styled(ProductArticle)`
   div.article-image.large-image {
     height: 400px;
 
-    @media (max-width: 414px) {
+    @media screen and (max-width: 480px) {
       grid-row-start: 2;
       height: 300px;
     }
