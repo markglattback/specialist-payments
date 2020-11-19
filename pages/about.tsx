@@ -104,7 +104,7 @@ export default function About() {
               <Benefit
                 icon="/benefits/next-day-funding.svg"
                 title="Next Day Funds"
-                details="The payments you take will be in your bank account the next day, improving your cash flow."
+                details="Next day settlements available to help with your business cashflow."
               />
               <Benefit
                 icon="/benefits/next-day-delivery.svg"
