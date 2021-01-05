@@ -47,7 +47,6 @@ export default function NavContext({ children }: { children: ReactNode }) {
       value={{
         state,
         dispatch: (action) => {
-          console.log("Im called here");
           dispatch(action);
         },
       }}

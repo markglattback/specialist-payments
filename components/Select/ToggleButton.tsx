@@ -22,19 +22,6 @@ type Props = {
 };
 
 export default function ToggleButton({ color, hover, reverse }: Props) {
-  // const styles: CSSProperties = {
-  //   fill: "none",
-  //   stroke: color || "inherit",
-  //   strokeLinecap: "square",
-  //   strokeMiterlimit: 10,
-  //   strokeWidth: "2px",
-  // };
-
-  // if (reverse) {
-  //   styles.transform = "scaleY(-1) translateY(-2px)";
-  //   styles.transformOrigin = "center";
-  // }
-
   return (
     <StyledSVG
       xmlns="http://www.w3.org/2000/svg"

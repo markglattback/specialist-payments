@@ -68,7 +68,7 @@ export default function About() {
                 solution in place, or you are looking to acquire one, we can
                 help you. We want to help our clients grow their business by
                 streamlining the way they take payments. We hate the fact that
-                many business's are tied into long term contracts with
+                many businesses are tied into long term contracts with
                 extortionate price plans. We firmly believe that our honest and
                 fair approach will help shape a more collaborative payments
                 industry.
