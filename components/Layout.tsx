@@ -4,6 +4,7 @@ import { useAppContext } from "../context/AppContext";
 import Header from "./Header";
 import styled from "styled-components";
 import Footer from "./Footer";
+import FacebookChatPlugin from "./FacebookChatPlugin";
 import CookieConsent from "react-cookie-consent";
 
 const Main = styled.main`
@@ -57,6 +58,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
       >
         This website uses cookies to track usage and to improve user experience.
       </CookieConsent>
+      <FacebookChatPlugin />
     </>
   );
 }
