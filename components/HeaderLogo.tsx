@@ -21,6 +21,10 @@ const BrandLogo = styled.div<Props>`
     cursor: pointer;
     height: 100%;
   }
+
+  svg {
+    mask-size: cover;
+  }
 `;
 
 type Props = {
@@ -29,12 +33,6 @@ type Props = {
 };
 
 export default function HeaderLogo({ mobile, open }: Props) {
-  const LinkChild = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
-    ({ ...props }, ref) => {
-      return <Logo {...props} ref={ref} />;
-    }
-  );
-
   const router = useRouter();
 
   return (
