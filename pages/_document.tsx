@@ -1,3 +1,4 @@
+import FacebookChatPlugin from "components/FacebookChatPlugin";
 import Document, { DocumentContext, Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
@@ -33,10 +34,10 @@ export default class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+          <FacebookChatPlugin />
           <Main />
           <NextScript />
         </body>
-        <script src='/js/facebookchat.js'></script>
         <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
       </Html>
     )
