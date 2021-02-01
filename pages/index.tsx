@@ -201,7 +201,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Merchant Payment Services | Specialist Payment</title>
+        <title>Merchant Payment Services | Specialist Payments</title>
         <meta
           name="description"
           content="At Specialist Payments we focus on helping businesses streamline the way they take payments to maximise revenue by offering the cheapest card machine service."
