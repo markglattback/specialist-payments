@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import ProductHeroWrapper from "styled-components/ProductHeroWrapper";
 import ProductDetailWrapper from "styled-components/ProductDetailWrapper";
-import ProductArticle from "styled-components/ProductArticle";
 import Container from "styled-components/Container";
 import SkewedBackgroundTint from "styled-components/SkewedBackgroundTint";
 import BusinessFinance from "components/Product Illustrations/BusinessFinance";

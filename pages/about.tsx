@@ -54,24 +54,10 @@ export default function About() {
             <div className="about-us">
               <h1>About Us</h1>
               <p>
-                Specialist Payments was launched with an ambition to make
-                payment solutions more cost effective and fairer. Card payments
-                have been increasing for many years, however, on the back of
-                Covid-19 , the world is experiencing a massive shift, and so is
-                the way businesses take payments. Whilst cash will still be
-                around for years to come, the demand for contactless payments is
-                almost an expectation for most customers these days, and even
-                more so with social distancing playing a role.
+                Specialist Payments was born out of a desire to improve the transparency of the card payments industry. Our goal is to find our clients the perfect payment solution for their business, whether they are new to card payments or looking to switch providers. The multiple options available to merchants can appear very confusing, so we remove the industry jargon and do the ground work for you. Through our expertise and extensive banking partnerships, we aim to present you with a reliable solution that not only saves you money, but also provides a first-class customer experience. Once we've helped equip you with the tools you need to take payments, we are there to provide ongoing support to help you maximise your payments journey.
               </p>
               <p>
-                That's where we come in. Whether you already have a payment
-                solution in place, or you are looking to acquire one, we can
-                help you. We want to help our clients grow their business by
-                streamlining the way they take payments. We hate the fact that
-                many businesses are tied into long term contracts with
-                extortionate price plans. We firmly believe that our honest and
-                fair approach will help shape a more collaborative payments
-                industry.
+                Further to card payment solutions, we can also assist you with business energy, insurance, finance and telecoms through our unique network of partners. We save you hours of searching for the best deals, allowing you to spend more time doing what you do best and growing your business!
               </p>
             </div>
           </article>
