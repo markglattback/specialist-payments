@@ -122,7 +122,7 @@ const Article = styled.article`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   max-width: var(--maxWidth);
-  margin: 10rem auto;
+  margin: 0 auto;
 
   :nth-of-type(1) {
     margin-top: 0;
@@ -198,133 +198,133 @@ const BackgroundSkew = styled.div`
 `;
 
 export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Merchant Payment Services | Specialist Payments</title>
-        <meta
-          name="description"
-          content="At Specialist Payments we focus on helping businesses streamline the way they take payments to maximise revenue by offering the cheapest card machine service."
-        />
-      </Head>
-      <section id="company-description" style={{ position: "relative" }}>
-        <HeroContainer>
-          <div className="headline-container">
-            <div className="headline">
-              <h1>
-                Take Payments,
+	return (
+		<div>
+			<Head>
+				<title>Merchant Payment Services | Specialist Payments</title>
+				<meta
+					name="description"
+					content="At Specialist Payments we focus on helping businesses streamline the way they take payments to maximise revenue by offering the cheapest card machine service."
+				/>
+			</Head>
+			<section id="company-description" style={{ position: "relative" }}>
+				<HeroContainer>
+					<div className="headline-container">
+						<div className="headline">
+							<h1>
+								Take Payments,
                 <br />
                 Increase Revenue,
                 <br />
                 Prosper.
               </h1>
-              <p>
-                We help businesses streamline the way they take payments to
-                maximise their revenue.
+							<p>
+								We help businesses streamline the way they take payments to
+								maximise their revenue.
               </p>
-              <Link href="/quote">
-                <Button type="button" primary>
-                  Get a Quote
+							<Link href="/quote">
+								<Button type="button" primary>
+									Get a Quote
                 </Button>
-              </Link>
-            </div>
-          </div>
-          <div className="hero-image">
-            <HeroSVG style={{ height: "100%" }} />
-          </div>
-        </HeroContainer>
-      </section>
-      <section id="products" style={{ position: "relative" }}>
-        <BackgroundSkew />
+							</Link>
+						</div>
+					</div>
+					<div className="hero-image">
+						<HeroSVG style={{ height: "100%" }} />
+					</div>
+				</HeroContainer>
+			</section>
+			<section id="products" style={{ position: "relative" }}>
+				<BackgroundSkew />
 
-        <ProductContainer>
-          <article id="products">
-            <h2>Payment Solutions</h2>
-            <div className="products">
-              <ProductCard
-                product={{
-                  title: "Card Readers",
-                  iconComp: "Readers",
-                  iconSrc: "/product card icons/readers.svg",
-                  iconAltText: "Illustration of a Card Reader",
-                  description:
-                    "Take card payments with products from the most popular brands in the industry.",
-                  href: "/products/card-readers",
-                }}
-              />
-              <ProductCard
-                product={{
-                  title: "Payment Gateways",
-                  iconComp: "Gateways",
-                  iconSrc: "/product card icons/gateways.svg",
-                  iconAltText: "Illustration of a Payment Gateway",
-                  description:
-                    "Open up your business to the world of e-commerce with our easy to use payment gateways.",
-                  href: "/products/online-payments",
-                }}
-              />
-              <ProductCard
-                product={{
-                  title: "Payment Links",
-                  iconComp: "Links",
-                  iconSrc: "/product card icons/links.svg",
-                  iconAltText: "Illustration of a Payment Link",
-                  description:
-                    "Simple and secure payment links make it easy for your customers to pay you.",
-                  href: "/products/online-payments",
-                }}
-              />
-              <ProductCard
-                product={{
-                  title: "Phone Payments",
-                  iconComp: "Phone",
-                  iconSrc: "/product card icons/phone.svg",
-                  iconAltText: "Illustration of a Phone",
-                  description:
-                    "Take advantage of low rates if your customers need to call you to make a payment.",
-                  href: "/products/online-payments",
-                }}
-              />
-            </div>
-          </article>
-          <article id="why-us">
-            <h2 className="benefits">Client Benefits</h2>
-            <Benefit
-              icon="/benefits/support.svg"
-              title="24/7 Support"
-              details="We're confident you won't need us often, but when you do we'll be there for you, all day, every day."
-            />
-            <Benefit
-              icon="/benefits/account-manager.svg"
-              title="Dedicated Account Manager"
-              details="We'll assign you a dedicated account manager to guide you on your journey with us."
-            />
-            <Benefit
-              icon="/benefits/next-day-funding.svg"
-              title="Next Day Funds"
-              details="Next day settlements available to help with your business cashflow."
-            />
-            <Benefit
-              icon="/benefits/next-day-delivery.svg"
-              title="Next Day Delivery"
-              details="Once you're signed up you'll receive your new equipment the next day. No waiting."
-            />
-            <Benefit
-              icon="/benefits/fast-setup.svg"
-              title="Fast Setup"
-              details="Installing your new equipment couldn't be easier. You'll be up and running within minutes."
-            />
-            <Benefit
-              icon="/benefits/pci-compliance.svg"
-              title="PCI Compliance"
-              details="We'll take care of your PCI Compliance so you can focus on running your business."
-            />
-          </article>
-        </ProductContainer>
-      </section>
-      <section id="epos-business-finance">
-        <SectionContainer>
-          <Article id="epos">
+				<ProductContainer>
+					<article id="products">
+						<h2>Payment Solutions</h2>
+						<div className="products">
+							<ProductCard
+								product={{
+									title: "Card Readers",
+									iconComp: "Readers",
+									iconSrc: "/product card icons/readers.svg",
+									iconAltText: "Illustration of a Card Reader",
+									description:
+										"Take card payments with products from the most popular brands in the industry.",
+									href: "/products/card-readers",
+								}}
+							/>
+							<ProductCard
+								product={{
+									title: "Payment Gateways",
+									iconComp: "Gateways",
+									iconSrc: "/product card icons/gateways.svg",
+									iconAltText: "Illustration of a Payment Gateway",
+									description:
+										"Open up your business to the world of e-commerce with our easy to use payment gateways.",
+									href: "/products/online-payments",
+								}}
+							/>
+							<ProductCard
+								product={{
+									title: "Payment Links",
+									iconComp: "Links",
+									iconSrc: "/product card icons/links.svg",
+									iconAltText: "Illustration of a Payment Link",
+									description:
+										"Simple and secure payment links make it easy for your customers to pay you.",
+									href: "/products/online-payments",
+								}}
+							/>
+							<ProductCard
+								product={{
+									title: "Phone Payments",
+									iconComp: "Phone",
+									iconSrc: "/product card icons/phone.svg",
+									iconAltText: "Illustration of a Phone",
+									description:
+										"Take advantage of low rates if your customers need to call you to make a payment.",
+									href: "/products/online-payments",
+								}}
+							/>
+						</div>
+					</article>
+					<article id="why-us">
+						<h2 className="benefits">Client Benefits</h2>
+						<Benefit
+							icon="/benefits/support.svg"
+							title="24/7 Support"
+							details="We're confident you won't need us often, but when you do we'll be there for you, all day, every day."
+						/>
+						<Benefit
+							icon="/benefits/account-manager.svg"
+							title="Dedicated Account Manager"
+							details="We'll assign you a dedicated account manager to guide you on your journey with us."
+						/>
+						<Benefit
+							icon="/benefits/next-day-funding.svg"
+							title="Next Day Funds"
+							details="Next day settlements available to help with your business cashflow."
+						/>
+						<Benefit
+							icon="/benefits/next-day-delivery.svg"
+							title="Next Day Delivery"
+							details="Once you're signed up you'll receive your new equipment the next day. No waiting."
+						/>
+						<Benefit
+							icon="/benefits/fast-setup.svg"
+							title="Fast Setup"
+							details="Installing your new equipment couldn't be easier. You'll be up and running within minutes."
+						/>
+						<Benefit
+							icon="/benefits/pci-compliance.svg"
+							title="PCI Compliance"
+							details="We'll take care of your PCI Compliance so you can focus on running your business."
+						/>
+					</article>
+				</ProductContainer>
+			</section>
+			<section id="epos-business-finance">
+				<SectionContainer>
+					{/* <Article id="epos">
             <div className="article-image">
               <EPOS style={{ height: "100%", width: "100%" }} />
             </div>
@@ -336,29 +336,29 @@ export default function Home() {
                 require a new one.
               </p>
             </div>
-          </Article>
-          <Article id="finance">
-            <div className="article-text">
-              <h2>Flexible Business Finance</h2>
-              <p>
-                Pay us back when you get paid with our amazingly flexible
-                lending scheme. We agree a sum for you to borrow and a fixed %
-                to repay each month. If you have a bad month sales wise, relax,
-                you can pay us next month. No late penalties, no increases in
-                repayments and no hidden costs. Whether its a few hundred pounds
-                or a few million, we are simply here to support your business in
-                a way that suits you.
+          </Article> */}
+					<Article id="finance">
+						<div className="article-text">
+							<h2>Flexible Business Finance</h2>
+							<p>
+								Pay us back when you get paid with our amazingly flexible
+								lending scheme. We agree a sum for you to borrow and a fixed %
+								to repay each month. If you have a bad month sales wise, relax,
+								you can pay us next month. No late penalties, no increases in
+								repayments and no hidden costs. Whether its a few hundred pounds
+								or a few million, we are simply here to support your business in
+								a way that suits you.
               </p>
-            </div>
-            <div className="article-image">
-              <BusinessFinance style={{ height: "100%", width: "100%" }} />
-            </div>
-          </Article>
-        </SectionContainer>
-      </section>
-      <QuoteSection />
-    </div>
-  );
+						</div>
+						<div className="article-image">
+							<BusinessFinance style={{ height: "100%", width: "100%" }} />
+						</div>
+					</Article>
+				</SectionContainer>
+			</section>
+			<QuoteSection />
+		</div>
+	);
 }
 let lorem =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis maiores quod quo harum hic dolores aspernatur delectus.";
+	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veritatis maiores quod quo harum hic dolores aspernatur delectus.";

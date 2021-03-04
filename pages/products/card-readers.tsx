@@ -102,75 +102,75 @@ const CustomProductArticle = styled(ProductArticle)`
 `;
 
 export default function CardReaderPage() {
-  return (
-    <>
-      <Head>
-        <title>Card Readers | Specialist Payments</title>
-        <meta
-          name="description"
-          content="Take card payments with modern wireless card readers from the industry's favourite brands."
-        />
-      </Head>
-      <section id="card-reader-heading">
-        <ProductHeroWrapper>
-          <div className="information">
-            <h1>Card Readers</h1>
-            <p>
-              Get your business set up to take card payments with our wireless
-              card readers from the most popular brands in the industry.
+	return (
+		<>
+			<Head>
+				<title>Card Readers | Specialist Payments</title>
+				<meta
+					name="description"
+					content="Take card payments with modern wireless card readers from the industry's favourite brands."
+				/>
+			</Head>
+			<section id="card-reader-heading">
+				<ProductHeroWrapper>
+					<div className="information">
+						<h1>Card Readers</h1>
+						<p>
+							Get your business set up to take card payments with our wireless
+							card readers from the most popular brands in the industry.
             </p>
-          </div>
-          <div className="illustration">
-            <CardReaders style={{ height: "100%" }} />
-          </div>
-        </ProductHeroWrapper>
-      </section>
-      <section id="card-reader-detail">
-        <ProductDetailWrapper>
-          <SkewedBackground />
-          <Container>
-            <CustomProductArticle>
-              <div className="article-text">
-                <h2>Powerful hardware in a stylish design</h2>
-                <p>
-                  The revolutionary terminal that started it all. The Pax A920
-                  combines the full features of an Android tablet with a
-                  powerful POS payment terminal, all in a sleek and compact
-                  design.
+					</div>
+					<div className="illustration">
+						<CardReaders style={{ height: "100%" }} />
+					</div>
+				</ProductHeroWrapper>
+			</section>
+			<section id="card-reader-detail">
+				<ProductDetailWrapper>
+					<SkewedBackground />
+					<Container>
+						<CustomProductArticle>
+							<div className="article-text">
+								<h2>Powerful hardware in a stylish design</h2>
+								<p>
+									The revolutionary terminal that started it all. The Pax A920
+									combines the full features of an Android tablet with a
+									powerful POS payment terminal, all in a sleek and compact
+									design.
                 </p>
-              </div>
-              <div className="article-image">
-                <img src="/A920.webp" alt="Pax A920 Card Reader" />
-              </div>
-            </CustomProductArticle>
-            <CustomProductArticle>
-              <div className="article-image large-image">
-                <img
-                  src="/a920-branded-front.png"
-                  alt="Pax A920 Card Reader"
-                  style={{ height: "100%", width: "auto" }}
-                />
-              </div>
-              <div className="article-text centred">
-                <h3>Key Features</h3>
-                <ul>
-                  <li>Powered by Android 7.1</li>
-                  <li>Cortex A7 Processor</li>
-                  <li>5" Capacitive Touch Screen</li>
-                  <li>4G + WIFI + GPS</li>
-                  <li>5250mAh capacity battery</li>
-                  <li>Front and Rear Cameras</li>
-                  <li>NFC Contactless</li>
-                  <li>PIN on glass</li>
-                  <li>PCI PTS 5.x SRED</li>
-                  <li>ATEX Certified</li>
-                  <li>Optional Docking Station</li>
-                </ul>
-              </div>
-            </CustomProductArticle>
-          </Container>
-        </ProductDetailWrapper>
-        <ProductDetailWrapper>
+							</div>
+							<div className="article-image">
+								<img src="/A920.webp" alt="Pax A920 Card Reader" />
+							</div>
+						</CustomProductArticle>
+						<CustomProductArticle>
+							<div className="article-image large-image">
+								<img
+									src="/a920-branded-front.png"
+									alt="Pax A920 Card Reader"
+									style={{ height: "100%", width: "auto" }}
+								/>
+							</div>
+							<div className="article-text centred">
+								<h3>Key Features</h3>
+								<ul>
+									<li>Powered by Android 7.1</li>
+									<li>Cortex A7 Processor</li>
+									<li>5" Capacitive Touch Screen</li>
+									<li>4G + WIFI + GPS</li>
+									<li>5250mAh capacity battery</li>
+									<li>Front and Rear Cameras</li>
+									<li>NFC Contactless</li>
+									<li>PIN on glass</li>
+									<li>PCI PTS 5.x SRED</li>
+									<li>ATEX Certified</li>
+									<li>Optional Docking Station</li>
+								</ul>
+							</div>
+						</CustomProductArticle>
+					</Container>
+				</ProductDetailWrapper>
+				{/* <ProductDetailWrapper>
           <Container>
             <EPOSArticle>
               <div className="article-text">
@@ -189,9 +189,9 @@ export default function CardReaderPage() {
               </div>
             </EPOSArticle>
           </Container>
-        </ProductDetailWrapper>
-      </section>
-      <QuoteSection />
-    </>
-  );
+        </ProductDetailWrapper> */}
+			</section>
+			<QuoteSection />
+		</>
+	);
 }
