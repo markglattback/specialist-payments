@@ -1,7 +1,7 @@
 :root {
   --black: hsl(221, 50%, 1%);
   --backgroundShade: hsl(221, 50%, 5%);
-  --backgroundShade: #0d1526;
+  --backgroundShade: hsl(221, 49%, 10%);
   --background: #142038;
   --backgroundTint: #1f2b42;
   --backgroundHighTint: #47576a;
