@@ -26,21 +26,26 @@ const Wrapper = styled(Container)`
   }
 
   div.partner-grid {
-    display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 60px;
+    display: grid;
+		grid-template-columns: repeat(4, 1fr);
     padding: 0;
     margin: 0 auto;
 		margin-bottom: 60px;
 		width: 100%;
 
+		@media (max-width: 640px) {
+			grid-template-columns: 1fr;
+		}
+
     div {
       display: flex;
       justify-content: center;
       align-items: center;
-			width: calc((100% - 240px) / 4);
+			padding: 30px;
+
+			@media (max-width: 640px) {
+				padding: 30px 90px;
+			}
     }
 
     img {
@@ -57,11 +62,20 @@ const Wrapper = styled(Container)`
 		align-items: center;
 		width: 100%;
 
+		@media (max-width: 640px) {
+			flex-direction: column;
+		}
+
     div {
       display: flex;
       justify-content: center;
       align-items: center;
 			width: calc((100% - 240px) / 4);
+			
+			@media (max-width: 640px) {
+				width: 100%;
+				padding: 30px 100px;
+			}
     }
 
 		.text {
@@ -70,6 +84,11 @@ const Wrapper = styled(Container)`
 			margin-left: 25px;
 			margin-right: 12px;
 			width: fit-content;
+			
+			@media (max-width: 640px) {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
 		}
 
     img {
@@ -92,7 +111,7 @@ export default function Partners() {
 							<h1>Partners</h1>
 						</div>
 						<div className="partner-grid">
-							<div style={{ height: "96px" }}>
+							<div>
 								<img src="/partners/pax.png" alt="Pax" />
 							</div>
 							<div>
