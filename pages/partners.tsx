@@ -25,6 +25,33 @@ const Wrapper = styled(Container)`
     text-align: left;
   }
 
+	.partners-grid {
+		display: flex;
+		justify-content: space-around;
+
+
+		@media (max-width: 640px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.partner {
+			display: flex;
+			align-items: flex-end;
+			width: 25%;
+
+			@media (max-width: 640px) {
+				width: 50%;
+				margin-bottom: 60px;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
   div.partner-grid {
     display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -110,39 +137,12 @@ export default function Partners() {
 						<div className="partners">
 							<h1>Partners</h1>
 						</div>
-						<div className="partner-grid">
-							<div>
+						<div className="partners-grid">
+							<div className="partner">
 								<img src="/partners/pax.png" alt="Pax" />
 							</div>
-							<div>
-								<img src="/partners/eposnow.svg" alt="EposNow" />
-							</div>
-							<div>
-								<img src="/partners/fiserve.png" alt="Fiserve" />
-							</div>
-							<div>
-								<img src="/partners/ingenico.png" alt="Ingenico" />
-							</div>
-							<div>
-								<img src="/partners/iZettle.png" alt="iZettle" />
-							</div>
-							<div>
-								<img src="/partners/square.png" alt="Square" />
-							</div>
-							<div>
-								<img src="/partners/sumup.png" alt="Sumup" />
-							</div>
-							<div>
-								<img src="/partners/verifone.png" alt="Verifone" />
-							</div>
-						</div>
-						<div className="pairing">
-							<div>
-								<img src="/partners/utp-logo-x2.png" alt="UTP" />
-							</div>
-							<div className="text">in association with</div>
-							<div>
-								<img src="/partners/barclays.png" alt="Barclays" />
+							<div className="partner">
+								<img src="/partners/dojo.svg" alt="Dojo" />
 							</div>
 						</div>
 					</article>
